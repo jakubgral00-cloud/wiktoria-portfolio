@@ -1,0 +1,100 @@
+PASS [desktop-1440] URL without trailing slash is redirected into the base path — http://127.0.0.1:8766/portfolio-wiktoria/
+PASS [desktop-1440] home lists all manifest projects in Behance order — 12 cards
+PASS [desktop-1440] home cards link to detail routes
+PASS [desktop-1440] grid columns — 3 columns
+PASS [desktop-1440] home: all images have alt text
+PASS [desktop-1440] home: rendered aspect ratios match source files
+PASS [desktop-1440] home: no broken images
+PASS [desktop-1440] home: no horizontal overflow — scrollWidth=1440 clientWidth=1440
+PASS [desktop-1440] no Behance platform UI text
+PASS [desktop-1440] first Tab lands on skip link — skip-link
+PASS [desktop-1440] Enter on card opens project detail
+PASS [desktop-1440] in-app navigation stays under the base path — http://127.0.0.1:8766/portfolio-wiktoria/#/project/bohateron
+PASS [desktop-1440] focus moves to project heading on navigation
+PASS [desktop-1440] reloading a deep link renders the same project
+PASS [desktop-1440] detail 01 bohateron: title, media order, source link
+PASS [desktop-1440] detail: all images have alt text
+PASS [desktop-1440] detail: rendered aspect ratios match source files
+PASS [desktop-1440] detail: no broken images
+PASS [desktop-1440] detail: no horizontal overflow — scrollWidth=1440 clientWidth=1440
+PASS [desktop-1440] detail 02 magdalena-lamparska: title, media order, source link
+PASS [desktop-1440] detail 03 empik-go-ania-z-zielonego-wzgorza: title, media order, source link
+PASS [desktop-1440] detail 04 xiaomi: title, media order, source link
+PASS [desktop-1440] detail 05 neboa: title, media order, source link
+PASS [desktop-1440] detail 06 kampania-spoleczna-crystal-palace-x-a-m-wesolowska: title, media order, source link
+PASS [desktop-1440] detail 07 kampania-spoleczna-crystal-palace-x-j-blaszczykowski: title, media order, source link
+PASS [desktop-1440] detail 08 empik-go: title, media order, source link
+PASS [desktop-1440] detail 09 blu-x-warner-music: title, media order, source link
+PASS [desktop-1440] detail 10 sanprobi-premium: title, media order, source link
+PASS [desktop-1440] detail 11 sonbird-stylizacje-do-klipow: title, media order, source link
+PASS [desktop-1440] detail 12 przemek-kucyk-kucyk: title, media order, source link
+PASS [desktop-1440] pager prev/next follow manifest order
+PASS [desktop-1440] lightbox opens with Enter and is modal
+PASS [desktop-1440] lightbox moves focus to Close button
+PASS [desktop-1440] lightbox image has alt text — Cover image of the project “Magdalena Lamparska”
+PASS [desktop-1440] focus stays inside lightbox on Tab
+PASS [desktop-1440] Escape closes lightbox and returns focus to trigger
+PASS [desktop-1440] lightbox arrow/Home keys step through media in order — ['test image B', 'test image C', 'test image C', 'test image A', 'test image A']
+PASS [desktop-1440] about shows verbatim profile text
+PASS [desktop-1440] about shows public e-mail from profile
+PASS [desktop-1440] no broken Facebook link rendered
+PASS [desktop-1440] about: all images have alt text
+PASS [desktop-1440] about: rendered aspect ratios match source files
+PASS [desktop-1440] about: no broken images
+PASS [desktop-1440] about: no horizontal overflow — scrollWidth=1440 clientWidth=1440
+PASS [desktop-1440] unknown project shows Not found
+PASS [desktop-1440] no console/page errors
+PASS [desktop-1440] no failed requests
+PASS [desktop-1440] no external network requests
+PASS [desktop-1440] all local requests stay under /portfolio-wiktoria
+PASS [mobile-390] URL without trailing slash is redirected into the base path — http://127.0.0.1:8766/portfolio-wiktoria/
+PASS [mobile-390] home lists all manifest projects in Behance order — 12 cards
+PASS [mobile-390] home cards link to detail routes
+PASS [mobile-390] grid columns — 1 columns
+PASS [mobile-390] home: all images have alt text
+PASS [mobile-390] home: rendered aspect ratios match source files
+PASS [mobile-390] home: no broken images
+PASS [mobile-390] home: no horizontal overflow — scrollWidth=390 clientWidth=390
+PASS [mobile-390] no Behance platform UI text
+PASS [mobile-390] first Tab lands on skip link — skip-link
+PASS [mobile-390] Enter on card opens project detail
+PASS [mobile-390] in-app navigation stays under the base path — http://127.0.0.1:8766/portfolio-wiktoria/#/project/bohateron
+PASS [mobile-390] focus moves to project heading on navigation
+PASS [mobile-390] reloading a deep link renders the same project
+PASS [mobile-390] detail 01 bohateron: title, media order, source link
+PASS [mobile-390] detail: all images have alt text
+PASS [mobile-390] detail: rendered aspect ratios match source files
+PASS [mobile-390] detail: no broken images
+PASS [mobile-390] detail: no horizontal overflow — scrollWidth=390 clientWidth=390
+PASS [mobile-390] detail 02 magdalena-lamparska: title, media order, source link
+PASS [mobile-390] detail 03 empik-go-ania-z-zielonego-wzgorza: title, media order, source link
+PASS [mobile-390] detail 04 xiaomi: title, media order, source link
+PASS [mobile-390] detail 05 neboa: title, media order, source link
+PASS [mobile-390] detail 06 kampania-spoleczna-crystal-palace-x-a-m-wesolowska: title, media order, source link
+PASS [mobile-390] detail 07 kampania-spoleczna-crystal-palace-x-j-blaszczykowski: title, media order, source link
+PASS [mobile-390] detail 08 empik-go: title, media order, source link
+PASS [mobile-390] detail 09 blu-x-warner-music: title, media order, source link
+PASS [mobile-390] detail 10 sanprobi-premium: title, media order, source link
+PASS [mobile-390] detail 11 sonbird-stylizacje-do-klipow: title, media order, source link
+PASS [mobile-390] detail 12 przemek-kucyk-kucyk: title, media order, source link
+PASS [mobile-390] pager prev/next follow manifest order
+PASS [mobile-390] lightbox opens with Enter and is modal
+PASS [mobile-390] lightbox moves focus to Close button
+PASS [mobile-390] lightbox image has alt text — Cover image of the project “Magdalena Lamparska”
+PASS [mobile-390] focus stays inside lightbox on Tab
+PASS [mobile-390] Escape closes lightbox and returns focus to trigger
+PASS [mobile-390] lightbox arrow/Home keys step through media in order — ['test image B', 'test image C', 'test image C', 'test image A', 'test image A']
+PASS [mobile-390] about shows verbatim profile text
+PASS [mobile-390] about shows public e-mail from profile
+PASS [mobile-390] no broken Facebook link rendered
+PASS [mobile-390] about: all images have alt text
+PASS [mobile-390] about: rendered aspect ratios match source files
+PASS [mobile-390] about: no broken images
+PASS [mobile-390] about: no horizontal overflow — scrollWidth=390 clientWidth=390
+PASS [mobile-390] unknown project shows Not found
+PASS [mobile-390] no console/page errors
+PASS [mobile-390] no failed requests
+PASS [mobile-390] no external network requests
+PASS [mobile-390] all local requests stay under /portfolio-wiktoria
+
+98/98 checks passed

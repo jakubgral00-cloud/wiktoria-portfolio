@@ -1,0 +1,295 @@
+{
+  "generated_at": "2026-11-07T13:18:55+00:00",
+  "source": {
+    "profile_url": "https://www.behance.net/wiktoriawolniak",
+    "method": "Plain HTTP GET of the public profile page; data read from its embedded JSON (script#beconfig-store_state). Images downloaded from the public CDN URLs listed there.",
+    "profile_list_complete": false,
+    "profile_list_note": "The public profile page lists the first 12 projects and reports more exist (hasMore=true). The remaining ones load through Behance's internal API, which was not used."
+  },
+  "profile": {
+    "display_name": "Wiktoria Wolniak-Gral",
+    "first_name": "Wiktoria",
+    "occupation": "Freelance Stylist",
+    "company": "Fashion Stylist Wiktoria Wolniak-Gral",
+    "location": "Warszawa, Poland",
+    "website": "https://www.instagram.com/wiktoria.wolniak/",
+    "about": {
+      "title": "ABOUT ME",
+      "text": "Freelance Stylist based in Warsaw/Poland\nFASHION I COMMERCIAL I MUSIC VIDEO I CAMPAIGN I TV SHOWS I CELEBRITIES I PERSONAL SHOPPER\n\ne-mail: wiktoriawolniak.stylist@gmail.com"
+    },
+    "email": "wiktoriawolniak.stylist@gmail.com",
+    "socials": [
+      {
+        "service": "Facebook",
+        "url_as_listed": "http://facebook.com/Wiktoria Wolniak-Czupajło",
+        "valid_url": false
+      },
+      {
+        "service": "Instagram",
+        "url_as_listed": "http://instagram.com/wiktoria.wolniak",
+        "valid_url": true
+      }
+    ],
+    "avatar": {
+      "src": "assets/profile/avatar.jpg",
+      "source_url": "https://pps.services.adobe.com/api/profile/2F471D8165F4C0980A495E62@AdobeID/image/585a7374-1114-43aa-89ed-8c2382f1ca92/276",
+      "width": 276,
+      "height": 276,
+      "alt": "Profile photo of Wiktoria Wolniak-Gral"
+    }
+  },
+  "projects": [
+    {
+      "order": 1,
+      "behance_id": 257199233,
+      "title": "BohaterON",
+      "slug": "bohateron",
+      "source_url": "https://www.behance.net/gallery/257199233/BohaterON",
+      "published_on": "2026-10-16",
+      "dominant_color": "#050508",
+      "cover": {
+        "src": "assets/covers/01-257199233.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/935493257199233.6ad22a29976d0.jpg",
+        "width": 808,
+        "height": 632,
+        "alt": "Cover image of the project “BohaterON”",
+        "role": "profile grid cover (as shown on the Behance profile)"
+      },
+      "description": null,
+      "media": [],
+      "detail_status": "unavailable",
+      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+    },
+    {
+      "order": 2,
+      "behance_id": 255162521,
+      "title": "Magdalena Lamparska",
+      "slug": "magdalena-lamparska",
+      "source_url": "https://www.behance.net/gallery/255162521/Magdalena-Lamparska",
+      "published_on": "2026-09-02",
+      "dominant_color": "#291f14",
+      "cover": {
+        "src": "assets/covers/02-255162521.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/34b6c8255162521.6a984d5854735.jpg",
+        "width": 808,
+        "height": 632,
+        "alt": "Cover image of the project “Magdalena Lamparska”",
+        "role": "profile grid cover (as shown on the Behance profile)"
+      },
+      "description": null,
+      "media": [],
+      "detail_status": "unavailable",
+      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+    },
+    {
+      "order": 3,
+      "behance_id": 252142005,
+      "title": "Empik Go - „Ania z Zielonego Wzgórza”",
+      "slug": "empik-go-ania-z-zielonego-wzgorza",
+      "source_url": "https://www.behance.net/gallery/252142005/Empik-Go-Ania-z-Zielonego-Wzgorza",
+      "published_on": "2026-07-03",
+      "dominant_color": "#d9bf4f",
+      "cover": {
+        "src": "assets/covers/03-252142005.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/95e329252142005.6a47b64166a1e.jpg",
+        "width": 808,
+        "height": 632,
+        "alt": "Cover image of the project “Empik Go - „Ania z Zielonego Wzgórza””",
+        "role": "profile grid cover (as shown on the Behance profile)"
+      },
+      "description": null,
+      "media": [],
+      "detail_status": "unavailable",
+      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+    },
+    {
+      "order": 4,
+      "behance_id": 252141819,
+      "title": "Xiaomi",
+      "slug": "xiaomi",
+      "source_url": "https://www.behance.net/gallery/252141819/Xiaomi",
+      "published_on": "2026-07-03",
+      "dominant_color": "#1f210c",
+      "cover": {
+        "src": "assets/covers/04-252141819.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/d687d7252141819.6a47b57b7598a.jpg",
+        "width": 808,
+        "height": 632,
+        "alt": "Cover image of the project “Xiaomi”",
+        "role": "profile grid cover (as shown on the Behance profile)"
+      },
+      "description": null,
+      "media": [],
+      "detail_status": "unavailable",
+      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+    },
+    {
+      "order": 5,
+      "behance_id": 250195061,
+      "title": "Neboa",
+      "slug": "neboa",
+      "source_url": "https://www.behance.net/gallery/250195061/Neboa",
+      "published_on": "2026-05-29",
+      "dominant_color": "#e4e3e3",
+      "cover": {
+        "src": "assets/covers/05-250195061.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/aba07f250195061.6a1940276afa2.jpg",
+        "width": 808,
+        "height": 632,
+        "alt": "Cover image of the project “Neboa”",
+        "role": "profile grid cover (as shown on the Behance profile)"
+      },
+      "description": null,
+      "media": [],
+      "detail_status": "unavailable",
+      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+    },
+    {
+      "order": 6,
+      "behance_id": 249801397,
+      "title": "Kampania społeczna \"Crystal Palace\" x A.M.Wesołowska",
+      "slug": "kampania-spoleczna-crystal-palace-x-a-m-wesolowska",
+      "source_url": "https://www.behance.net/gallery/249801397/Kampania-spoleczna-Crystal-Palace-x-AMWesolowska",
+      "published_on": "2026-05-21",
+      "dominant_color": "#030405",
+      "cover": {
+        "src": "assets/covers/06-249801397.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/532f15249801397.6a0f6058ba47d.jpg",
+        "width": 808,
+        "height": 632,
+        "alt": "Cover image of the project “Kampania społeczna \"Crystal Palace\" x A.M.Wesołowska”",
+        "role": "profile grid cover (as shown on the Behance profile)"
+      },
+      "description": null,
+      "media": [],
+      "detail_status": "unavailable",
+      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+    },
+    {
+      "order": 7,
+      "behance_id": 249800959,
+      "title": "Kampania społeczna \"Crystal Palace\" x J. Błaszczykowski",
+      "slug": "kampania-spoleczna-crystal-palace-x-j-blaszczykowski",
+      "source_url": "https://www.behance.net/gallery/249800959/Kampania-spoleczna-Crystal-Palace-x-J-Blaszczykowski",
+      "published_on": "2026-05-21",
+      "dominant_color": "#010101",
+      "cover": {
+        "src": "assets/covers/07-249800959.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/a7ea7c249800959.6a0f5e6455d80.jpg",
+        "width": 808,
+        "height": 632,
+        "alt": "Cover image of the project “Kampania społeczna \"Crystal Palace\" x J. Błaszczykowski”",
+        "role": "profile grid cover (as shown on the Behance profile)"
+      },
+      "description": null,
+      "media": [],
+      "detail_status": "unavailable",
+      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+    },
+    {
+      "order": 8,
+      "behance_id": 248962659,
+      "title": "Empik Go",
+      "slug": "empik-go",
+      "source_url": "https://www.behance.net/gallery/248962659/Empik-Go",
+      "published_on": "2026-05-07",
+      "dominant_color": "#5d1f0b",
+      "cover": {
+        "src": "assets/covers/08-248962659.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/37cf23248962659.6a0ed66164e0e.jpg",
+        "width": 808,
+        "height": 632,
+        "alt": "Cover image of the project “Empik Go”",
+        "role": "profile grid cover (as shown on the Behance profile)"
+      },
+      "description": null,
+      "media": [],
+      "detail_status": "unavailable",
+      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+    },
+    {
+      "order": 9,
+      "behance_id": 246087983,
+      "title": "Blu x Warner Music",
+      "slug": "blu-x-warner-music",
+      "source_url": "https://www.behance.net/gallery/246087983/Blu-x-Warner-Music",
+      "published_on": "2026-03-19",
+      "dominant_color": "#a65a10",
+      "cover": {
+        "src": "assets/covers/09-246087983.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/e36e30246087983.69bbdd1db2400.jpg",
+        "width": 808,
+        "height": 632,
+        "alt": "Cover image of the project “Blu x Warner Music”",
+        "role": "profile grid cover (as shown on the Behance profile)"
+      },
+      "description": null,
+      "media": [],
+      "detail_status": "unavailable",
+      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+    },
+    {
+      "order": 10,
+      "behance_id": 246087827,
+      "title": "Sanprobi Premium",
+      "slug": "sanprobi-premium",
+      "source_url": "https://www.behance.net/gallery/246087827/Sanprobi-Premium",
+      "published_on": "2026-03-19",
+      "dominant_color": "#e9eff4",
+      "cover": {
+        "src": "assets/covers/10-246087827.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/3b2a72246087827.6a253d7872a42.jpg",
+        "width": 808,
+        "height": 632,
+        "alt": "Cover image of the project “Sanprobi Premium”",
+        "role": "profile grid cover (as shown on the Behance profile)"
+      },
+      "description": null,
+      "media": [],
+      "detail_status": "unavailable",
+      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+    },
+    {
+      "order": 11,
+      "behance_id": 246087497,
+      "title": "SONBIRD - stylizacje do klipów",
+      "slug": "sonbird-stylizacje-do-klipow",
+      "source_url": "https://www.behance.net/gallery/246087497/SONBIRD-stylizacje-do-klipow",
+      "published_on": "2026-03-19",
+      "dominant_color": "#fcf9f5",
+      "cover": {
+        "src": "assets/covers/11-246087497.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/8ae8c9246087497.6a0ed6f76783f.jpg",
+        "width": 808,
+        "height": 632,
+        "alt": "Cover image of the project “SONBIRD - stylizacje do klipów”",
+        "role": "profile grid cover (as shown on the Behance profile)"
+      },
+      "description": null,
+      "media": [],
+      "detail_status": "unavailable",
+      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+    },
+    {
+      "order": 12,
+      "behance_id": 246087249,
+      "title": "Przemek Kucyk - „Kucyk”",
+      "slug": "przemek-kucyk-kucyk",
+      "source_url": "https://www.behance.net/gallery/246087249/Przemek-Kucyk-Kucyk",
+      "published_on": "2026-03-19",
+      "dominant_color": "#0a0a06",
+      "cover": {
+        "src": "assets/covers/12-246087249.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/1f5ae9246087249.69bbd9eb1f790.jpg",
+        "width": 808,
+        "height": 632,
+        "alt": "Cover image of the project “Przemek Kucyk - „Kucyk””",
+        "role": "profile grid cover (as shown on the Behance profile)"
+      },
+      "description": null,
+      "media": [],
+      "detail_status": "unavailable",
+      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+    }
+  ]
+}

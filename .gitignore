@@ -1,0 +1,7 @@
+*.log
+PROMPT.md
+*.tar.gz
+screenshots/
+__pycache__/
+.DS_Store
+.env*
