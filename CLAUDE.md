@@ -25,10 +25,10 @@ A server is required: `index.html` fetches `content.json`, so `file://` won't wo
 | Path | What |
 |---|---|
 | `index.html` | Page shell, lightbox `<dialog>`, inline trailing-slash guard |
-| `css/styles.css` | All styling (grey #c8c8c8 page, Satoshi font from Fontshare, edge-to-edge photo grid, hover captions) |
-| `js/app.js` | Hash router (`#/`, `#/project/<slug>`, `#/about`), views, home intro animation (texts fly in, then photos fly in from the front), keyboard lightbox |
+| `css/styles.css` | All styling (white page, Satoshi font from Fontshare, pinned hero with guide lines, edge-to-edge photo grid, hover captions) |
+| `js/app.js` | Hash router (`#/`, `#/project/<slug>`, `#/about`), views, home hero intro (3D photo fly-in, typed title, fading name), scroll-linked motion in both directions, keyboard lightbox |
 | `content.json` | **The content manifest**: profile, projects in Behance order, every image with local `src`, `source_url`, `width`, `height`, `alt` |
-| `assets/` | Downloaded images (`covers/NN-<behanceId>.jpg`, `projects/NN-<behanceId>/MM.jpg`, `profile/avatar.jpg`) |
+| `assets/` | Images: `covers/`, `projects/` (from Behance), `profile/avatar.jpg`, `hero/wiktoria-N.jpg` (Wiktoria's own photos, supplied by Jakub) |
 | `source/profile_snapshot.json` | Trimmed data from the public profile page |
 | `source/behance_projects.json` | All projects (titles, dates, tags, cover, ordered image URLs), read in a normal browser session |
 | `tools/fetch_profile.py` | Re-fetches the profile page into the snapshot (one plain GET) |

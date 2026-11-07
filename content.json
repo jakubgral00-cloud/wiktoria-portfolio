@@ -43,7 +43,37 @@
       "full_time": true,
       "source": "availabilityInfo on the public profile page"
     },
-    "member_since": 1710538908
+    "member_since": 1710538908,
+    "hero_photos": [
+      {
+        "src": "assets/hero/wiktoria-1.jpg",
+        "width": 800,
+        "height": 1200,
+        "alt": "Wiktoria Wolniak-Gral sitting on a stool, black-and-white portrait",
+        "source": "supplied by Jakub (Wiktoria's own photos), 2026-11-07"
+      },
+      {
+        "src": "assets/hero/wiktoria-2.jpg",
+        "width": 799,
+        "height": 1200,
+        "alt": "Wiktoria Wolniak-Gral sitting on a white plinth in a striped shirt",
+        "source": "supplied by Jakub (Wiktoria's own photos), 2026-11-07"
+      },
+      {
+        "src": "assets/hero/wiktoria-3.jpg",
+        "width": 800,
+        "height": 1200,
+        "alt": "Wiktoria Wolniak-Gral standing in a black blazer and striped trousers",
+        "source": "supplied by Jakub (Wiktoria's own photos), 2026-11-07"
+      },
+      {
+        "src": "assets/hero/wiktoria-4.jpg",
+        "width": 800,
+        "height": 1200,
+        "alt": "Wiktoria Wolniak-Gral sitting on the floor, black-and-white portrait",
+        "source": "supplied by Jakub (Wiktoria's own photos), 2026-11-07"
+      }
+    ]
   },
   "projects": [
     {

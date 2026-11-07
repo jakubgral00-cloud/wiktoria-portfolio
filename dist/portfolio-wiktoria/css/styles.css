@@ -1,9 +1,10 @@
 :root {
-  --bg: #c8c8c8;            /* the grey from the reference, used on the whole page */
-  --bg-soft: #d2d2d2;
-  --ink: #0d0d0d;
-  --muted: #3f3f3f;
-  --line: rgba(13, 13, 13, 0.18);
+  --bg: #ffffff;
+  --bg-soft: #f1f1f1;
+  --ink: #111111;
+  --title: #2b2b2b;
+  --muted: #6a6a6a;
+  --line: rgba(17, 17, 17, 0.1);
   --font: "Satoshi", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
   --gutter: clamp(0.9rem, 2vw, 1.75rem);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -54,18 +55,16 @@ a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
   gap: 1rem;
   align-items: start;
   padding: var(--gutter);
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 500;
   line-height: 1.35;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
 }
 .wordmark {
   display: grid;
-  font-size: 1.05rem;
-  font-weight: 900;
-  line-height: 0.92;
-  letter-spacing: -0.03em;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
 }
 .wordmark:hover { text-decoration: none; }
 .site-nav, .site-links { display: grid; justify-items: start; margin: 0; padding: 0; list-style: none; }
@@ -82,33 +81,98 @@ a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
 
 main { flex: 1; outline: none; }
 
-/* ---------- Hero ---------- */
-.hero {
-  min-height: clamp(18rem, 52vh, 34rem);
-  display: grid;
-  place-content: center;
-  justify-items: center;
-  gap: clamp(0.5rem, 1.5vw, 1.25rem);
-  padding: 2rem var(--gutter) clamp(2.5rem, 6vw, 4.5rem);
-  text-align: center;
+/* On the home page the header sits on top of the hero, like the labels in the reference. */
+.is-home .site-header { position: absolute; top: 0; left: 0; right: 0; }
+
+/* ---------- Hero (pinned while its elements fly away on scroll) ---------- */
+.hero { position: relative; height: 165vh; }
+.hero__stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  perspective: 1200px;
 }
+/* Thin guide lines, as in the reference. */
+.hero__lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--line), var(--line)) 25% 0 / 1px 100% no-repeat,
+    linear-gradient(var(--line), var(--line)) 50% 0 / 1px 100% no-repeat,
+    linear-gradient(var(--line), var(--line)) 75% 0 / 1px 100% no-repeat,
+    linear-gradient(var(--line), var(--line)) 0 12% / 100% 1px no-repeat,
+    linear-gradient(var(--line), var(--line)) 0 60% / 100% 1px no-repeat,
+    linear-gradient(var(--line), var(--line)) 0 88% / 100% 1px no-repeat;
+}
+.hero__item { position: absolute; will-change: transform, opacity; }
+.hero__item > * { display: block; }
+
+.hero__photo { width: clamp(7rem, 15vw, 15rem); }
+.hero__photo img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; background: var(--bg-soft); }
+.hero__photo--1 { left: 26%; top: 9%; }
+.hero__photo--2 { right: 0; top: 25%; width: clamp(6.5rem, 13vw, 13rem); }
+.hero__photo--3 { left: 1.5%; top: 55%; width: clamp(6.5rem, 13vw, 13rem); }
+.hero__photo--4 { left: 58%; top: 64%; }
+
+.hero__title-wrap { inset: 0; display: grid; place-items: center; pointer-events: none; }
 .hero__title {
   margin: 0;
-  display: flex;
-  font-size: clamp(4.5rem, 17vw, 15rem);
-  font-weight: 900;
-  line-height: 0.82;
-  letter-spacing: -0.06em;
-  text-transform: uppercase;
+  white-space: nowrap;
+  font-size: clamp(3.5rem, 12.5vw, 13rem);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.065em;
+  color: var(--title);
 }
-.hero__title span { display: inline-block; }
+.hero__arrow { font-weight: 400; letter-spacing: -0.08em; margin-left: 0.12em; }
+.hero__caret {
+  display: inline-block;
+  width: 0.06em;
+  height: 0.78em;
+  margin-left: 0.04em;
+  background: var(--title);
+  vertical-align: -0.02em;
+  animation: caret 0.9s steps(1) infinite;
+}
+.hero__caret.is-done { visibility: hidden; animation: none; }
+@keyframes caret { 50% { opacity: 0; } }
+
 .hero__name {
+  right: 14%;
+  top: 31%;
   margin: 0;
-  font-size: clamp(0.8rem, 1.4vw, 1.05rem);
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: clamp(0.8rem, 1.1vw, 1rem);
+  font-weight: 500;
+  line-height: 1.25;
+  white-space: nowrap;
 }
+.hero__label { margin: 0; font-size: 0.8rem; font-weight: 500; line-height: 1.25; }
+.hero__label--int { left: var(--gutter); top: 48%; }
+.hero__label--hash { left: calc(12.5% + 0.5rem); top: 48%; }
+.hero__label--bl { left: var(--gutter); bottom: 4%; }
+.hero__label--bc { left: calc(25% + 0.6rem); bottom: 4%; }
+.hero__label--br { right: var(--gutter); bottom: 4%; }
+.hero__scroll { left: 0; right: 0; bottom: 4%; text-align: center; }
+
+@media (max-width: 760px) {
+  .hero { height: 150vh; }
+  .hero__title { white-space: normal; text-align: left; font-size: 19vw; }
+  .hero__title-wrap { padding: 0 var(--gutter); }
+  .hero__photo { width: 30vw; }
+  .hero__photo--1 { left: 30%; top: 6%; }
+  .hero__photo--2 { width: 26vw; top: 20%; }
+  .hero__photo--3 { width: 26vw; top: 68%; }
+  .hero__photo--4 { left: 62%; top: 70%; }
+  .hero__name { right: var(--gutter); top: 40%; }
+  .hero__label--hash, .hero__label--bc, .hero__label--int { display: none; }
+}
+
+/* The gallery slides up over the end of the pinned hero. */
+.work { position: relative; z-index: 2; margin-top: -65vh; padding-top: 1rem; background: var(--bg); }
+@media (max-width: 760px) { .work { margin-top: -50vh; } }
 
 /* ---------- Gallery: photos only, edge to edge ---------- */
 .grid {
@@ -164,6 +228,7 @@ main { flex: 1; outline: none; }
 
 /* While a photo flies in it sits above its neighbours. */
 .card.is-flying { z-index: 3; }
+.card { will-change: transform, opacity; }
 
 /* ---------- Project page ---------- */
 .project { padding: 0 var(--gutter); }
@@ -308,7 +373,7 @@ main { flex: 1; outline: none; }
   background: var(--bg);
   color: var(--ink);
 }
-.lightbox::backdrop { background: rgba(200, 200, 200, 0.9); }
+.lightbox::backdrop { background: rgba(255, 255, 255, 0.9); }
 .lightbox__inner {
   position: relative;
   height: 100%;
