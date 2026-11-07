@@ -35,9 +35,10 @@
 
   const pad = (n) => String(n).padStart(2, "0");
 
-  function formatDate(iso) {
+  function formatDate(iso, withDay = false) {
     const [y, m, d] = iso.split("-").map(Number);
-    return new Intl.DateTimeFormat("en-GB", { month: "long", year: "numeric", timeZone: "UTC" })
+    const opts = withDay ? { day: "numeric", month: "long", year: "numeric" } : { month: "long", year: "numeric" };
+    return new Intl.DateTimeFormat("en-GB", { ...opts, timeZone: "UTC" })
       .format(new Date(Date.UTC(y, m - 1, d)));
   }
 
@@ -60,61 +61,86 @@
   }
 
   // ---------- views ----------
+  // Small inline icons (stroke = currentColor), as on the Behance profile card.
+  const ICONS = {
+    check: '<path d="M20 6 9 17l-5-5"/>',
+    role: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>',
+    company: '<path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/>',
+    pin: '<path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/>',
+    link: '<path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/>',
+    mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+  };
+  function icon(name) {
+    const span = document.createElement("span");
+    span.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
+    return span.firstChild;
+  }
+
+  const httpsUrl = (url) => url.replace(/^http:/, "https:");
+  const bareUrl = (url) => url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+
+  function card(p, i) {
+    const count = p.media.length;
+    return el("li", { class: "card" },
+      el("a", { href: `#/project/${p.slug}` },
+        el("div", { class: "card__frame", style: p.dominant_color ? `background-color:${p.dominant_color}` : null },
+          img(p.cover, { loading: i < 8 ? "eager" : "lazy" }),
+          count > 1 ? el("span", { class: "card__count", "aria-hidden": "true", text: `${count} images` }) : null
+        ),
+        el("h3", { class: "card__title", text: p.title }),
+        el("p", { class: "card__meta" },
+          el("time", { datetime: p.published_on, text: formatDate(p.published_on) }))
+      )
+    );
+  }
+
   function homeView() {
-    const { profile, projects, source } = content;
+    const { profile, projects } = content;
     // About text verbatim, minus the e-mail line (the e-mail gets its own button).
     const aboutLines = profile.about
       ? profile.about.text.split("\n").map((l) => l.trim()).filter((l) => l && !/^e-mail:/i.test(l))
       : [];
     const instagram = profile.socials.find((s) => s.valid_url && s.service === "Instagram");
+    const website = profile.website ? httpsUrl(profile.website) : null;
 
-    // Profile column, laid out like the Behance profile card: round photo, name,
-    // occupation, location, contact buttons, then the About text.
+    const fact = (name, ...children) => el("li", {}, icon(name), el("span", {}, ...children));
+    const since = profile.member_since
+      ? new Intl.DateTimeFormat("en-GB", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" })
+          .format(new Date(profile.member_since * 1000))
+      : null;
+
+    // Profile card, laid out like the Behance one: round photo, name, facts, buttons, About.
     const profileCard = el("aside", { class: "profile", "aria-labelledby": "profile-name" },
       img(profile.avatar, { class: "profile__photo", loading: "eager" }),
       el("h1", { class: "profile__name", id: "profile-name", text: profile.display_name }),
-      el("p", { class: "profile__role", text: profile.occupation }),
-      el("p", { class: "profile__location", text: profile.location }),
+      el("ul", { class: "facts" },
+        profile.availability ? el("li", { class: "facts__available" }, icon("check"), el("span", { text: profile.availability.text })) : null,
+        fact("role", profile.occupation),
+        profile.company ? fact("company", profile.company) : null,
+        fact("pin", profile.location),
+        website ? fact("link", el("a", { href: website, rel: "noopener", text: bareUrl(website) })) : null
+      ),
       el("div", { class: "profile__actions" },
-        profile.email ? el("a", { class: "btn btn--solid", href: `mailto:${profile.email}`, text: "E-mail" }) : null,
-        instagram ? el("a", { class: "btn", href: instagram.url_as_listed.replace(/^http:/, "https:"), rel: "noopener", text: "Instagram" }) : null
+        profile.email ? el("a", { class: "btn btn--solid", href: `mailto:${profile.email}` }, icon("mail"), "E-mail") : null,
+        instagram ? el("a", { class: "btn", href: httpsUrl(instagram.url_as_listed), rel: "noopener", text: "Instagram" }) : null
       ),
       aboutLines.length ? el("div", { class: "profile__about" },
-        el("h2", { class: "eyebrow", text: profile.about.title }),
-        aboutLines.map((line) => el("p", { text: line }))
+        el("h2", { text: profile.about.title }),
+        aboutLines.map((line) => el("p", { text: line })),
+        since ? el("p", { class: "profile__since", text: `Member since: ${since}` }) : null
       ) : null
     );
 
-    const grid = el("ul", { class: "grid", "aria-label": "Projects" },
-      projects.map((p, i) =>
-        el("li", { class: "card" },
-          el("a", { href: `#/project/${p.slug}` },
-            el("div", { class: "card__frame" },
-              img(p.cover, { loading: i < 3 ? "eager" : "lazy" })
-            ),
-            el("div", { class: "card__body" },
-              el("span", { class: "card__num", "aria-hidden": "true", text: pad(p.order) }),
-              el("h2", { class: "card__title", text: p.title }),
-              el("p", { class: "card__date" },
-                el("time", { datetime: p.published_on, text: formatDate(p.published_on) }))
-            )
-          )
-        )
-      )
-    );
-
-    const note = source.profile_list_complete ? null : el("p", { class: "archive-note" },
-      `These are the ${projects.length} most recent projects listed on the public profile. Older projects can be found on `,
-      el("a", { href: source.profile_url, rel: "noopener", text: "Behance" }),
-      "."
+    const work = el("section", { class: "work", "aria-labelledby": "work-heading" },
+      el("div", { class: "tabs" },
+        el("h2", { class: "tabs__item", id: "work-heading" }, "Work",
+          el("span", { class: "tabs__count", text: String(projects.length) }))),
+      el("ul", { class: "grid", "aria-label": "Projects" }, projects.map(card))
     );
 
     setPage(`${profile.display_name} — ${profile.occupation}, ${profile.location}`, "#/");
-    render(el("div", { class: "home" }, profileCard,
-      el("section", { class: "work", "aria-labelledby": "work-heading" },
-        el("h2", { class: "work__heading", id: "work-heading" }, "Work ",
-          el("span", { class: "work__count", text: String(projects.length) })),
-        grid, note)));
+    render(el("div", {}, el("div", { class: "banner", "aria-hidden": "true" }),
+      el("div", { class: "home" }, profileCard, work)));
   }
 
   function projectView(slug) {
@@ -122,17 +148,18 @@
     const index = projects.findIndex((p) => p.slug === slug);
     if (index === -1) return notFoundView();
     const p = projects[index];
-    const prev = projects[index - 1];
-    const next = projects[index + 1];
 
-    // Media sequence in source order; when the project page could not be read,
-    // the only verified artwork is the profile cover.
-    const usingCover = p.media.length === 0;
-    const items = usingCover
-      ? [{ ...p.cover, caption: "Project cover, as shown on the Behance profile." }]
-      : p.media;
+    // Image sequence in Behance order; fall back to the cover if none was imported.
+    const items = p.media.length ? p.media : [p.cover];
 
     const title = el("h1", { class: "project__title", id: "project-title", tabindex: "-1", text: p.title });
+
+    const head = el("header", { class: "project__head" },
+      img(profile.avatar, { class: "project__avatar", alt: "" }),
+      el("div", {}, title,
+        el("p", { class: "project__owner" }, el("a", { href: "#/about", text: profile.display_name }))),
+      el("a", { class: "btn project__back", href: "#/", text: "← All work" })
+    );
 
     const media = el("ol", { class: "media", "aria-label": `Images from ${p.title}` },
       items.map((item, i) =>
@@ -141,7 +168,7 @@
             el("button", {
               class: "media__btn",
               type: "button",
-              "aria-label": `View image ${i + 1} of ${items.length} full screen: ${item.alt}`,
+              "aria-label": `View image ${i + 1} of ${items.length} full screen`,
               onclick: (e) => lightbox.open(items, i, e.currentTarget),
             }, img(item, { loading: i < 2 ? "eager" : "lazy" })),
             item.caption ? el("figcaption", { text: item.caption }) : null
@@ -150,39 +177,25 @@
       )
     );
 
-    const aside = el("div", { class: "project__aside" },
-      p.description ? el("p", { text: p.description }) : null,
-      usingCover ? el("p", { class: "notice" },
-        "The full image sequence and description of this project could not be retrieved for this site. They are available on the original project page."
-      ) : null,
-      el("a", { class: "source-link", href: p.source_url, rel: "noopener", text: "View the original project →" })
-    );
-
-    const pager = el("nav", { class: "pager", "aria-label": "More projects" },
-      prev ? el("a", { class: "pager__prev", href: `#/project/${prev.slug}`, rel: "prev" },
-        el("span", { text: "← Previous" }), el("span", { text: prev.title })) : null,
-      next ? el("a", { class: "pager__next", href: `#/project/${next.slug}`, rel: "next" },
-        el("span", { text: "Next →" }), el("span", { text: next.title })) : null
-    );
-
-    const article = el("article", { class: "project", "aria-labelledby": "project-title" },
-      el("a", { class: "project__back", href: "#/", text: "← All work" }),
-      el("header", { class: "project__head" },
-        el("div", {},
-          el("p", { class: "eyebrow", text: `Project ${pad(p.order)} / ${pad(projects.length)}` }),
-          title
-        ),
-        el("dl", { class: "project__meta" },
-          el("dt", { text: "Published" }),
-          el("dd", {}, el("time", { datetime: p.published_on, text: formatDate(p.published_on) }))
-        )
+    const info = el("section", { class: "project__info", "aria-label": "Project details" },
+      el("div", {},
+        el("h2", { text: p.title }),
+        el("p", {}, "Published: ", el("time", { datetime: p.published_on, text: formatDate(p.published_on, true) })),
+        p.description ? el("p", { class: "project__desc", text: p.description }) : null,
+        p.tags && p.tags.length ? el("ul", { class: "tags", "aria-label": "Tags" }, p.tags.map((t) => el("li", { text: t }))) : null
       ),
-      el("div", { class: "project__layout" }, media, aside),
-      pager
+      el("a", { class: "btn", href: p.source_url, rel: "noopener", text: "View on Behance" })
+    );
+
+    // "More by" strip: the next four projects, wrapping around the list.
+    const more = [1, 2, 3, 4].map((k) => projects[(index + k) % projects.length]).filter((q) => q !== p);
+    const moreSection = el("section", { class: "more", "aria-labelledby": "more-heading" },
+      el("h2", { id: "more-heading", text: `More by ${profile.display_name}` }),
+      el("ul", { class: "grid" }, more.map((q) => card(q, 99)))
     );
 
     setPage(`${p.title} — ${profile.display_name}`, null);
-    render(article, title);
+    render(el("article", { class: "project", "aria-labelledby": "project-title" }, head, media, info, moreSection), title);
   }
 
   function aboutView() {
@@ -256,9 +269,8 @@
       image.alt = item.alt;
       image.width = item.width;
       image.height = item.height;
-      caption.textContent = items.length > 1
-        ? `${index + 1} / ${items.length} — ${item.alt}`
-        : item.alt;
+      const text = item.caption || "";
+      caption.textContent = items.length > 1 ? `${index + 1} / ${items.length}${text ? " — " + text : ""}` : text;
       const single = items.length < 2;
       prevBtn.hidden = nextBtn.hidden = single;
       prevBtn.disabled = index === 0;

@@ -33,10 +33,13 @@ cd dist && python3 -m http.server 8000
 
 Then open http://localhost:8000/portfolio-wiktoria/.
 
-## Source limitations
+## Content
 
-Behance's project pages could not be read (HTTP 403 bot challenge), so the
-site has each project's cover image but no descriptions or full image
-sequences. Only the 12 most recent projects are listed. See
-[SOURCE_GAPS.md](SOURCE_GAPS.md) for details and how to fill the gaps.
-[REPORT.md](REPORT.md) covers the build and test results.
+All 71 projects from the Behance profile, in Behance order, each with its full
+image sequence. See [SOURCE_GAPS.md](SOURCE_GAPS.md) for how they were sourced
+and `tools/import_behance.py` to rebuild `content.json`.
+
+## Deploy
+
+`tools/deploy_ftp.sh <ftp-host> <ftp-user> <remote-dir>` uploads the export over
+FTPS (e.g. to seohost.pl). It asks for the password and never stores it.

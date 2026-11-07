@@ -1,5 +1,21 @@
 # Source gaps
 
+**Update 2026-11-07 (later the same day):** the gaps below are closed. The
+profile and all 71 project pages were opened in a normal (non-headless) browser
+session, which loads them like any visitor. The project list, tags, publish dates
+and full image sequences (369 images) were read from each page's embedded data
+into `source/behance_projects.json`, and `tools/import_behance.py` built
+`content.json` from it.
+
+Still not available, because Behance has none for these projects: project
+descriptions, image captions and credits. Behance stats (views, appreciations,
+followers) are left out on purpose.
+
+The original notes follow for reference.
+
+---
+
+
 Source: https://www.behance.net/wiktoriawolniak (public profile), inspected 2026-11-07.
 
 What **was** readable: the public profile page (HTTP 200). Its embedded JSON

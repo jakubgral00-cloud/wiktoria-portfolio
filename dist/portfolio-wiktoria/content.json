@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-07T13:18:55+00:00",
+  "generated_at": "2026-11-07T14:32:08+00:00",
   "source": {
     "profile_url": "https://www.behance.net/wiktoriawolniak",
-    "method": "Plain HTTP GET of the public profile page; data read from its embedded JSON (script#beconfig-store_state). Images downloaded from the public CDN URLs listed there.",
-    "profile_list_complete": false,
-    "profile_list_note": "The public profile page lists the first 12 projects and reports more exist (hasMore=true). The remaining ones load through Behance's internal API, which was not used."
+    "method": "Profile data: plain HTTP GET of the public profile page. Project list and project pages: read in a normal browser session (embedded page data). Images downloaded from Behance's public CDN.",
+    "profile_list_complete": true,
+    "profile_list_note": "All 71 projects on the public profile, in Behance order (2026-11-07)."
   },
   "profile": {
     "display_name": "Wiktoria Wolniak-Gral",
@@ -36,7 +36,14 @@
       "width": 276,
       "height": 276,
       "alt": "Profile photo of Wiktoria Wolniak-Gral"
-    }
+    },
+    "availability": {
+      "text": "Available for Freelance & Fulltime",
+      "freelance": true,
+      "full_time": true,
+      "source": "availabilityInfo on the public profile page"
+    },
+    "member_since": 1710538908
   },
   "projects": [
     {
@@ -46,19 +53,66 @@
       "slug": "bohateron",
       "source_url": "https://www.behance.net/gallery/257199233/BohaterON",
       "published_on": "2026-10-16",
-      "dominant_color": "#050508",
+      "dominant_color": "rgb(20, 20, 20)",
+      "tags": [
+        "kampania",
+        "Stylizacje",
+        "kostiumy",
+        "реклама"
+      ],
       "cover": {
         "src": "assets/covers/01-257199233.jpg",
-        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/935493257199233.6ad22a29976d0.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/935493257199233.6ad22a29976d0.jpg",
+        "alt": "Cover image of the project „BohaterON”",
         "width": 808,
-        "height": 632,
-        "alt": "Cover image of the project “BohaterON”",
-        "role": "profile grid cover (as shown on the Behance profile)"
+        "height": 632
       },
       "description": null,
-      "media": [],
-      "detail_status": "unavailable",
-      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+      "media": [
+        {
+          "src": "assets/projects/01-257199233/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/dfa8cf257199233.6ad22a2a078ff.jpg",
+          "alt": "„BohaterON” — image 1 of 6",
+          "width": 1200,
+          "height": 787
+        },
+        {
+          "src": "assets/projects/01-257199233/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/76513d257199233.6ad22a2a087f7.jpg",
+          "alt": "„BohaterON” — image 2 of 6",
+          "width": 1200,
+          "height": 789
+        },
+        {
+          "src": "assets/projects/01-257199233/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/76f983257199233.6ad22a2a0810e.jpg",
+          "alt": "„BohaterON” — image 3 of 6",
+          "width": 1200,
+          "height": 796
+        },
+        {
+          "src": "assets/projects/01-257199233/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b8e205257199233.6ad22a2a09ca0.jpg",
+          "alt": "„BohaterON” — image 4 of 6",
+          "width": 1200,
+          "height": 785
+        },
+        {
+          "src": "assets/projects/01-257199233/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5f0939257199233.6ad22a2a0958b.jpg",
+          "alt": "„BohaterON” — image 5 of 6",
+          "width": 1200,
+          "height": 795
+        },
+        {
+          "src": "assets/projects/01-257199233/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b6e506257199233.6ad22a2a08ecb.jpg",
+          "alt": "„BohaterON” — image 6 of 6",
+          "width": 1200,
+          "height": 789
+        }
+      ],
+      "detail_status": "complete"
     },
     {
       "order": 2,
@@ -67,19 +121,58 @@
       "slug": "magdalena-lamparska",
       "source_url": "https://www.behance.net/gallery/255162521/Magdalena-Lamparska",
       "published_on": "2026-09-02",
-      "dominant_color": "#291f14",
+      "dominant_color": "rgb(41, 31, 20)",
+      "tags": [
+        "Stylizacje",
+        "sesja zdjęciowa",
+        "stylistka"
+      ],
       "cover": {
         "src": "assets/covers/02-255162521.jpg",
-        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/34b6c8255162521.6a984d5854735.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/34b6c8255162521.6a984d5854735.jpg",
+        "alt": "Cover image of the project „Magdalena Lamparska”",
         "width": 808,
-        "height": 632,
-        "alt": "Cover image of the project “Magdalena Lamparska”",
-        "role": "profile grid cover (as shown on the Behance profile)"
+        "height": 632
       },
       "description": null,
-      "media": [],
-      "detail_status": "unavailable",
-      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+      "media": [
+        {
+          "src": "assets/projects/02-255162521/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8a5d10255162521.6a984d58c6738.jpg",
+          "alt": "„Magdalena Lamparska” — image 1 of 5",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/02-255162521/02.png",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/faf159255162521.6a984d58c743b.png",
+          "alt": "„Magdalena Lamparska” — image 2 of 5",
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "src": "assets/projects/02-255162521/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7b450c255162521.6a984d58c6d6c.jpg",
+          "alt": "„Magdalena Lamparska” — image 3 of 5",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "src": "assets/projects/02-255162521/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5c8afb255162521.6a984d58c6076.jpg",
+          "alt": "„Magdalena Lamparska” — image 4 of 5",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/02-255162521/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c2900d255162521.6a984d58c599a.jpg",
+          "alt": "„Magdalena Lamparska” — image 5 of 5",
+          "width": 1200,
+          "height": 800
+        }
+      ],
+      "detail_status": "complete"
     },
     {
       "order": 3,
@@ -88,19 +181,30 @@
       "slug": "empik-go-ania-z-zielonego-wzgorza",
       "source_url": "https://www.behance.net/gallery/252142005/Empik-Go-Ania-z-Zielonego-Wzgorza",
       "published_on": "2026-07-03",
-      "dominant_color": "#d9bf4f",
+      "dominant_color": "rgb(217, 191, 79)",
+      "tags": [
+        "kostiumy",
+        "Stylizacje",
+        "stylistka"
+      ],
       "cover": {
         "src": "assets/covers/03-252142005.jpg",
-        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/95e329252142005.6a47b64166a1e.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/95e329252142005.6a47b64166a1e.jpg",
+        "alt": "Cover image of the project „Empik Go - „Ania z Zielonego Wzgórza””",
         "width": 808,
-        "height": 632,
-        "alt": "Cover image of the project “Empik Go - „Ania z Zielonego Wzgórza””",
-        "role": "profile grid cover (as shown on the Behance profile)"
+        "height": 632
       },
       "description": null,
-      "media": [],
-      "detail_status": "unavailable",
-      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+      "media": [
+        {
+          "src": "assets/projects/03-252142005/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2e5d44252142005.6a47b641c8678.jpg",
+          "alt": "„Empik Go - „Ania z Zielonego Wzgórza”” — image 1 of 1",
+          "width": 1200,
+          "height": 1386
+        }
+      ],
+      "detail_status": "complete"
     },
     {
       "order": 4,
@@ -109,19 +213,72 @@
       "slug": "xiaomi",
       "source_url": "https://www.behance.net/gallery/252141819/Xiaomi",
       "published_on": "2026-07-03",
-      "dominant_color": "#1f210c",
+      "dominant_color": "rgb(31, 33, 20)",
+      "tags": [
+        "sesja zdjęciowa",
+        "Stylizacje",
+        "реклама"
+      ],
       "cover": {
         "src": "assets/covers/04-252141819.jpg",
-        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/d687d7252141819.6a47b57b7598a.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/d687d7252141819.6a47b57b7598a.jpg",
+        "alt": "Cover image of the project „Xiaomi”",
         "width": 808,
-        "height": 632,
-        "alt": "Cover image of the project “Xiaomi”",
-        "role": "profile grid cover (as shown on the Behance profile)"
+        "height": 632
       },
       "description": null,
-      "media": [],
-      "detail_status": "unavailable",
-      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+      "media": [
+        {
+          "src": "assets/projects/04-252141819/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/09b45a252141819.6a47b57be4376.jpg",
+          "alt": "„Xiaomi” — image 1 of 7",
+          "width": 864,
+          "height": 1080
+        },
+        {
+          "src": "assets/projects/04-252141819/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ca6630252141819.6a47b57be5009.jpg",
+          "alt": "„Xiaomi” — image 2 of 7",
+          "width": 1200,
+          "height": 1494
+        },
+        {
+          "src": "assets/projects/04-252141819/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/067a99252141819.6a47b57be46d5.jpg",
+          "alt": "„Xiaomi” — image 3 of 7",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/04-252141819/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4b9f10252141819.6a47b57be4a30.jpg",
+          "alt": "„Xiaomi” — image 4 of 7",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/04-252141819/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f89ff8252141819.6a47b57be4cfa.jpg",
+          "alt": "„Xiaomi” — image 5 of 7",
+          "width": 864,
+          "height": 1080
+        },
+        {
+          "src": "assets/projects/04-252141819/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9919ca252141819.6a47b57be3d02.jpg",
+          "alt": "„Xiaomi” — image 6 of 7",
+          "width": 1200,
+          "height": 1499
+        },
+        {
+          "src": "assets/projects/04-252141819/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8cf6a6252141819.6a47b57be4051.jpg",
+          "alt": "„Xiaomi” — image 7 of 7",
+          "width": 1200,
+          "height": 1500
+        }
+      ],
+      "detail_status": "complete"
     },
     {
       "order": 5,
@@ -130,61 +287,172 @@
       "slug": "neboa",
       "source_url": "https://www.behance.net/gallery/250195061/Neboa",
       "published_on": "2026-05-29",
-      "dominant_color": "#e4e3e3",
+      "dominant_color": "rgb(228, 227, 227)",
+      "tags": [
+        "Stylizacje",
+        "реклама",
+        "kosmetyki"
+      ],
       "cover": {
         "src": "assets/covers/05-250195061.jpg",
-        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/aba07f250195061.6a1940276afa2.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/aba07f250195061.6a1940276afa2.jpg",
+        "alt": "Cover image of the project „Neboa”",
         "width": 808,
-        "height": 632,
-        "alt": "Cover image of the project “Neboa”",
-        "role": "profile grid cover (as shown on the Behance profile)"
+        "height": 632
       },
       "description": null,
-      "media": [],
-      "detail_status": "unavailable",
-      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+      "media": [
+        {
+          "src": "assets/projects/05-250195061/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/055fc0250195061.6a194027ce42c.jpg",
+          "alt": "„Neboa” — image 1 of 2",
+          "width": 1200,
+          "height": 1495
+        },
+        {
+          "src": "assets/projects/05-250195061/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/98395c250195061.6a194027cdf8e.jpg",
+          "alt": "„Neboa” — image 2 of 2",
+          "width": 1200,
+          "height": 1369
+        }
+      ],
+      "detail_status": "complete"
     },
     {
       "order": 6,
       "behance_id": 249801397,
       "title": "Kampania społeczna \"Crystal Palace\" x A.M.Wesołowska",
-      "slug": "kampania-spoleczna-crystal-palace-x-a-m-wesolowska",
+      "slug": "kampania-spoeczna-crystal-palace-x-a-m-wesoowska",
       "source_url": "https://www.behance.net/gallery/249801397/Kampania-spoleczna-Crystal-Palace-x-AMWesolowska",
       "published_on": "2026-05-21",
-      "dominant_color": "#030405",
+      "dominant_color": "rgb(20, 20, 20)",
+      "tags": [
+        "Kampania społeczna",
+        "реклама",
+        "Stylizacje"
+      ],
       "cover": {
         "src": "assets/covers/06-249801397.jpg",
-        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/532f15249801397.6a0f6058ba47d.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/532f15249801397.6a0f6058ba47d.jpg",
+        "alt": "Cover image of the project „Kampania społeczna \"Crystal Palace\" x A.M.Wesołowska”",
         "width": 808,
-        "height": 632,
-        "alt": "Cover image of the project “Kampania społeczna \"Crystal Palace\" x A.M.Wesołowska”",
-        "role": "profile grid cover (as shown on the Behance profile)"
+        "height": 632
       },
       "description": null,
-      "media": [],
-      "detail_status": "unavailable",
-      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+      "media": [
+        {
+          "src": "assets/projects/06-249801397/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/bd358d249801397.6a0f60593456a.jpg",
+          "alt": "„Kampania społeczna \"Crystal Palace\" x A.M.Wesołowska” — image 1 of 6",
+          "width": 1200,
+          "height": 884
+        },
+        {
+          "src": "assets/projects/06-249801397/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ab1f53249801397.6a0f605934d72.jpg",
+          "alt": "„Kampania społeczna \"Crystal Palace\" x A.M.Wesołowska” — image 2 of 6",
+          "width": 1200,
+          "height": 1036
+        },
+        {
+          "src": "assets/projects/06-249801397/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/fc9806249801397.6a0f605934089.jpg",
+          "alt": "„Kampania społeczna \"Crystal Palace\" x A.M.Wesołowska” — image 3 of 6",
+          "width": 1200,
+          "height": 992
+        },
+        {
+          "src": "assets/projects/06-249801397/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/874b1d249801397.6a0f605933b57.jpg",
+          "alt": "„Kampania społeczna \"Crystal Palace\" x A.M.Wesołowska” — image 4 of 6",
+          "width": 1200,
+          "height": 959
+        },
+        {
+          "src": "assets/projects/06-249801397/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/87465a249801397.6a0f6059349a2.jpg",
+          "alt": "„Kampania społeczna \"Crystal Palace\" x A.M.Wesołowska” — image 5 of 6",
+          "width": 1200,
+          "height": 1046
+        },
+        {
+          "src": "assets/projects/06-249801397/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/837a31249801397.6a0f6059350f0.jpg",
+          "alt": "„Kampania społeczna \"Crystal Palace\" x A.M.Wesołowska” — image 6 of 6",
+          "width": 1200,
+          "height": 1149
+        }
+      ],
+      "detail_status": "complete"
     },
     {
       "order": 7,
       "behance_id": 249800959,
       "title": "Kampania społeczna \"Crystal Palace\" x J. Błaszczykowski",
-      "slug": "kampania-spoleczna-crystal-palace-x-j-blaszczykowski",
+      "slug": "kampania-spoeczna-crystal-palace-x-j-baszczykowski",
       "source_url": "https://www.behance.net/gallery/249800959/Kampania-spoleczna-Crystal-Palace-x-J-Blaszczykowski",
       "published_on": "2026-05-21",
-      "dominant_color": "#010101",
+      "dominant_color": "rgb(20, 20, 20)",
+      "tags": [
+        "реклама",
+        "Kampania społeczna",
+        "Stylizacje",
+        "kostiumy"
+      ],
       "cover": {
         "src": "assets/covers/07-249800959.jpg",
-        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/a7ea7c249800959.6a0f5e6455d80.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/a7ea7c249800959.6a0f5e6455d80.jpg",
+        "alt": "Cover image of the project „Kampania społeczna \"Crystal Palace\" x J. Błaszczykowski”",
         "width": 808,
-        "height": 632,
-        "alt": "Cover image of the project “Kampania społeczna \"Crystal Palace\" x J. Błaszczykowski”",
-        "role": "profile grid cover (as shown on the Behance profile)"
+        "height": 632
       },
       "description": null,
-      "media": [],
-      "detail_status": "unavailable",
-      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+      "media": [
+        {
+          "src": "assets/projects/07-249800959/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/11ccf4249800959.6a0f5e218d10f.jpg",
+          "alt": "„Kampania społeczna \"Crystal Palace\" x J. Błaszczykowski” — image 1 of 6",
+          "width": 1200,
+          "height": 1194
+        },
+        {
+          "src": "assets/projects/07-249800959/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f74f87249800959.6a0f5e218d802.jpg",
+          "alt": "„Kampania społeczna \"Crystal Palace\" x J. Błaszczykowski” — image 2 of 6",
+          "width": 1200,
+          "height": 1176
+        },
+        {
+          "src": "assets/projects/07-249800959/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/abe922249800959.6a0f5e218c767.jpg",
+          "alt": "„Kampania społeczna \"Crystal Palace\" x J. Błaszczykowski” — image 3 of 6",
+          "width": 1200,
+          "height": 1266
+        },
+        {
+          "src": "assets/projects/07-249800959/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/139907249800959.6a0f5e218dc89.jpg",
+          "alt": "„Kampania społeczna \"Crystal Palace\" x J. Błaszczykowski” — image 4 of 6",
+          "width": 1200,
+          "height": 1124
+        },
+        {
+          "src": "assets/projects/07-249800959/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/371bce249800959.6a0f5e218c2c9.jpg",
+          "alt": "„Kampania społeczna \"Crystal Palace\" x J. Błaszczykowski” — image 5 of 6",
+          "width": 1200,
+          "height": 1094
+        },
+        {
+          "src": "assets/projects/07-249800959/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b5eede249800959.6a0f5e218cc71.jpg",
+          "alt": "„Kampania społeczna \"Crystal Palace\" x J. Błaszczykowski” — image 6 of 6",
+          "width": 1200,
+          "height": 1232
+        }
+      ],
+      "detail_status": "complete"
     },
     {
       "order": 8,
@@ -193,19 +461,45 @@
       "slug": "empik-go",
       "source_url": "https://www.behance.net/gallery/248962659/Empik-Go",
       "published_on": "2026-05-07",
-      "dominant_color": "#5d1f0b",
+      "dominant_color": "rgb(93, 31, 20)",
+      "tags": [
+        "Stylizacje",
+        "stylistka",
+        "реклама",
+        "sesja zdjęciowa"
+      ],
       "cover": {
         "src": "assets/covers/08-248962659.jpg",
-        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/37cf23248962659.6a0ed66164e0e.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/37cf23248962659.6a0ed66164e0e.jpg",
+        "alt": "Cover image of the project „Empik Go”",
         "width": 808,
-        "height": 632,
-        "alt": "Cover image of the project “Empik Go”",
-        "role": "profile grid cover (as shown on the Behance profile)"
+        "height": 632
       },
       "description": null,
-      "media": [],
-      "detail_status": "unavailable",
-      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+      "media": [
+        {
+          "src": "assets/projects/08-248962659/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7c4759248962659.69fcec04da0d5.jpg",
+          "alt": "„Empik Go” — image 1 of 3",
+          "width": 1200,
+          "height": 1492
+        },
+        {
+          "src": "assets/projects/08-248962659/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/95f514248962659.6a0ed66248a71.jpg",
+          "alt": "„Empik Go” — image 2 of 3",
+          "width": 1200,
+          "height": 1491
+        },
+        {
+          "src": "assets/projects/08-248962659/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6fc07b248962659.6a0ed66248f2a.jpg",
+          "alt": "„Empik Go” — image 3 of 3",
+          "width": 1200,
+          "height": 1491
+        }
+      ],
+      "detail_status": "complete"
     },
     {
       "order": 9,
@@ -214,19 +508,37 @@
       "slug": "blu-x-warner-music",
       "source_url": "https://www.behance.net/gallery/246087983/Blu-x-Warner-Music",
       "published_on": "2026-03-19",
-      "dominant_color": "#a65a10",
+      "dominant_color": "rgb(166, 90, 20)",
+      "tags": [
+        "Stylizacje",
+        "teledysk",
+        "video clip"
+      ],
       "cover": {
         "src": "assets/covers/09-246087983.jpg",
-        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/e36e30246087983.69bbdd1db2400.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/e36e30246087983.69bbdd1db2400.jpg",
+        "alt": "Cover image of the project „Blu x Warner Music”",
         "width": 808,
-        "height": 632,
-        "alt": "Cover image of the project “Blu x Warner Music”",
-        "role": "profile grid cover (as shown on the Behance profile)"
+        "height": 632
       },
       "description": null,
-      "media": [],
-      "detail_status": "unavailable",
-      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+      "media": [
+        {
+          "src": "assets/projects/09-246087983/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5c25ed246087983.69bbdd1e160aa.jpg",
+          "alt": "„Blu x Warner Music” — image 1 of 2",
+          "width": 1200,
+          "height": 1080
+        },
+        {
+          "src": "assets/projects/09-246087983/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/873077246087983.69bbdd1e16578.jpg",
+          "alt": "„Blu x Warner Music” — image 2 of 2",
+          "width": 1200,
+          "height": 1169
+        }
+      ],
+      "detail_status": "complete"
     },
     {
       "order": 10,
@@ -235,19 +547,57 @@
       "slug": "sanprobi-premium",
       "source_url": "https://www.behance.net/gallery/246087827/Sanprobi-Premium",
       "published_on": "2026-03-19",
-      "dominant_color": "#e9eff4",
+      "dominant_color": "rgb(233, 235, 235)",
+      "tags": [
+        "Stylizacje",
+        "реклама"
+      ],
       "cover": {
         "src": "assets/covers/10-246087827.jpg",
-        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/3b2a72246087827.6a253d7872a42.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/3b2a72246087827.6a253d7872a42.jpg",
+        "alt": "Cover image of the project „Sanprobi Premium”",
         "width": 808,
-        "height": 632,
-        "alt": "Cover image of the project “Sanprobi Premium”",
-        "role": "profile grid cover (as shown on the Behance profile)"
+        "height": 632
       },
       "description": null,
-      "media": [],
-      "detail_status": "unavailable",
-      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+      "media": [
+        {
+          "src": "assets/projects/10-246087827/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6a5014246087827.69bbdc71535f7.jpg",
+          "alt": "„Sanprobi Premium” — image 1 of 5",
+          "width": 1200,
+          "height": 2118
+        },
+        {
+          "src": "assets/projects/10-246087827/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9a2258246087827.69bbdc7153c1d.jpg",
+          "alt": "„Sanprobi Premium” — image 2 of 5",
+          "width": 1200,
+          "height": 1485
+        },
+        {
+          "src": "assets/projects/10-246087827/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/290c2a246087827.69bbdc7154286.jpg",
+          "alt": "„Sanprobi Premium” — image 3 of 5",
+          "width": 1200,
+          "height": 1482
+        },
+        {
+          "src": "assets/projects/10-246087827/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f1691a246087827.69bbdc7154871.jpg",
+          "alt": "„Sanprobi Premium” — image 4 of 5",
+          "width": 1200,
+          "height": 1510
+        },
+        {
+          "src": "assets/projects/10-246087827/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1ed801246087827.6a253d795e651.jpg",
+          "alt": "„Sanprobi Premium” — image 5 of 5",
+          "width": 1200,
+          "height": 1491
+        }
+      ],
+      "detail_status": "complete"
     },
     {
       "order": 11,
@@ -256,19 +606,58 @@
       "slug": "sonbird-stylizacje-do-klipow",
       "source_url": "https://www.behance.net/gallery/246087497/SONBIRD-stylizacje-do-klipow",
       "published_on": "2026-03-19",
-      "dominant_color": "#fcf9f5",
+      "dominant_color": "rgb(235, 235, 235)",
+      "tags": [
+        "video clip",
+        "teledysk",
+        "Stylizacje"
+      ],
       "cover": {
         "src": "assets/covers/11-246087497.jpg",
-        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/8ae8c9246087497.6a0ed6f76783f.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/8ae8c9246087497.6a0ed6f76783f.jpg",
+        "alt": "Cover image of the project „SONBIRD - stylizacje do klipów”",
         "width": 808,
-        "height": 632,
-        "alt": "Cover image of the project “SONBIRD - stylizacje do klipów”",
-        "role": "profile grid cover (as shown on the Behance profile)"
+        "height": 632
       },
       "description": null,
-      "media": [],
-      "detail_status": "unavailable",
-      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+      "media": [
+        {
+          "src": "assets/projects/11-246087497/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d0b435246087497.69bbdb1c8ed0a.jpg",
+          "alt": "„SONBIRD - stylizacje do klipów” — image 1 of 5",
+          "width": 1194,
+          "height": 1599
+        },
+        {
+          "src": "assets/projects/11-246087497/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/266d65246087497.69bbdb1c90284.jpg",
+          "alt": "„SONBIRD - stylizacje do klipów” — image 2 of 5",
+          "width": 1200,
+          "height": 1455
+        },
+        {
+          "src": "assets/projects/11-246087497/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/aeffdc246087497.69bbdb1c8f4ac.jpg",
+          "alt": "„SONBIRD - stylizacje do klipów” — image 3 of 5",
+          "width": 1200,
+          "height": 1080
+        },
+        {
+          "src": "assets/projects/11-246087497/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a2e0b1246087497.69bbdb1c8fbfb.jpg",
+          "alt": "„SONBIRD - stylizacje do klipów” — image 4 of 5",
+          "width": 1190,
+          "height": 1582
+        },
+        {
+          "src": "assets/projects/11-246087497/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9085a2246087497.6a0ed6cf539f5.jpg",
+          "alt": "„SONBIRD - stylizacje do klipów” — image 5 of 5",
+          "width": 1145,
+          "height": 1441
+        }
+      ],
+      "detail_status": "complete"
     },
     {
       "order": 12,
@@ -277,19 +666,3823 @@
       "slug": "przemek-kucyk-kucyk",
       "source_url": "https://www.behance.net/gallery/246087249/Przemek-Kucyk-Kucyk",
       "published_on": "2026-03-19",
-      "dominant_color": "#0a0a06",
+      "dominant_color": "rgb(20, 20, 20)",
+      "tags": [
+        "video clip",
+        "teledysk",
+        "Stylizacje"
+      ],
       "cover": {
         "src": "assets/covers/12-246087249.jpg",
-        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/original/1f5ae9246087249.69bbd9eb1f790.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/1f5ae9246087249.69bbd9eb1f790.jpg",
+        "alt": "Cover image of the project „Przemek Kucyk - „Kucyk””",
         "width": 808,
-        "height": 632,
-        "alt": "Cover image of the project “Przemek Kucyk - „Kucyk””",
-        "role": "profile grid cover (as shown on the Behance profile)"
+        "height": 632
       },
       "description": null,
-      "media": [],
-      "detail_status": "unavailable",
-      "detail_note": "Project page returned HTTP 403 with a JavaScript bot challenge; description and media sequence not retrieved. See SOURCE_GAPS.md."
+      "media": [
+        {
+          "src": "assets/projects/12-246087249/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1986fe246087249.69bbd9eb6c2f7.jpg",
+          "alt": "„Przemek Kucyk - „Kucyk”” — image 1 of 7",
+          "width": 1200,
+          "height": 658
+        },
+        {
+          "src": "assets/projects/12-246087249/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f9a662246087249.69bbd9eb6baac.jpg",
+          "alt": "„Przemek Kucyk - „Kucyk”” — image 2 of 7",
+          "width": 1200,
+          "height": 649
+        },
+        {
+          "src": "assets/projects/12-246087249/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/157e36246087249.69bbd9eb6cda8.jpg",
+          "alt": "„Przemek Kucyk - „Kucyk”” — image 3 of 7",
+          "width": 1200,
+          "height": 659
+        },
+        {
+          "src": "assets/projects/12-246087249/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d0f094246087249.69bbd9eb6bea3.jpg",
+          "alt": "„Przemek Kucyk - „Kucyk”” — image 4 of 7",
+          "width": 1200,
+          "height": 669
+        },
+        {
+          "src": "assets/projects/12-246087249/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/945827246087249.69bbd9eb6b526.jpg",
+          "alt": "„Przemek Kucyk - „Kucyk”” — image 5 of 7",
+          "width": 1200,
+          "height": 661
+        },
+        {
+          "src": "assets/projects/12-246087249/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/abbac6246087249.69bbd9eb6c68a.jpg",
+          "alt": "„Przemek Kucyk - „Kucyk”” — image 6 of 7",
+          "width": 1200,
+          "height": 656
+        },
+        {
+          "src": "assets/projects/12-246087249/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c6ef6a246087249.69bbd9eb6ca17.jpg",
+          "alt": "„Przemek Kucyk - „Kucyk”” — image 7 of 7",
+          "width": 1200,
+          "height": 656
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 13,
+      "behance_id": 246087099,
+      "title": "Ninja vs Ninja - stylizacje prowadzących sezon 12",
+      "slug": "ninja-vs-ninja-stylizacje-prowadzacych-sezon-12",
+      "source_url": "https://www.behance.net/gallery/246087099/Ninja-vs-Ninja-stylizacje-prowadzacych-sezon-12",
+      "published_on": "2026-03-19",
+      "dominant_color": "rgb(20, 86, 155)",
+      "tags": [
+        "Stylizacje",
+        "tv",
+        "program tv"
+      ],
+      "cover": {
+        "src": "assets/covers/13-246087099.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/0c00a7246087099.6a0f654276901.jpg",
+        "alt": "Cover image of the project „Ninja vs Ninja - stylizacje prowadzących sezon 12”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/13-246087099/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e8a31a246087099.69bbd93938334.jpg",
+          "alt": "„Ninja vs Ninja - stylizacje prowadzących sezon 12” — image 1 of 6",
+          "width": 1200,
+          "height": 1474
+        },
+        {
+          "src": "assets/projects/13-246087099/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c49eb7246087099.69bbd93938aa4.jpg",
+          "alt": "„Ninja vs Ninja - stylizacje prowadzących sezon 12” — image 2 of 6",
+          "width": 1118,
+          "height": 1438
+        },
+        {
+          "src": "assets/projects/13-246087099/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/67f5e7246087099.69bbd93937c7f.jpg",
+          "alt": "„Ninja vs Ninja - stylizacje prowadzących sezon 12” — image 3 of 6",
+          "width": 1150,
+          "height": 1526
+        },
+        {
+          "src": "assets/projects/13-246087099/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/61565c246087099.6a0f65436f32a.jpg",
+          "alt": "„Ninja vs Ninja - stylizacje prowadzących sezon 12” — image 4 of 6",
+          "width": 1200,
+          "height": 1390
+        },
+        {
+          "src": "assets/projects/13-246087099/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/572cb4246087099.6a0f65436f7eb.jpg",
+          "alt": "„Ninja vs Ninja - stylizacje prowadzących sezon 12” — image 5 of 6",
+          "width": 1200,
+          "height": 2334
+        },
+        {
+          "src": "assets/projects/13-246087099/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d8b441246087099.6a0f65436ef4a.jpg",
+          "alt": "„Ninja vs Ninja - stylizacje prowadzących sezon 12” — image 6 of 6",
+          "width": 1200,
+          "height": 1260
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 14,
+      "behance_id": 246086813,
+      "title": "Marika i Paweł Domagała - „Okruchy Złota”",
+      "slug": "marika-i-pawe-domagaa-okruchy-zota",
+      "source_url": "https://www.behance.net/gallery/246086813/Marika-i-Pawel-Domagala-Okruchy-Zlota",
+      "published_on": "2026-03-19",
+      "dominant_color": "rgb(26, 26, 34)",
+      "tags": [
+        "video clip",
+        "Stylizacje",
+        "teledysk"
+      ],
+      "cover": {
+        "src": "assets/covers/14-246086813.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/a6c9c2246086813.69bbd7fc447c1.jpg",
+        "alt": "Cover image of the project „Marika i Paweł Domagała - „Okruchy Złota””",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/14-246086813/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/cbab5b246086813.69bbd7fc9ffea.jpg",
+          "alt": "„Marika i Paweł Domagała - „Okruchy Złota”” — image 1 of 6",
+          "width": 1200,
+          "height": 860
+        },
+        {
+          "src": "assets/projects/14-246086813/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0c8b13246086813.69bbd7fca096b.jpg",
+          "alt": "„Marika i Paweł Domagała - „Okruchy Złota”” — image 2 of 6",
+          "width": 1184,
+          "height": 939
+        },
+        {
+          "src": "assets/projects/14-246086813/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e1db1b246086813.69bbd7fca0305.jpg",
+          "alt": "„Marika i Paweł Domagała - „Okruchy Złota”” — image 3 of 6",
+          "width": 1200,
+          "height": 894
+        },
+        {
+          "src": "assets/projects/14-246086813/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d40f8b246086813.69bbd7fc9fc74.jpg",
+          "alt": "„Marika i Paweł Domagała - „Okruchy Złota”” — image 4 of 6",
+          "width": 1200,
+          "height": 899
+        },
+        {
+          "src": "assets/projects/14-246086813/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7ba8c0246086813.69bbd7fca065c.jpg",
+          "alt": "„Marika i Paweł Domagała - „Okruchy Złota”” — image 5 of 6",
+          "width": 1200,
+          "height": 869
+        },
+        {
+          "src": "assets/projects/14-246086813/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/977416246086813.69bbd7fca0c88.jpg",
+          "alt": "„Marika i Paweł Domagała - „Okruchy Złota”” — image 6 of 6",
+          "width": 1200,
+          "height": 914
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 15,
+      "behance_id": 246086417,
+      "title": "Le Possé - lookbook&campaign",
+      "slug": "le-posse-lookbook-campaign",
+      "source_url": "https://www.behance.net/gallery/246086417/Le-Poss-lookbook-campaign",
+      "published_on": "2026-03-19",
+      "dominant_color": "rgb(20, 37, 86)",
+      "tags": [
+        "Stylizacje",
+        "stylistka",
+        "Fashion Stylist",
+        "photoshoot"
+      ],
+      "cover": {
+        "src": "assets/covers/15-246086417.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/1a7345246086417.69bbd628027ab.jpg",
+        "alt": "Cover image of the project „Le Possé - lookbook&campaign”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/15-246086417/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/cf4021246086417.69bbd6286de53.jpg",
+          "alt": "„Le Possé - lookbook&campaign” — image 1 of 7",
+          "width": 1032,
+          "height": 1747
+        },
+        {
+          "src": "assets/projects/15-246086417/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6bb6ab246086417.69bbd6286f29d.jpg",
+          "alt": "„Le Possé - lookbook&campaign” — image 2 of 7",
+          "width": 1070,
+          "height": 1737
+        },
+        {
+          "src": "assets/projects/15-246086417/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6d265a246086417.69bbd6286ced3.jpg",
+          "alt": "„Le Possé - lookbook&campaign” — image 3 of 7",
+          "width": 984,
+          "height": 1731
+        },
+        {
+          "src": "assets/projects/15-246086417/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/09524e246086417.69bbd6286f8fc.jpg",
+          "alt": "„Le Possé - lookbook&campaign” — image 4 of 7",
+          "width": 985,
+          "height": 1721
+        },
+        {
+          "src": "assets/projects/15-246086417/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/22ef3b246086417.69bbd6286e50b.jpg",
+          "alt": "„Le Possé - lookbook&campaign” — image 5 of 7",
+          "width": 1069,
+          "height": 1686
+        },
+        {
+          "src": "assets/projects/15-246086417/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ea16ba246086417.69bbd6286ebf1.jpg",
+          "alt": "„Le Possé - lookbook&campaign” — image 6 of 7",
+          "width": 1037,
+          "height": 1716
+        },
+        {
+          "src": "assets/projects/15-246086417/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d89bd7246086417.69bbd6286d7bf.jpg",
+          "alt": "„Le Possé - lookbook&campaign” — image 7 of 7",
+          "width": 1093,
+          "height": 1121
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 16,
+      "behance_id": 240825097,
+      "title": "XIAOMI - reklama",
+      "slug": "xiaomi-reklama",
+      "source_url": "https://www.behance.net/gallery/240825097/XIAOMI-reklama",
+      "published_on": "2025-12-20",
+      "dominant_color": "rgb(20, 20, 20)",
+      "tags": [
+        "Stylizacje",
+        "реклама",
+        "stylistka"
+      ],
+      "cover": {
+        "src": "assets/covers/16-240825097.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/816bc3240825097.6946fdbc7502a.jpg",
+        "alt": "Cover image of the project „XIAOMI - reklama”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/16-240825097/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/64409e240825097.6946fd9b10011.jpg",
+          "alt": "„XIAOMI - reklama” — image 1 of 9",
+          "width": 1200,
+          "height": 658
+        },
+        {
+          "src": "assets/projects/16-240825097/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e783ae240825097.6946fd9b0e777.jpg",
+          "alt": "„XIAOMI - reklama” — image 2 of 9",
+          "width": 1200,
+          "height": 666
+        },
+        {
+          "src": "assets/projects/16-240825097/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1df340240825097.6946fd9b0f3d6.jpg",
+          "alt": "„XIAOMI - reklama” — image 3 of 9",
+          "width": 1200,
+          "height": 655
+        },
+        {
+          "src": "assets/projects/16-240825097/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/994148240825097.6946fd9b10730.jpg",
+          "alt": "„XIAOMI - reklama” — image 4 of 9",
+          "width": 1200,
+          "height": 658
+        },
+        {
+          "src": "assets/projects/16-240825097/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c84f5f240825097.6946fd9b0eed0.jpg",
+          "alt": "„XIAOMI - reklama” — image 5 of 9",
+          "width": 1200,
+          "height": 659
+        },
+        {
+          "src": "assets/projects/16-240825097/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d45071240825097.6946fd9b10e24.jpg",
+          "alt": "„XIAOMI - reklama” — image 6 of 9",
+          "width": 1200,
+          "height": 665
+        },
+        {
+          "src": "assets/projects/16-240825097/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c0ada3240825097.6946fd9b11384.jpg",
+          "alt": "„XIAOMI - reklama” — image 7 of 9",
+          "width": 1200,
+          "height": 663
+        },
+        {
+          "src": "assets/projects/16-240825097/08.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3c0c63240825097.6946fd9b0fb23.jpg",
+          "alt": "„XIAOMI - reklama” — image 8 of 9",
+          "width": 1200,
+          "height": 661
+        },
+        {
+          "src": "assets/projects/16-240825097/09.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d796b6240825097.6946fd9b0dfcc.jpg",
+          "alt": "„XIAOMI - reklama” — image 9 of 9",
+          "width": 1200,
+          "height": 664
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 17,
+      "behance_id": 240825055,
+      "title": "Sanprobi Premium - reklama",
+      "slug": "sanprobi-premium-reklama",
+      "source_url": "https://www.behance.net/gallery/240825055/Sanprobi-Premium-reklama",
+      "published_on": "2025-12-20",
+      "dominant_color": "rgb(233, 234, 235)",
+      "tags": [
+        "Stylizacje",
+        "sesja",
+        "реклама"
+      ],
+      "cover": {
+        "src": "assets/covers/17-240825055.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/935c82240825055.6946fd58ebc09.jpg",
+        "alt": "Cover image of the project „Sanprobi Premium - reklama”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/17-240825055/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/74aba3240825055.6946fd598882d.jpg",
+          "alt": "„Sanprobi Premium - reklama” — image 1 of 4",
+          "width": 1200,
+          "height": 2082
+        },
+        {
+          "src": "assets/projects/17-240825055/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5271e7240825055.6946fd5987c02.jpg",
+          "alt": "„Sanprobi Premium - reklama” — image 2 of 4",
+          "width": 1200,
+          "height": 1486
+        },
+        {
+          "src": "assets/projects/17-240825055/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2e3f88240825055.6946fd5988c61.jpg",
+          "alt": "„Sanprobi Premium - reklama” — image 3 of 4",
+          "width": 1200,
+          "height": 2072
+        },
+        {
+          "src": "assets/projects/17-240825055/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a7bb6f240825055.6946fd598812a.jpg",
+          "alt": "„Sanprobi Premium - reklama” — image 4 of 4",
+          "width": 1200,
+          "height": 2031
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 18,
+      "behance_id": 239977783,
+      "title": "Laser DeLux - reklama",
+      "slug": "laser-delux-reklama",
+      "source_url": "https://www.behance.net/gallery/239977783/Laser-DeLux-reklama",
+      "published_on": "2025-12-07",
+      "dominant_color": "rgb(37, 23, 26)",
+      "tags": [
+        "Stylizacje",
+        "реклама",
+        "stylistka"
+      ],
+      "cover": {
+        "src": "assets/covers/18-239977783.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/8d6a3f239977783.6934c583d3dfe.jpg",
+        "alt": "Cover image of the project „Laser DeLux - reklama”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/18-239977783/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4965f5239977783.6934c5845abae.jpg",
+          "alt": "„Laser DeLux - reklama” — image 1 of 3",
+          "width": 1200,
+          "height": 1073
+        },
+        {
+          "src": "assets/projects/18-239977783/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/28eb6f239977783.6934c5845a15e.jpg",
+          "alt": "„Laser DeLux - reklama” — image 2 of 3",
+          "width": 1200,
+          "height": 740
+        },
+        {
+          "src": "assets/projects/18-239977783/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c2b717239977783.6934c5845a6b7.jpg",
+          "alt": "„Laser DeLux - reklama” — image 3 of 3",
+          "width": 1200,
+          "height": 659
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 19,
+      "behance_id": 239972875,
+      "title": "MTV Unplugged - stylizacje zespołu Maryli",
+      "slug": "mtv-unplugged-stylizacje-zespou-maryli",
+      "source_url": "https://www.behance.net/gallery/239972875/MTV-Unplugged-stylizacje-zespolu-Maryli",
+      "published_on": "2025-12-06",
+      "dominant_color": "rgb(211, 225, 225)",
+      "tags": [
+        "концерт",
+        "Stylizacje",
+        "музыка"
+      ],
+      "cover": {
+        "src": "assets/covers/19-239972875.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/2acbea239972875.693704307bb5c.jpg",
+        "alt": "Cover image of the project „MTV Unplugged - stylizacje zespołu Maryli”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/19-239972875/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/914512239972875.69349a368a19f.jpg",
+          "alt": "„MTV Unplugged - stylizacje zespołu Maryli” — image 1 of 3",
+          "width": 1200,
+          "height": 1179
+        },
+        {
+          "src": "assets/projects/19-239972875/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f02038239972875.69349a3689a44.jpg",
+          "alt": "„MTV Unplugged - stylizacje zespołu Maryli” — image 2 of 3",
+          "width": 1200,
+          "height": 856
+        },
+        {
+          "src": "assets/projects/19-239972875/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/343465239972875.69349a368a873.jpg",
+          "alt": "„MTV Unplugged - stylizacje zespołu Maryli” — image 3 of 3",
+          "width": 1200,
+          "height": 859
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 20,
+      "behance_id": 239972735,
+      "title": "Kinder Niespodzianka - Słowa od Serca",
+      "slug": "kinder-niespodzianka-sowa-od-serca",
+      "source_url": "https://www.behance.net/gallery/239972735/Kinder-Niespodzianka-Slowa-od-Serca",
+      "published_on": "2025-12-06",
+      "dominant_color": "rgb(188, 152, 99)",
+      "tags": [
+        "реклама",
+        "Stylizacje",
+        "stylistka"
+      ],
+      "cover": {
+        "src": "assets/covers/20-239972735.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/393a7b239972735.693499452de1c.jpg",
+        "alt": "Cover image of the project „Kinder Niespodzianka - Słowa od Serca”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/20-239972735/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/31067f239972735.69349945bce4f.jpg",
+          "alt": "„Kinder Niespodzianka - Słowa od Serca” — image 1 of 5",
+          "width": 1200,
+          "height": 1753
+        },
+        {
+          "src": "assets/projects/20-239972735/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/01523a239972735.69349945bd677.jpg",
+          "alt": "„Kinder Niespodzianka - Słowa od Serca” — image 2 of 5",
+          "width": 1200,
+          "height": 1784
+        },
+        {
+          "src": "assets/projects/20-239972735/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f0ef26239972735.69349945bc7b7.jpg",
+          "alt": "„Kinder Niespodzianka - Słowa od Serca” — image 3 of 5",
+          "width": 1200,
+          "height": 1835
+        },
+        {
+          "src": "assets/projects/20-239972735/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d9e93e239972735.69349945bb247.jpg",
+          "alt": "„Kinder Niespodzianka - Słowa od Serca” — image 4 of 5",
+          "width": 1200,
+          "height": 1872
+        },
+        {
+          "src": "assets/projects/20-239972735/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/123a3b239972735.69349945bab1f.jpg",
+          "alt": "„Kinder Niespodzianka - Słowa od Serca” — image 5 of 5",
+          "width": 1200,
+          "height": 1975
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 21,
+      "behance_id": 238991137,
+      "title": "Remigiusz Mróz",
+      "slug": "remigiusz-mroz",
+      "source_url": "https://www.behance.net/gallery/238991137/Remigiusz-Mroz",
+      "published_on": "2025-11-20",
+      "dominant_color": "rgb(45, 20, 20)",
+      "tags": [
+        "stylizacja",
+        "sesja zdjęciowa",
+        "pisarz"
+      ],
+      "cover": {
+        "src": "assets/covers/21-238991137.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/f75033238991137.691f8b1ba339f.jpg",
+        "alt": "Cover image of the project „Remigiusz Mróz”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/21-238991137/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/edeff9238991137.691f8b1c123da.jpg",
+          "alt": "„Remigiusz Mróz” — image 1 of 1",
+          "width": 1130,
+          "height": 1328
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 22,
+      "behance_id": 238161769,
+      "title": "Sanprobi Premium - reklama",
+      "slug": "sanprobi-premium-reklama-238161769",
+      "source_url": "https://www.behance.net/gallery/238161769/Sanprobi-Premium-reklama",
+      "published_on": "2025-11-08",
+      "dominant_color": "rgb(185, 172, 159)",
+      "tags": [
+        "Stylizacje",
+        "sesja zdjęciowa",
+        "реклама"
+      ],
+      "cover": {
+        "src": "assets/covers/22-238161769.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/2ce969238161769.690f1e7b4e712.jpg",
+        "alt": "Cover image of the project „Sanprobi Premium - reklama”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/22-238161769/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6dc3a4238161769.690f1e7bd6ab0.jpg",
+          "alt": "„Sanprobi Premium - reklama” — image 1 of 4",
+          "width": 1200,
+          "height": 1491
+        },
+        {
+          "src": "assets/projects/22-238161769/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d9d914238161769.690f1e7bd652c.jpg",
+          "alt": "„Sanprobi Premium - reklama” — image 2 of 4",
+          "width": 1020,
+          "height": 1652
+        },
+        {
+          "src": "assets/projects/22-238161769/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8d1812238161769.690f1e7bd7546.jpg",
+          "alt": "„Sanprobi Premium - reklama” — image 3 of 4",
+          "width": 1040,
+          "height": 1760
+        },
+        {
+          "src": "assets/projects/22-238161769/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d41095238161769.690f1e7bd6ffb.jpg",
+          "alt": "„Sanprobi Premium - reklama” — image 4 of 4",
+          "width": 1200,
+          "height": 1957
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 23,
+      "behance_id": 238161649,
+      "title": "VILLAGE photoshoot",
+      "slug": "village-photoshoot",
+      "source_url": "https://www.behance.net/gallery/238161649/VILLAGE-photoshoot",
+      "published_on": "2025-11-08",
+      "dominant_color": "rgb(38, 37, 35)",
+      "tags": [
+        "sesja zdjęciowa",
+        "stylizacje do sesji"
+      ],
+      "cover": {
+        "src": "assets/covers/23-238161649.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/e96917238161649.690f1deac522c.jpg",
+        "alt": "Cover image of the project „VILLAGE photoshoot”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/23-238161649/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/02502c238161649.690f1deb81089.jpg",
+          "alt": "„VILLAGE photoshoot” — image 1 of 8",
+          "width": 1163,
+          "height": 1609
+        },
+        {
+          "src": "assets/projects/23-238161649/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b79c8a238161649.690f1deb815c7.jpg",
+          "alt": "„VILLAGE photoshoot” — image 2 of 8",
+          "width": 1168,
+          "height": 1643
+        },
+        {
+          "src": "assets/projects/23-238161649/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0b5a28238161649.690f1deb803a4.jpg",
+          "alt": "„VILLAGE photoshoot” — image 3 of 8",
+          "width": 1157,
+          "height": 1635
+        },
+        {
+          "src": "assets/projects/23-238161649/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9459cf238161649.690f1deb820c6.jpg",
+          "alt": "„VILLAGE photoshoot” — image 4 of 8",
+          "width": 1157,
+          "height": 1627
+        },
+        {
+          "src": "assets/projects/23-238161649/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ea7d64238161649.690f1deb80a22.jpg",
+          "alt": "„VILLAGE photoshoot” — image 5 of 8",
+          "width": 1158,
+          "height": 1619
+        },
+        {
+          "src": "assets/projects/23-238161649/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/cb1616238161649.690f1deb7fc6b.jpg",
+          "alt": "„VILLAGE photoshoot” — image 6 of 8",
+          "width": 1166,
+          "height": 1643
+        },
+        {
+          "src": "assets/projects/23-238161649/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0bc537238161649.690f1deb81a5d.jpg",
+          "alt": "„VILLAGE photoshoot” — image 7 of 8",
+          "width": 1200,
+          "height": 1470
+        },
+        {
+          "src": "assets/projects/23-238161649/08.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6b923b238161649.690f1deb82599.jpg",
+          "alt": "„VILLAGE photoshoot” — image 8 of 8",
+          "width": 1200,
+          "height": 1370
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 24,
+      "behance_id": 238161445,
+      "title": "MUNO PUZZLE",
+      "slug": "muno-puzzle",
+      "source_url": "https://www.behance.net/gallery/238161445/MUNO-PUZZLE",
+      "published_on": "2025-11-08",
+      "dominant_color": "rgb(158, 89, 41)",
+      "tags": [
+        "Stylizacje",
+        "sesja zdjęciowa",
+        "marka produktowa"
+      ],
+      "cover": {
+        "src": "assets/covers/24-238161445.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/271d9b238161445.690f1ca41be8c.jpg",
+        "alt": "Cover image of the project „MUNO PUZZLE”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/24-238161445/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/91cbeb238161445.690f1ca485f1f.jpg",
+          "alt": "„MUNO PUZZLE” — image 1 of 3",
+          "width": 1200,
+          "height": 1539
+        },
+        {
+          "src": "assets/projects/24-238161445/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6f27b3238161445.690f1ca4857c0.jpg",
+          "alt": "„MUNO PUZZLE” — image 2 of 3",
+          "width": 1200,
+          "height": 1575
+        },
+        {
+          "src": "assets/projects/24-238161445/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4d6cdd238161445.690f1ca4865f9.jpg",
+          "alt": "„MUNO PUZZLE” — image 3 of 3",
+          "width": 1200,
+          "height": 1469
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 25,
+      "behance_id": 238161263,
+      "title": "Dr Vita - reklama",
+      "slug": "dr-vita-reklama",
+      "source_url": "https://www.behance.net/gallery/238161263/Dr-Vita-reklama",
+      "published_on": "2025-11-08",
+      "dominant_color": "rgb(33, 33, 25)",
+      "tags": [
+        "Stylizacje",
+        "kostiumy",
+        "реклама"
+      ],
+      "cover": {
+        "src": "assets/covers/25-238161263.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/05b708238161263.690f1bbc89e6c.jpg",
+        "alt": "Cover image of the project „Dr Vita - reklama”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/25-238161263/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/25cd57238161263.690f1b9e08670.jpg",
+          "alt": "„Dr Vita - reklama” — image 1 of 2",
+          "width": 1200,
+          "height": 666
+        },
+        {
+          "src": "assets/projects/25-238161263/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0d7c76238161263.690f1b9e0803a.jpg",
+          "alt": "„Dr Vita - reklama” — image 2 of 2",
+          "width": 1200,
+          "height": 665
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 26,
+      "behance_id": 238161205,
+      "title": "VASCO - reklama",
+      "slug": "vasco-reklama",
+      "source_url": "https://www.behance.net/gallery/238161205/VASCO-reklama",
+      "published_on": "2025-11-08",
+      "dominant_color": "rgb(80, 54, 67)",
+      "tags": [
+        "Stylizacje",
+        "реклама",
+        "commercial",
+        "stylistka"
+      ],
+      "cover": {
+        "src": "assets/covers/26-238161205.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/668d01238161205.690f1be2e502d.jpg",
+        "alt": "Cover image of the project „VASCO - reklama”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/26-238161205/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/76888d238161205.690f1b36dd50c.jpg",
+          "alt": "„VASCO - reklama” — image 1 of 1",
+          "width": 1200,
+          "height": 629
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 27,
+      "behance_id": 236715949,
+      "title": "Blu x Warner Music",
+      "slug": "blu-x-warner-music-236715949",
+      "source_url": "https://www.behance.net/gallery/236715949/Blu-x-Warner-Music",
+      "published_on": "2025-10-16",
+      "dominant_color": "rgb(31, 44, 20)",
+      "tags": [
+        "Stylizacje",
+        "stylistka",
+        "video clip"
+      ],
+      "cover": {
+        "src": "assets/covers/27-236715949.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/e312d1236715949.68f12d2634414.jpg",
+        "alt": "Cover image of the project „Blu x Warner Music”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/27-236715949/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e3e935236715949.68f12d26b493d.jpg",
+          "alt": "„Blu x Warner Music” — image 1 of 3",
+          "width": 1200,
+          "height": 1343
+        },
+        {
+          "src": "assets/projects/27-236715949/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ce6312236715949.68f12d26b3759.jpg",
+          "alt": "„Blu x Warner Music” — image 2 of 3",
+          "width": 1136,
+          "height": 846
+        },
+        {
+          "src": "assets/projects/27-236715949/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6e51f0236715949.68f12d26b3f7d.jpg",
+          "alt": "„Blu x Warner Music” — image 3 of 3",
+          "width": 1144,
+          "height": 1167
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 28,
+      "behance_id": 234139741,
+      "title": "Ninja vs Ninja - stylizacje prowadzących sezon 11",
+      "slug": "ninja-vs-ninja-stylizacje-prowadzacych-sezon-11",
+      "source_url": "https://www.behance.net/gallery/234139741/Ninja-vs-Ninja-stylizacje-prowadzacych-sezon-11",
+      "published_on": "2025-09-07",
+      "dominant_color": "rgb(20, 20, 22)",
+      "tags": [
+        "Stylizacje",
+        "program tv",
+        "prowadzący"
+      ],
+      "cover": {
+        "src": "assets/covers/28-234139741.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/974821234139741.68bf231d43c05.jpg",
+        "alt": "Cover image of the project „Ninja vs Ninja - stylizacje prowadzących sezon 11”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/28-234139741/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/74c80f234139741.68bdd9a8508b9.jpg",
+          "alt": "„Ninja vs Ninja - stylizacje prowadzących sezon 11” — image 1 of 4",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/28-234139741/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6a9bac234139741.68bdd9a85009c.jpg",
+          "alt": "„Ninja vs Ninja - stylizacje prowadzących sezon 11” — image 2 of 4",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/28-234139741/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f028b9234139741.68bdd9a850ff1.jpg",
+          "alt": "„Ninja vs Ninja - stylizacje prowadzących sezon 11” — image 3 of 4",
+          "width": 1200,
+          "height": 675
+        },
+        {
+          "src": "assets/projects/28-234139741/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/cc6c0c234139741.68bf231e21d75.jpg",
+          "alt": "„Ninja vs Ninja - stylizacje prowadzących sezon 11” — image 4 of 4",
+          "width": 1099,
+          "height": 1399
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 29,
+      "behance_id": 234139631,
+      "title": "Marta Ćwiertniewicz - ramówka Telewizji Polsat",
+      "slug": "marta-cwiertniewicz-ramowka-telewizji-polsat",
+      "source_url": "https://www.behance.net/gallery/234139631/Marta-Cwiertniewicz-ramowka-Telewizji-Polsat",
+      "published_on": "2025-09-07",
+      "dominant_color": "rgb(20, 73, 140)",
+      "tags": [
+        "Stylizacje",
+        "stylistka",
+        "polsat"
+      ],
+      "cover": {
+        "src": "assets/covers/29-234139631.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/363e08234139631.68bdd9288ac25.jpg",
+        "alt": "Cover image of the project „Marta Ćwiertniewicz - ramówka Telewizji Polsat”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/29-234139631/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/26778f234139631.68bdd90cc004d.jpg",
+          "alt": "„Marta Ćwiertniewicz - ramówka Telewizji Polsat” — image 1 of 1",
+          "width": 1200,
+          "height": 1799
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 30,
+      "behance_id": 228503615,
+      "title": "Sylwia Przybysz x TVP Mistrzostwa Europy",
+      "slug": "sylwia-przybysz-x-tvp-mistrzostwa-europy",
+      "source_url": "https://www.behance.net/gallery/228503615/Sylwia-Przybysz-x-TVP-Mistrzostwa-Europy",
+      "published_on": "2025-06-19",
+      "dominant_color": "rgb(201, 190, 188)",
+      "tags": [
+        "stylizacja",
+        "billboard",
+        "kobiety",
+        "sesja zdjęciowa"
+      ],
+      "cover": {
+        "src": "assets/covers/30-228503615.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/014f7f228503615.6853e93e8a919.jpg",
+        "alt": "Cover image of the project „Sylwia Przybysz x TVP Mistrzostwa Europy”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/30-228503615/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e38b35228503615.6853e93f0d8b4.jpg",
+          "alt": "„Sylwia Przybysz x TVP Mistrzostwa Europy” — image 1 of 1",
+          "width": 1200,
+          "height": 1744
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 31,
+      "behance_id": 228021375,
+      "title": "Sylwia Przybysz",
+      "slug": "sylwia-przybysz",
+      "source_url": "https://www.behance.net/gallery/228021375/Sylwia-Przybysz",
+      "published_on": "2025-06-12",
+      "dominant_color": "rgb(235, 234, 227)",
+      "tags": [
+        "sesja zdjęciowa",
+        "Stylizacje",
+        "moda"
+      ],
+      "cover": {
+        "src": "assets/covers/31-228021375.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/9b2700228021375.68531dc6b0f1c.jpg",
+        "alt": "Cover image of the project „Sylwia Przybysz”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/31-228021375/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/187336228021375.684b17b2e71e0.jpg",
+          "alt": "„Sylwia Przybysz” — image 1 of 7",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/31-228021375/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b019e0228021375.684b17b2e7d59.jpg",
+          "alt": "„Sylwia Przybysz” — image 2 of 7",
+          "width": 1200,
+          "height": 1486
+        },
+        {
+          "src": "assets/projects/31-228021375/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/6daec9228021375.684b17b2e5bc8.jpg",
+          "alt": "„Sylwia Przybysz” — image 3 of 7",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/31-228021375/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b52bb8228021375.684b17b2e76a7.jpg",
+          "alt": "„Sylwia Przybysz” — image 4 of 7",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/31-228021375/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a05ff2228021375.684b17b2e622f.jpg",
+          "alt": "„Sylwia Przybysz” — image 5 of 7",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/31-228021375/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9af5be228021375.684b17b2e6bee.jpg",
+          "alt": "„Sylwia Przybysz” — image 6 of 7",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/31-228021375/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2272aa228021375.68531dc7a6635.jpg",
+          "alt": "„Sylwia Przybysz” — image 7 of 7",
+          "width": 1135,
+          "height": 1115
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 32,
+      "behance_id": 225490945,
+      "title": "WITTCHEN - SS25 Campaign",
+      "slug": "wittchen-ss25-campaign",
+      "source_url": "https://www.behance.net/gallery/225490945/WITTCHEN-SS25-Campaign",
+      "published_on": "2025-05-09",
+      "dominant_color": "rgb(178, 206, 229)",
+      "tags": [
+        "кампания",
+        "marka modowa",
+        "Stylizacje",
+        "sesja zdjęciowa"
+      ],
+      "cover": {
+        "src": "assets/covers/32-225490945.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/b42d97225490945.681dea1f07087.jpg",
+        "alt": "Cover image of the project „WITTCHEN - SS25 Campaign”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/32-225490945/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/65dc08225490945.681dea1fc3811.jpg",
+          "alt": "„WITTCHEN - SS25 Campaign” — image 1 of 8",
+          "width": 1200,
+          "height": 1716
+        },
+        {
+          "src": "assets/projects/32-225490945/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9a48a5225490945.681dea1fc1ef1.jpg",
+          "alt": "„WITTCHEN - SS25 Campaign” — image 2 of 8",
+          "width": 1200,
+          "height": 1716
+        },
+        {
+          "src": "assets/projects/32-225490945/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/33271e225490945.681dea1fc4092.jpg",
+          "alt": "„WITTCHEN - SS25 Campaign” — image 3 of 8",
+          "width": 1200,
+          "height": 795
+        },
+        {
+          "src": "assets/projects/32-225490945/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9e8782225490945.681dea1fc25c7.jpg",
+          "alt": "„WITTCHEN - SS25 Campaign” — image 4 of 8",
+          "width": 1200,
+          "height": 1508
+        },
+        {
+          "src": "assets/projects/32-225490945/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/de8994225490945.681dea1fc17fb.jpg",
+          "alt": "„WITTCHEN - SS25 Campaign” — image 5 of 8",
+          "width": 1200,
+          "height": 1741
+        },
+        {
+          "src": "assets/projects/32-225490945/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a402f6225490945.681dea1fc2c72.jpg",
+          "alt": "„WITTCHEN - SS25 Campaign” — image 6 of 8",
+          "width": 1200,
+          "height": 796
+        },
+        {
+          "src": "assets/projects/32-225490945/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4113d6225490945.681dea1fc3c58.jpg",
+          "alt": "„WITTCHEN - SS25 Campaign” — image 7 of 8",
+          "width": 1200,
+          "height": 1707
+        },
+        {
+          "src": "assets/projects/32-225490945/08.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/189cc4225490945.681dea1fc32cc.jpg",
+          "alt": "„WITTCHEN - SS25 Campaign” — image 8 of 8",
+          "width": 1200,
+          "height": 1859
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 33,
+      "behance_id": 223671203,
+      "title": "Mateusz Damięcki x Gillette - reklamy promocyjne",
+      "slug": "mateusz-damiecki-x-gillette-reklamy-promocyjne",
+      "source_url": "https://www.behance.net/gallery/223671203/Mateusz-Damiecki-x-Gillette-reklamy-promocyjne",
+      "published_on": "2025-04-14",
+      "dominant_color": "rgb(37, 30, 33)",
+      "tags": [
+        "Stylizacje",
+        "aktor  ",
+        "реклама"
+      ],
+      "cover": {
+        "src": "assets/covers/33-223671203.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/023e7e223671203.67fd4414be354.jpg",
+        "alt": "Cover image of the project „Mateusz Damięcki x Gillette - reklamy promocyjne”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/33-223671203/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/036425223671203.67fd441528a1e.jpg",
+          "alt": "„Mateusz Damięcki x Gillette - reklamy promocyjne” — image 1 of 1",
+          "width": 1200,
+          "height": 1581
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 34,
+      "behance_id": 223668225,
+      "title": "LEXY CHAPLIN",
+      "slug": "lexy-chaplin",
+      "source_url": "https://www.behance.net/gallery/223668225/LEXY-CHAPLIN",
+      "published_on": "2025-04-14",
+      "dominant_color": "rgb(235, 235, 235)",
+      "tags": [
+        "sesja zdjęciowa",
+        "sesja modowa",
+        "stylistka"
+      ],
+      "cover": {
+        "src": "assets/covers/34-223668225.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/d150ac223668225.67fd3ad125ba3.jpg",
+        "alt": "Cover image of the project „LEXY CHAPLIN”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/34-223668225/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/711022223668225.67fd3ad1e5f63.jpg",
+          "alt": "„LEXY CHAPLIN” — image 1 of 7",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/34-223668225/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8f76e0223668225.67fd3ad1e7f2d.jpg",
+          "alt": "„LEXY CHAPLIN” — image 2 of 7",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/34-223668225/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9bcdf5223668225.67fd3ad1e70bf.jpg",
+          "alt": "„LEXY CHAPLIN” — image 3 of 7",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/34-223668225/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8053ef223668225.67fd3ad1e86ef.jpg",
+          "alt": "„LEXY CHAPLIN” — image 4 of 7",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/34-223668225/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/342ae7223668225.67fd3ad1e65c5.jpg",
+          "alt": "„LEXY CHAPLIN” — image 5 of 7",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/34-223668225/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/08ae64223668225.67fd3ad1e78f6.jpg",
+          "alt": "„LEXY CHAPLIN” — image 6 of 7",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "src": "assets/projects/34-223668225/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/508415223668225.67fd3ad1e6b46.jpg",
+          "alt": "„LEXY CHAPLIN” — image 7 of 7",
+          "width": 1200,
+          "height": 800
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 35,
+      "behance_id": 223667807,
+      "title": "Ada Posiadała - LaMon Agency",
+      "slug": "ada-posiadaa-lamon-agency",
+      "source_url": "https://www.behance.net/gallery/223667807/Ada-Posiadala-LaMon-Agency",
+      "published_on": "2025-04-14",
+      "dominant_color": "rgb(212, 232, 235)",
+      "tags": [
+        "sesja zdjęciowa",
+        "Stylizacje",
+        "moda"
+      ],
+      "cover": {
+        "src": "assets/covers/35-223667807.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/6c45b2223667807.67fd39689b116.jpg",
+        "alt": "Cover image of the project „Ada Posiadała - LaMon Agency”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/35-223667807/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/da70af223667807.67fd3969709df.jpg",
+          "alt": "„Ada Posiadała - LaMon Agency” — image 1 of 6",
+          "width": 1200,
+          "height": 1488
+        },
+        {
+          "src": "assets/projects/35-223667807/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/846f4e223667807.67fd396971f64.jpg",
+          "alt": "„Ada Posiadała - LaMon Agency” — image 2 of 6",
+          "width": 1200,
+          "height": 1483
+        },
+        {
+          "src": "assets/projects/35-223667807/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/906eb1223667807.67fd396970df2.jpg",
+          "alt": "„Ada Posiadała - LaMon Agency” — image 3 of 6",
+          "width": 1200,
+          "height": 1478
+        },
+        {
+          "src": "assets/projects/35-223667807/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/fbea2a223667807.67fd3969704fe.jpg",
+          "alt": "„Ada Posiadała - LaMon Agency” — image 4 of 6",
+          "width": 1200,
+          "height": 1481
+        },
+        {
+          "src": "assets/projects/35-223667807/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/677c43223667807.67fd39697190b.jpg",
+          "alt": "„Ada Posiadała - LaMon Agency” — image 5 of 6",
+          "width": 1200,
+          "height": 1484
+        },
+        {
+          "src": "assets/projects/35-223667807/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/76298c223667807.67fd396971463.jpg",
+          "alt": "„Ada Posiadała - LaMon Agency” — image 6 of 6",
+          "width": 1200,
+          "height": 1484
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 36,
+      "behance_id": 223667671,
+      "title": "Remigiusz Mróz - WYDAWNICTWO POZNAŃSKIE",
+      "slug": "remigiusz-mroz-wydawnictwo-poznanskie",
+      "source_url": "https://www.behance.net/gallery/223667671/Remigiusz-Mroz-WYDAWNICTWO-POZNANSKIE",
+      "published_on": "2025-04-14",
+      "dominant_color": "rgb(43, 21, 20)",
+      "tags": [
+        "sesja zdjęciowa",
+        "pisarz",
+        "Stylizacje"
+      ],
+      "cover": {
+        "src": "assets/covers/36-223667671.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/3aac94223667671.67fd3909ebea3.jpg",
+        "alt": "Cover image of the project „Remigiusz Mróz - WYDAWNICTWO POZNAŃSKIE”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/36-223667671/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/105283223667671.67fd390a5a35e.jpg",
+          "alt": "„Remigiusz Mróz - WYDAWNICTWO POZNAŃSKIE” — image 1 of 1",
+          "width": 1200,
+          "height": 1499
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 37,
+      "behance_id": 223667563,
+      "title": "Izabela Janiszewska - WYDAWNICTWO POZNAŃSKIE",
+      "slug": "izabela-janiszewska-wydawnictwo-poznanskie",
+      "source_url": "https://www.behance.net/gallery/223667563/Izabela-Janiszewska-WYDAWNICTWO-POZNANSKIE",
+      "published_on": "2025-04-14",
+      "dominant_color": "rgb(49, 49, 49)",
+      "tags": [
+        "sesja zdjęciowa",
+        "Stylizacje",
+        "sesja biznesowa"
+      ],
+      "cover": {
+        "src": "assets/covers/37-223667563.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/846b8b223667563.681dea5ba8ac1.jpg",
+        "alt": "Cover image of the project „Izabela Janiszewska - WYDAWNICTWO POZNAŃSKIE”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/37-223667563/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/24a738223667563.67fd38c03baea.jpg",
+          "alt": "„Izabela Janiszewska - WYDAWNICTWO POZNAŃSKIE” — image 1 of 3",
+          "width": 1200,
+          "height": 1676
+        },
+        {
+          "src": "assets/projects/37-223667563/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c28c85223667563.67fd38c03b220.jpg",
+          "alt": "„Izabela Janiszewska - WYDAWNICTWO POZNAŃSKIE” — image 2 of 3",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/37-223667563/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/09573b223667563.67fd38c03c0b5.jpg",
+          "alt": "„Izabela Janiszewska - WYDAWNICTWO POZNAŃSKIE” — image 3 of 3",
+          "width": 1200,
+          "height": 1749
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 38,
+      "behance_id": 219786965,
+      "title": "Karolina Giloń",
+      "slug": "karolina-gilon",
+      "source_url": "https://www.behance.net/gallery/219786965/Karolina-Gilon",
+      "published_on": "2025-02-20",
+      "dominant_color": "rgb(84, 110, 121)",
+      "tags": [
+        "sesja zdjęciowa",
+        "sesja ciążowa",
+        "stylistka"
+      ],
+      "cover": {
+        "src": "assets/covers/38-219786965.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/cc3b13219786965.67b78d43e2071.jpg",
+        "alt": "Cover image of the project „Karolina Giloń”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/38-219786965/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/861a60219786965.67b78d450effb.jpg",
+          "alt": "„Karolina Giloń” — image 1 of 9",
+          "width": 1200,
+          "height": 1792
+        },
+        {
+          "src": "assets/projects/38-219786965/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f2bd81219786965.67b78d450d8af.jpg",
+          "alt": "„Karolina Giloń” — image 2 of 9",
+          "width": 1200,
+          "height": 1793
+        },
+        {
+          "src": "assets/projects/38-219786965/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0f93fd219786965.67b78d450ebee.jpg",
+          "alt": "„Karolina Giloń” — image 3 of 9",
+          "width": 1200,
+          "height": 1808
+        },
+        {
+          "src": "assets/projects/38-219786965/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/83f20b219786965.67b78d450f3e7.jpg",
+          "alt": "„Karolina Giloń” — image 4 of 9",
+          "width": 1200,
+          "height": 1811
+        },
+        {
+          "src": "assets/projects/38-219786965/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/18a85e219786965.67b78d450fb6d.jpg",
+          "alt": "„Karolina Giloń” — image 5 of 9",
+          "width": 1200,
+          "height": 1819
+        },
+        {
+          "src": "assets/projects/38-219786965/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d5f1e8219786965.67b78d450d13c.jpg",
+          "alt": "„Karolina Giloń” — image 6 of 9",
+          "width": 1200,
+          "height": 1799
+        },
+        {
+          "src": "assets/projects/38-219786965/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b76673219786965.67b78d450e04e.jpg",
+          "alt": "„Karolina Giloń” — image 7 of 9",
+          "width": 1200,
+          "height": 1793
+        },
+        {
+          "src": "assets/projects/38-219786965/08.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2da249219786965.67b78d450e7d4.jpg",
+          "alt": "„Karolina Giloń” — image 8 of 9",
+          "width": 1200,
+          "height": 1812
+        },
+        {
+          "src": "assets/projects/38-219786965/09.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9d6cfc219786965.67b78d450c94d.jpg",
+          "alt": "„Karolina Giloń” — image 9 of 9",
+          "width": 1200,
+          "height": 1803
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 39,
+      "behance_id": 219786645,
+      "title": "NOVÉ ELEMENTS",
+      "slug": "nove-elements",
+      "source_url": "https://www.behance.net/gallery/219786645/NOVE-ELEMENTS",
+      "published_on": "2025-02-20",
+      "dominant_color": "rgb(235, 224, 208)",
+      "tags": [
+        "moda",
+        "Stylizacje",
+        "sesja zdjęciowa"
+      ],
+      "cover": {
+        "src": "assets/covers/39-219786645.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/6e1836219786645.67b78ba6dfd55.jpg",
+        "alt": "Cover image of the project „NOVÉ ELEMENTS”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/39-219786645/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/57cfc2219786645.67b78ba7b86fd.jpg",
+          "alt": "„NOVÉ ELEMENTS” — image 1 of 9",
+          "width": 1200,
+          "height": 1499
+        },
+        {
+          "src": "assets/projects/39-219786645/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e332bf219786645.67b78ba7b8fb3.jpg",
+          "alt": "„NOVÉ ELEMENTS” — image 2 of 9",
+          "width": 1200,
+          "height": 1493
+        },
+        {
+          "src": "assets/projects/39-219786645/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1e480c219786645.67b78ba7b66dd.jpg",
+          "alt": "„NOVÉ ELEMENTS” — image 3 of 9",
+          "width": 1200,
+          "height": 1792
+        },
+        {
+          "src": "assets/projects/39-219786645/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2c6398219786645.67b78ba7b7a74.jpg",
+          "alt": "„NOVÉ ELEMENTS” — image 4 of 9",
+          "width": 1200,
+          "height": 1797
+        },
+        {
+          "src": "assets/projects/39-219786645/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/88fb1d219786645.67b78ba7b72f3.jpg",
+          "alt": "„NOVÉ ELEMENTS” — image 5 of 9",
+          "width": 1200,
+          "height": 1797
+        },
+        {
+          "src": "assets/projects/39-219786645/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7e4c4e219786645.67b78ba7b9717.jpg",
+          "alt": "„NOVÉ ELEMENTS” — image 6 of 9",
+          "width": 1200,
+          "height": 1794
+        },
+        {
+          "src": "assets/projects/39-219786645/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e8e962219786645.67b78ba7b81cb.jpg",
+          "alt": "„NOVÉ ELEMENTS” — image 7 of 9",
+          "width": 1200,
+          "height": 1790
+        },
+        {
+          "src": "assets/projects/39-219786645/08.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/beae59219786645.67b78ba7b9dd7.jpg",
+          "alt": "„NOVÉ ELEMENTS” — image 8 of 9",
+          "width": 1200,
+          "height": 1790
+        },
+        {
+          "src": "assets/projects/39-219786645/09.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0582e5219786645.67b78ba7b6bb6.jpg",
+          "alt": "„NOVÉ ELEMENTS” — image 9 of 9",
+          "width": 1200,
+          "height": 1486
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 40,
+      "behance_id": 215885275,
+      "title": "WITTCHEN Christmas Commercial",
+      "slug": "wittchen-christmas-commercial",
+      "source_url": "https://www.behance.net/gallery/215885275/WITTCHEN-Christmas-Commercial",
+      "published_on": "2025-01-02",
+      "dominant_color": "rgb(93, 39, 20)",
+      "tags": [
+        "реклама",
+        "commercial",
+        "tv",
+        "sesja zdjęciowa",
+        "stylistka"
+      ],
+      "cover": {
+        "src": "assets/covers/40-215885275.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/cf9727215885275.67766dab3c886.jpg",
+        "alt": "Cover image of the project „WITTCHEN Christmas Commercial”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/40-215885275/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/845f3f215885275.67766dabb4e0d.jpg",
+          "alt": "„WITTCHEN Christmas Commercial” — image 1 of 2",
+          "width": 1200,
+          "height": 1192
+        },
+        {
+          "src": "assets/projects/40-215885275/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e9eb9a215885275.67766dabb5297.jpg",
+          "alt": "„WITTCHEN Christmas Commercial” — image 2 of 2",
+          "width": 1200,
+          "height": 848
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 41,
+      "behance_id": 215884451,
+      "title": "Instytut Plesyr Campaign",
+      "slug": "instytut-plesyr-campaign",
+      "source_url": "https://www.behance.net/gallery/215884451/Instytut-Plesyr-Campaign",
+      "published_on": "2025-01-02",
+      "dominant_color": "rgb(235, 202, 180)",
+      "tags": [
+        "sesja produktowa",
+        "stylistka",
+        "sesja zdjęciowa",
+        "marka kosmetyczka"
+      ],
+      "cover": {
+        "src": "assets/covers/41-215884451.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/615dd7215884451.67766b5da53ae.jpg",
+        "alt": "Cover image of the project „Instytut Plesyr Campaign”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/41-215884451/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4f2f21215884451.67766ae280146.jpg",
+          "alt": "„Instytut Plesyr Campaign” — image 1 of 7",
+          "width": 1200,
+          "height": 1499
+        },
+        {
+          "src": "assets/projects/41-215884451/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/135caf215884451.67766ae27edb2.jpg",
+          "alt": "„Instytut Plesyr Campaign” — image 2 of 7",
+          "width": 1200,
+          "height": 1499
+        },
+        {
+          "src": "assets/projects/41-215884451/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f3c370215884451.67766ae27fa35.jpg",
+          "alt": "„Instytut Plesyr Campaign” — image 3 of 7",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/41-215884451/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/dd6fbd215884451.67766ae27f2ab.jpg",
+          "alt": "„Instytut Plesyr Campaign” — image 4 of 7",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/41-215884451/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0c4cb6215884451.67766ae280864.jpg",
+          "alt": "„Instytut Plesyr Campaign” — image 5 of 7",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/41-215884451/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d4cc50215884451.67766ae27e90c.jpg",
+          "alt": "„Instytut Plesyr Campaign” — image 6 of 7",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/41-215884451/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/058d45215884451.67766ae27e1ce.jpg",
+          "alt": "„Instytut Plesyr Campaign” — image 7 of 7",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 42,
+      "behance_id": 213330533,
+      "title": "WITTCHEN 2024 - akcje promocyjne",
+      "slug": "wittchen-2024-akcje-promocyjne",
+      "source_url": "https://www.behance.net/gallery/213330533/WITTCHEN-2024-akcje-promocyjne",
+      "published_on": "2024-11-25",
+      "dominant_color": "rgb(20, 20, 20)",
+      "tags": [
+        "Stylizacje",
+        "stylistka",
+        "moda",
+        "marka modowa"
+      ],
+      "cover": {
+        "src": "assets/covers/42-213330533.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/de2465213330533.6744bc7e3aac4.jpg",
+        "alt": "Cover image of the project „WITTCHEN 2024 - akcje promocyjne”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/42-213330533/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e89ef5213330533.6744bc7f32f14.jpg",
+          "alt": "„WITTCHEN 2024 - akcje promocyjne” — image 1 of 4",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "assets/projects/42-213330533/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e4d821213330533.6744bc7f3162a.jpg",
+          "alt": "„WITTCHEN 2024 - akcje promocyjne” — image 2 of 4",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "assets/projects/42-213330533/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c55180213330533.6744bc7f31db9.jpg",
+          "alt": "„WITTCHEN 2024 - akcje promocyjne” — image 3 of 4",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/42-213330533/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ab4bb7213330533.6744bc7f327b9.jpg",
+          "alt": "„WITTCHEN 2024 - akcje promocyjne” — image 4 of 4",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 43,
+      "behance_id": 212192551,
+      "title": "Paulina Smaszcz - „Mówię Wam” TVN7",
+      "slug": "paulina-smaszcz-mowie-wam-tvn7",
+      "source_url": "https://www.behance.net/gallery/212192551/Paulina-Smaszcz-Mowie-Wam-TVN7",
+      "published_on": "2024-11-10",
+      "dominant_color": "rgb(88, 96, 93)",
+      "tags": [
+        "stylistka",
+        "Stylizacje",
+        "тв",
+        "moda"
+      ],
+      "cover": {
+        "src": "assets/covers/43-212192551.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/ab5a0b212192551.67310a525eea4.jpg",
+        "alt": "Cover image of the project „Paulina Smaszcz - „Mówię Wam” TVN7”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/43-212192551/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/afcada212192551.67310a53114cb.jpg",
+          "alt": "„Paulina Smaszcz - „Mówię Wam” TVN7” — image 1 of 4",
+          "width": 1200,
+          "height": 1484
+        },
+        {
+          "src": "assets/projects/43-212192551/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b853c5212192551.67310a5310ce1.jpg",
+          "alt": "„Paulina Smaszcz - „Mówię Wam” TVN7” — image 2 of 4",
+          "width": 1200,
+          "height": 1489
+        },
+        {
+          "src": "assets/projects/43-212192551/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d9628c212192551.67310a5311cbb.jpg",
+          "alt": "„Paulina Smaszcz - „Mówię Wam” TVN7” — image 3 of 4",
+          "width": 1200,
+          "height": 1492
+        },
+        {
+          "src": "assets/projects/43-212192551/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/635665212192551.67310a53123c7.jpg",
+          "alt": "„Paulina Smaszcz - „Mówię Wam” TVN7” — image 4 of 4",
+          "width": 1200,
+          "height": 1489
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 44,
+      "behance_id": 212192317,
+      "title": "EVER GRUPA - Commercial - Agencja Jamel",
+      "slug": "ever-grupa-commercial-agencja-jamel",
+      "source_url": "https://www.behance.net/gallery/212192317/EVER-GRUPA-Commercial-Agencja-Jamel",
+      "published_on": "2024-11-10",
+      "dominant_color": "rgb(20, 20, 20)",
+      "tags": [
+        "реклама",
+        "Stylizacje",
+        "stylistka",
+        "commercial"
+      ],
+      "cover": {
+        "src": "assets/covers/44-212192317.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/dc4db1212192317.67310956788fc.jpg",
+        "alt": "Cover image of the project „EVER GRUPA - Commercial - Agencja Jamel”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/44-212192317/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0bc5ae212192317.6731095725ed5.jpg",
+          "alt": "„EVER GRUPA - Commercial - Agencja Jamel” — image 1 of 6",
+          "width": 1200,
+          "height": 1498
+        },
+        {
+          "src": "assets/projects/44-212192317/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/579739212192317.67310957264ae.jpg",
+          "alt": "„EVER GRUPA - Commercial - Agencja Jamel” — image 2 of 6",
+          "width": 1200,
+          "height": 1495
+        },
+        {
+          "src": "assets/projects/44-212192317/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3065ab212192317.673109572714b.jpg",
+          "alt": "„EVER GRUPA - Commercial - Agencja Jamel” — image 3 of 6",
+          "width": 1200,
+          "height": 782
+        },
+        {
+          "src": "assets/projects/44-212192317/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/02df07212192317.6731095727cd5.jpg",
+          "alt": "„EVER GRUPA - Commercial - Agencja Jamel” — image 4 of 6",
+          "width": 1200,
+          "height": 791
+        },
+        {
+          "src": "assets/projects/44-212192317/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/06c440212192317.673109572776e.jpg",
+          "alt": "„EVER GRUPA - Commercial - Agencja Jamel” — image 5 of 6",
+          "width": 1200,
+          "height": 793
+        },
+        {
+          "src": "assets/projects/44-212192317/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/38f5f2212192317.6731095726b1a.jpg",
+          "alt": "„EVER GRUPA - Commercial - Agencja Jamel” — image 6 of 6",
+          "width": 1200,
+          "height": 790
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 45,
+      "behance_id": 212127679,
+      "title": "Magda Bereda x VIX.N - Mieszanka - Music Video",
+      "slug": "magda-bereda-x-vix-n-mieszanka-music-video",
+      "source_url": "https://www.behance.net/gallery/212127679/Magda-Bereda-x-VIXN-Mieszanka-Music-Video",
+      "published_on": "2024-11-09",
+      "dominant_color": "rgb(20, 20, 20)",
+      "tags": [
+        "teledysk",
+        "Stylizacje",
+        "stylistka",
+        "music video",
+        "fashion stylis"
+      ],
+      "cover": {
+        "src": "assets/covers/45-212127679.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/4e8670212127679.672f84afb32d1.jpg",
+        "alt": "Cover image of the project „Magda Bereda x VIX.N - Mieszanka - Music Video”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/45-212127679/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/13369e212127679.672f84b08b36f.jpg",
+          "alt": "„Magda Bereda x VIX.N - Mieszanka - Music Video” — image 1 of 4",
+          "width": 1200,
+          "height": 1188
+        },
+        {
+          "src": "assets/projects/45-212127679/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3822e7212127679.672f84b08ac18.jpg",
+          "alt": "„Magda Bereda x VIX.N - Mieszanka - Music Video” — image 2 of 4",
+          "width": 1200,
+          "height": 790
+        },
+        {
+          "src": "assets/projects/45-212127679/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c29092212127679.672f84b08c03d.jpg",
+          "alt": "„Magda Bereda x VIX.N - Mieszanka - Music Video” — image 3 of 4",
+          "width": 1200,
+          "height": 786
+        },
+        {
+          "src": "assets/projects/45-212127679/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/229afa212127679.672f84b08b92d.jpg",
+          "alt": "„Magda Bereda x VIX.N - Mieszanka - Music Video” — image 4 of 4",
+          "width": 1200,
+          "height": 790
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 46,
+      "behance_id": 207757323,
+      "title": "WITTCHEN Kampania AW 24/25",
+      "slug": "wittchen-kampania-aw-24-25",
+      "source_url": "https://www.behance.net/gallery/207757323/WITTCHEN-Kampania-AW-2425",
+      "published_on": "2024-09-12",
+      "dominant_color": "rgb(87, 102, 25)",
+      "tags": [
+        "sesja zdjęciowa",
+        "moda",
+        "kampania",
+        "marka odzieżowa"
+      ],
+      "cover": {
+        "src": "assets/covers/46-207757323.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/0fdb46207757323.66e2d61302833.jpg",
+        "alt": "Cover image of the project „WITTCHEN Kampania AW 24/25”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/46-207757323/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d8855d207757323.66e2d613ef699.jpg",
+          "alt": "„WITTCHEN Kampania AW 24/25” — image 1 of 7",
+          "width": 1200,
+          "height": 2157
+        },
+        {
+          "src": "assets/projects/46-207757323/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/760b00207757323.66e2d613f11a3.jpg",
+          "alt": "„WITTCHEN Kampania AW 24/25” — image 2 of 7",
+          "width": 1200,
+          "height": 2103
+        },
+        {
+          "src": "assets/projects/46-207757323/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a92eee207757323.66e2d613ee195.jpg",
+          "alt": "„WITTCHEN Kampania AW 24/25” — image 3 of 7",
+          "width": 1131,
+          "height": 1413
+        },
+        {
+          "src": "assets/projects/46-207757323/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/853552207757323.66e2d613f0a92.jpg",
+          "alt": "„WITTCHEN Kampania AW 24/25” — image 4 of 7",
+          "width": 1200,
+          "height": 2102
+        },
+        {
+          "src": "assets/projects/46-207757323/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2d4a00207757323.66e2d613eef26.jpg",
+          "alt": "„WITTCHEN Kampania AW 24/25” — image 5 of 7",
+          "width": 1135,
+          "height": 1408
+        },
+        {
+          "src": "assets/projects/46-207757323/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1aee84207757323.66e2d613f0263.jpg",
+          "alt": "„WITTCHEN Kampania AW 24/25” — image 6 of 7",
+          "width": 1162,
+          "height": 1172
+        },
+        {
+          "src": "assets/projects/46-207757323/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4862df207757323.66e2d613ee794.jpg",
+          "alt": "„WITTCHEN Kampania AW 24/25” — image 7 of 7",
+          "width": 1172,
+          "height": 1169
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 47,
+      "behance_id": 206662583,
+      "title": "SuperStyler - Marta Lech-Maciejewska",
+      "slug": "superstyler-marta-lech-maciejewska",
+      "source_url": "https://www.behance.net/gallery/206662583/SuperStyler-Marta-Lech-Maciejewska",
+      "published_on": "2024-08-29",
+      "dominant_color": "rgb(38, 35, 21)",
+      "tags": [
+        "moda",
+        "Fashion ",
+        "sesja zdjęciowa",
+        "Stylizacje"
+      ],
+      "cover": {
+        "src": "assets/covers/47-206662583.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/d8c09a206662583.66d02de354ef0.jpg",
+        "alt": "Cover image of the project „SuperStyler - Marta Lech-Maciejewska”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/47-206662583/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/651f27206662583.66d02de545b2c.jpg",
+          "alt": "„SuperStyler - Marta Lech-Maciejewska” — image 1 of 16",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/47-206662583/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e868df206662583.66d02de54917b.jpg",
+          "alt": "„SuperStyler - Marta Lech-Maciejewska” — image 2 of 16",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/47-206662583/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/316885206662583.66d02de54464a.jpg",
+          "alt": "„SuperStyler - Marta Lech-Maciejewska” — image 3 of 16",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/47-206662583/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2bc13c206662583.66d02de547505.jpg",
+          "alt": "„SuperStyler - Marta Lech-Maciejewska” — image 4 of 16",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/47-206662583/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/161ec5206662583.66d02de549efe.jpg",
+          "alt": "„SuperStyler - Marta Lech-Maciejewska” — image 5 of 16",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/47-206662583/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/13da75206662583.66d02de543e5e.jpg",
+          "alt": "„SuperStyler - Marta Lech-Maciejewska” — image 6 of 16",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/47-206662583/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1c141f206662583.66d02de548954.jpg",
+          "alt": "„SuperStyler - Marta Lech-Maciejewska” — image 7 of 16",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/47-206662583/08.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ff3fc1206662583.66d02de547044.jpg",
+          "alt": "„SuperStyler - Marta Lech-Maciejewska” — image 8 of 16",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/47-206662583/09.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/477ff1206662583.66d02de547f31.jpg",
+          "alt": "„SuperStyler - Marta Lech-Maciejewska” — image 9 of 16",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/47-206662583/10.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d4e0ab206662583.66d02de544f1b.jpg",
+          "alt": "„SuperStyler - Marta Lech-Maciejewska” — image 10 of 16",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/47-206662583/11.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e228c9206662583.66d02de5479ae.jpg",
+          "alt": "„SuperStyler - Marta Lech-Maciejewska” — image 11 of 16",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/47-206662583/12.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/841af3206662583.66d02de545575.jpg",
+          "alt": "„SuperStyler - Marta Lech-Maciejewska” — image 12 of 16",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/47-206662583/13.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4329e1206662583.66d02de54688c.jpg",
+          "alt": "„SuperStyler - Marta Lech-Maciejewska” — image 13 of 16",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/47-206662583/14.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3cc398206662583.66d02de549a2a.jpg",
+          "alt": "„SuperStyler - Marta Lech-Maciejewska” — image 14 of 16",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/47-206662583/15.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/edd9e1206662583.66d02de548446.jpg",
+          "alt": "„SuperStyler - Marta Lech-Maciejewska” — image 15 of 16",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/47-206662583/16.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/99bbf9206662583.66d02de546321.jpg",
+          "alt": "„SuperStyler - Marta Lech-Maciejewska” — image 16 of 16",
+          "width": 1200,
+          "height": 1600
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 48,
+      "behance_id": 203764269,
+      "title": "Pola",
+      "slug": "pola",
+      "source_url": "https://www.behance.net/gallery/203764269/Pola",
+      "published_on": "2024-07-21",
+      "dominant_color": "rgb(20, 26, 20)",
+      "tags": [
+        "sesja zdjęciowa",
+        "moda",
+        "warszawa",
+        "Stylizacje",
+        "Fashion ",
+        "sesja modowa"
+      ],
+      "cover": {
+        "src": "assets/covers/48-203764269.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/13635e203764269.669d4cef9bb8f.jpg",
+        "alt": "Cover image of the project „Pola”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/48-203764269/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/fb288a203764269.669d4cf0baca6.jpg",
+          "alt": "„Pola” — image 1 of 10",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/48-203764269/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3e4ac4203764269.669d4cf0bbce2.jpg",
+          "alt": "„Pola” — image 2 of 10",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/48-203764269/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2fc76f203764269.669d4cf0b9b07.jpg",
+          "alt": "„Pola” — image 3 of 10",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/48-203764269/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/981a57203764269.669d4cf0bc663.jpg",
+          "alt": "„Pola” — image 4 of 10",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/48-203764269/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/54b254203764269.669d4cf0ba4ea.jpg",
+          "alt": "„Pola” — image 5 of 10",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/48-203764269/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c39fd7203764269.669d4cf0bb427.jpg",
+          "alt": "„Pola” — image 6 of 10",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/48-203764269/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0c3d90203764269.669d4cf0bcfd9.jpg",
+          "alt": "„Pola” — image 7 of 10",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/48-203764269/08.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/df9628203764269.669d4cf0bd900.jpg",
+          "alt": "„Pola” — image 8 of 10",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/48-203764269/09.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/552cf0203764269.669d4cf0b91da.jpg",
+          "alt": "„Pola” — image 9 of 10",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/48-203764269/10.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/76ae5e203764269.669d4cf0b87ae.jpg",
+          "alt": "„Pola” — image 10 of 10",
+          "width": 1200,
+          "height": 1600
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 49,
+      "behance_id": 203492829,
+      "title": "Magdalena Wieczorek",
+      "slug": "magdalena-wieczorek",
+      "source_url": "https://www.behance.net/gallery/203492829/Magdalena-Wieczorek",
+      "published_on": "2024-07-17",
+      "dominant_color": "rgb(226, 218, 210)",
+      "tags": [
+        "moda",
+        "stylizacja",
+        "sesja modowa",
+        "sesja zdjęciowa",
+        "stylistka"
+      ],
+      "cover": {
+        "src": "assets/covers/49-203492829.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/6474c2203492829.66980d4f57dfd.jpg",
+        "alt": "Cover image of the project „Magdalena Wieczorek”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/49-203492829/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9a17a6203492829.66980d501f77c.jpg",
+          "alt": "„Magdalena Wieczorek” — image 1 of 5",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/49-203492829/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d1e454203492829.66980d502017e.jpg",
+          "alt": "„Magdalena Wieczorek” — image 2 of 5",
+          "width": 1067,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/49-203492829/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9ab229203492829.66980d501fcfb.jpg",
+          "alt": "„Magdalena Wieczorek” — image 3 of 5",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/49-203492829/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/76e3d4203492829.66980d5020719.jpg",
+          "alt": "„Magdalena Wieczorek” — image 4 of 5",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/49-203492829/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5a81a8203492829.66980d501eeca.jpg",
+          "alt": "„Magdalena Wieczorek” — image 5 of 5",
+          "width": 1200,
+          "height": 1800
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 50,
+      "behance_id": 203492377,
+      "title": "WITTCHEN",
+      "slug": "wittchen",
+      "source_url": "https://www.behance.net/gallery/203492377/WITTCHEN",
+      "published_on": "2024-07-17",
+      "dominant_color": "rgb(20, 224, 202)",
+      "tags": [
+        "moda",
+        "marka odzieżowa",
+        "stylizacja",
+        "Stylizacje",
+        "ubrania"
+      ],
+      "cover": {
+        "src": "assets/covers/50-203492377.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/ad8508203492377.66980c9084226.jpg",
+        "alt": "Cover image of the project „WITTCHEN”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/50-203492377/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7a8b97203492377.66980be15bef6.jpg",
+          "alt": "„WITTCHEN” — image 1 of 6",
+          "width": 1170,
+          "height": 1158
+        },
+        {
+          "src": "assets/projects/50-203492377/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/953e46203492377.66980be15b183.jpg",
+          "alt": "„WITTCHEN” — image 2 of 6",
+          "width": 1200,
+          "height": 1721
+        },
+        {
+          "src": "assets/projects/50-203492377/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/source/b20278203492377.66980be159768.jpg",
+          "alt": "„WITTCHEN” — image 3 of 6",
+          "width": 493,
+          "height": 707
+        },
+        {
+          "src": "assets/projects/50-203492377/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/source/002971203492377.66980be15a119.jpg",
+          "alt": "„WITTCHEN” — image 4 of 6",
+          "width": 493,
+          "height": 707
+        },
+        {
+          "src": "assets/projects/50-203492377/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/source/a71e9f203492377.66980be15a7e6.jpg",
+          "alt": "„WITTCHEN” — image 5 of 6",
+          "width": 493,
+          "height": 707
+        },
+        {
+          "src": "assets/projects/50-203492377/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e5fb42203492377.66980c91aced6.jpg",
+          "alt": "„WITTCHEN” — image 6 of 6",
+          "width": 1200,
+          "height": 1722
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 51,
+      "behance_id": 199861713,
+      "title": "VOGUE POLSKA Czerwiec 2024 - Monika Trzaskowska",
+      "slug": "vogue-polska-czerwiec-2024-monika-trzaskowska",
+      "source_url": "https://www.behance.net/gallery/199861713/VOGUE-POLSKA-Czerwiec-2024-Monika-Trzaskowska",
+      "published_on": "2024-05-30",
+      "dominant_color": "rgb(196, 197, 185)",
+      "tags": [
+        "moda",
+        "vogue",
+        "magazyn",
+        "stylistka",
+        "stylizacja"
+      ],
+      "cover": {
+        "src": "assets/covers/51-199861713.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/468f64199861713.665886e14753e.jpg",
+        "alt": "Cover image of the project „VOGUE POLSKA Czerwiec 2024 - Monika Trzaskowska”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/51-199861713/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/35ddf9199861713.665886e1d9528.jpg",
+          "alt": "„VOGUE POLSKA Czerwiec 2024 - Monika Trzaskowska” — image 1 of 1",
+          "width": 950,
+          "height": 1577
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 52,
+      "behance_id": 194033885,
+      "title": "Women’s Health",
+      "slug": "womens-health",
+      "source_url": "https://www.behance.net/gallery/194033885/Womens-Health",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(235, 235, 235)",
+      "tags": [
+        "magazine",
+        "magazyn",
+        "Stylizacje",
+        "stylizacja",
+        "moda",
+        "stylistka",
+        "Fashion Stylist",
+        "sesja zdjęciowa"
+      ],
+      "cover": {
+        "src": "assets/covers/52-194033885.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/9ab323194033885.65f56d3502f82.jpg",
+        "alt": "Cover image of the project „Women’s Health”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/52-194033885/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c9e51b194033885.65f56d3582c9e.jpg",
+          "alt": "„Women’s Health” — image 1 of 5",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/52-194033885/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8d2584194033885.65f56d3580698.jpg",
+          "alt": "„Women’s Health” — image 2 of 5",
+          "width": 1200,
+          "height": 1284
+        },
+        {
+          "src": "assets/projects/52-194033885/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/693b24194033885.65f56d35818bf.jpg",
+          "alt": "„Women’s Health” — image 3 of 5",
+          "width": 1200,
+          "height": 1492
+        },
+        {
+          "src": "assets/projects/52-194033885/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8b8655194033885.65f56d357f3c9.jpg",
+          "alt": "„Women’s Health” — image 4 of 5",
+          "width": 1200,
+          "height": 1495
+        },
+        {
+          "src": "assets/projects/52-194033885/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0953eb194033885.65f56d357e0b6.jpg",
+          "alt": "„Women’s Health” — image 5 of 5",
+          "width": 1200,
+          "height": 1495
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 53,
+      "behance_id": 194033325,
+      "title": "Remigiusz Mróz",
+      "slug": "remigiusz-mroz-194033325",
+      "source_url": "https://www.behance.net/gallery/194033325/Remigiusz-Mroz",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(20, 27, 45)",
+      "tags": [
+        "stylizacja",
+        "Stylizacje",
+        "stylistka",
+        "Fashion Stylist",
+        "moda",
+        "sesja zdjęciowa"
+      ],
+      "cover": {
+        "src": "assets/covers/53-194033325.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/49d41f194033325.65f56aa57fa59.jpg",
+        "alt": "Cover image of the project „Remigiusz Mróz”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/53-194033325/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a96b04194033325.65f56aa5edec1.jpg",
+          "alt": "„Remigiusz Mróz” — image 1 of 2",
+          "width": 1200,
+          "height": 1191
+        },
+        {
+          "src": "assets/projects/53-194033325/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5b9594194033325.65f56aa5ee977.jpg",
+          "alt": "„Remigiusz Mróz” — image 2 of 2",
+          "width": 1200,
+          "height": 720
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 54,
+      "behance_id": 194033101,
+      "title": "NINJA WARRIOR",
+      "slug": "ninja-warrior",
+      "source_url": "https://www.behance.net/gallery/194033101/NINJA-WARRIOR",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(36, 58, 82)",
+      "tags": [
+        "tv show",
+        "Stylizacje",
+        "stylizacja",
+        "moda",
+        "stylistka",
+        "Fashion Stylist",
+        "Program telewizyjny"
+      ],
+      "cover": {
+        "src": "assets/covers/54-194033101.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/258e7d194033101.65f569bc2cfa0.jpg",
+        "alt": "Cover image of the project „NINJA WARRIOR”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/54-194033101/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5dd28c194033101.65f569bc981a6.jpg",
+          "alt": "„NINJA WARRIOR” — image 1 of 1",
+          "width": 1200,
+          "height": 1494
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 55,
+      "behance_id": 194032361,
+      "title": "KRÓLOWA PRZETRWANIA - Izu",
+      "slug": "krolowa-przetrwania-izu",
+      "source_url": "https://www.behance.net/gallery/194032361/KROLOWA-PRZETRWANIA-Izu",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(72, 65, 51)",
+      "tags": [
+        "tv show",
+        "Stylizacje",
+        "stylizacja",
+        "moda",
+        "program tv"
+      ],
+      "cover": {
+        "src": "assets/covers/55-194032361.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/459c87194032361.65f566b6bceb9.jpg",
+        "alt": "Cover image of the project „KRÓLOWA PRZETRWANIA - Izu”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/55-194032361/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/45367b194032361.65f566923cc29.jpg",
+          "alt": "„KRÓLOWA PRZETRWANIA - Izu” — image 1 of 2",
+          "width": 1200,
+          "height": 1478
+        },
+        {
+          "src": "assets/projects/55-194032361/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/de3ab0194032361.65f566923da26.jpg",
+          "alt": "„KRÓLOWA PRZETRWANIA - Izu” — image 2 of 2",
+          "width": 1200,
+          "height": 672
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 56,
+      "behance_id": 194032059,
+      "title": "Waima - ft. OKI, Szpaku",
+      "slug": "waima-ft-oki-szpaku",
+      "source_url": "https://www.behance.net/gallery/194032059/Waima-ft-OKI-Szpaku",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(20, 20, 20)",
+      "tags": [
+        "video clip",
+        "Stylizacje",
+        "Style",
+        "stylistka",
+        "moda",
+        "Fashion ",
+        "Fashion Stylist"
+      ],
+      "cover": {
+        "src": "assets/covers/56-194032059.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/1add9d194032059.65f56538f3ba8.jpg",
+        "alt": "Cover image of the project „Waima - ft. OKI, Szpaku”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/56-194032059/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/63ac33194032059.65f565397d222.jpg",
+          "alt": "„Waima - ft. OKI, Szpaku” — image 1 of 5",
+          "width": 1200,
+          "height": 787
+        },
+        {
+          "src": "assets/projects/56-194032059/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/243fbb194032059.65f565397b9ae.jpg",
+          "alt": "„Waima - ft. OKI, Szpaku” — image 2 of 5",
+          "width": 1200,
+          "height": 978
+        },
+        {
+          "src": "assets/projects/56-194032059/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/af27ff194032059.65f565397afdc.jpg",
+          "alt": "„Waima - ft. OKI, Szpaku” — image 3 of 5",
+          "width": 1200,
+          "height": 788
+        },
+        {
+          "src": "assets/projects/56-194032059/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/34d71a194032059.65f565397c5ec.jpg",
+          "alt": "„Waima - ft. OKI, Szpaku” — image 4 of 5",
+          "width": 1200,
+          "height": 796
+        },
+        {
+          "src": "assets/projects/56-194032059/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b8cad4194032059.65f565397a332.jpg",
+          "alt": "„Waima - ft. OKI, Szpaku” — image 5 of 5",
+          "width": 1200,
+          "height": 793
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 57,
+      "behance_id": 194031857,
+      "title": "LOVE ISLAND",
+      "slug": "love-island",
+      "source_url": "https://www.behance.net/gallery/194031857/LOVE-ISLAND",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(32, 25, 20)",
+      "tags": [
+        "tv show",
+        "commercial",
+        "Style",
+        "Stylizacje",
+        "moda",
+        "stylistka",
+        "Fashion Stylist"
+      ],
+      "cover": {
+        "src": "assets/covers/57-194031857.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/592884194031857.65f58ed8d4be2.jpg",
+        "alt": "Cover image of the project „LOVE ISLAND”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/57-194031857/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3b74f3194031857.65f5644ed6053.jpg",
+          "alt": "„LOVE ISLAND” — image 1 of 14",
+          "width": 1200,
+          "height": 1473
+        },
+        {
+          "src": "assets/projects/57-194031857/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d09182194031857.65f5644ece913.jpg",
+          "alt": "„LOVE ISLAND” — image 2 of 14",
+          "width": 1200,
+          "height": 1489
+        },
+        {
+          "src": "assets/projects/57-194031857/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/de43f0194031857.65f5644ecf44d.jpg",
+          "alt": "„LOVE ISLAND” — image 3 of 14",
+          "width": 1200,
+          "height": 1492
+        },
+        {
+          "src": "assets/projects/57-194031857/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c8be3c194031857.65f5644eda13b.jpg",
+          "alt": "„LOVE ISLAND” — image 4 of 14",
+          "width": 1200,
+          "height": 1489
+        },
+        {
+          "src": "assets/projects/57-194031857/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4ea067194031857.65f5644ed2abd.jpg",
+          "alt": "„LOVE ISLAND” — image 5 of 14",
+          "width": 1200,
+          "height": 1494
+        },
+        {
+          "src": "assets/projects/57-194031857/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/bb223f194031857.65f5644ed9474.jpg",
+          "alt": "„LOVE ISLAND” — image 6 of 14",
+          "width": 1200,
+          "height": 1490
+        },
+        {
+          "src": "assets/projects/57-194031857/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7a565c194031857.65f5644ed3625.jpg",
+          "alt": "„LOVE ISLAND” — image 7 of 14",
+          "width": 1200,
+          "height": 1488
+        },
+        {
+          "src": "assets/projects/57-194031857/08.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9534d0194031857.65f5644ed1cec.jpg",
+          "alt": "„LOVE ISLAND” — image 8 of 14",
+          "width": 1200,
+          "height": 1491
+        },
+        {
+          "src": "assets/projects/57-194031857/09.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/16132b194031857.65f5644ed75bc.jpg",
+          "alt": "„LOVE ISLAND” — image 9 of 14",
+          "width": 1200,
+          "height": 1489
+        },
+        {
+          "src": "assets/projects/57-194031857/10.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9e9cd5194031857.65f5644ed87e2.jpg",
+          "alt": "„LOVE ISLAND” — image 10 of 14",
+          "width": 1200,
+          "height": 1489
+        },
+        {
+          "src": "assets/projects/57-194031857/11.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/23a615194031857.65f5644ed02a1.jpg",
+          "alt": "„LOVE ISLAND” — image 11 of 14",
+          "width": 1200,
+          "height": 1492
+        },
+        {
+          "src": "assets/projects/57-194031857/12.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/37bf2f194031857.65f5644ecdabd.jpg",
+          "alt": "„LOVE ISLAND” — image 12 of 14",
+          "width": 1200,
+          "height": 1198
+        },
+        {
+          "src": "assets/projects/57-194031857/13.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e858d1194031857.65f5644ed49c2.jpg",
+          "alt": "„LOVE ISLAND” — image 13 of 14",
+          "width": 1200,
+          "height": 1193
+        },
+        {
+          "src": "assets/projects/57-194031857/14.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/97912b194031857.65f5644ed0fb2.jpg",
+          "alt": "„LOVE ISLAND” — image 14 of 14",
+          "width": 1200,
+          "height": 1186
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 58,
+      "behance_id": 194031739,
+      "title": "Paulla",
+      "slug": "paulla",
+      "source_url": "https://www.behance.net/gallery/194031739/Paulla",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(66, 37, 89)",
+      "tags": [
+        "Style",
+        "stylist",
+        "Fashion Stylist",
+        "moda",
+        "stylistka"
+      ],
+      "cover": {
+        "src": "assets/covers/58-194031739.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/1460cd194031739.65f56381af34c.jpg",
+        "alt": "Cover image of the project „Paulla”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/58-194031739/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ab868f194031739.65f5638230630.jpeg",
+          "alt": "„Paulla” — image 1 of 3",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/58-194031739/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4affe2194031739.65f56382312ec.jpeg",
+          "alt": "„Paulla” — image 2 of 3",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/58-194031739/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8af4c2194031739.65f563822f874.jpeg",
+          "alt": "„Paulla” — image 3 of 3",
+          "width": 1200,
+          "height": 1600
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 59,
+      "behance_id": 194030967,
+      "title": "DENIM",
+      "slug": "denim",
+      "source_url": "https://www.behance.net/gallery/194030967/DENIM",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(175, 183, 196)",
+      "tags": [
+        "stylist",
+        "Fashion Stylist",
+        "models",
+        "stylistka",
+        "Stylizacje",
+        "moda",
+        "sesja zdjęciowa",
+        "Denim"
+      ],
+      "cover": {
+        "src": "assets/covers/59-194030967.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/3e3f20194030967.65f571565d6b9.jpg",
+        "alt": "Cover image of the project „DENIM”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/59-194030967/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/61363a194030967.65f55f5c3daa2.jpg",
+          "alt": "„DENIM” — image 1 of 12",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/59-194030967/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d9ecd5194030967.65f55f5c39889.jpg",
+          "alt": "„DENIM” — image 2 of 12",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/59-194030967/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/69798b194030967.65f55f5c3e969.jpg",
+          "alt": "„DENIM” — image 3 of 12",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/59-194030967/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e474d0194030967.65f55f5c418ec.jpg",
+          "alt": "„DENIM” — image 4 of 12",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/59-194030967/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/425f99194030967.65f55f5c3f9d9.jpg",
+          "alt": "„DENIM” — image 5 of 12",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/59-194030967/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a8fb85194030967.65f55f5c427d9.jpg",
+          "alt": "„DENIM” — image 6 of 12",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "src": "assets/projects/59-194030967/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5dc38e194030967.65f55f5c3ca02.jpg",
+          "alt": "„DENIM” — image 7 of 12",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/59-194030967/08.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b905d4194030967.65f55f5c3b8d6.jpg",
+          "alt": "„DENIM” — image 8 of 12",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/59-194030967/09.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c5d2ea194030967.65f55f5c374fa.jpg",
+          "alt": "„DENIM” — image 9 of 12",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "src": "assets/projects/59-194030967/10.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c5d3fa194030967.65f55f5c408e2.jpg",
+          "alt": "„DENIM” — image 10 of 12",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/59-194030967/11.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0e5948194030967.65f571270d48b.jpg",
+          "alt": "„DENIM” — image 11 of 12",
+          "width": 1200,
+          "height": 1800
+        },
+        {
+          "src": "assets/projects/59-194030967/12.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8bdb72194030967.65f571270ecda.jpg",
+          "alt": "„DENIM” — image 12 of 12",
+          "width": 1200,
+          "height": 1800
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 60,
+      "behance_id": 194030423,
+      "title": "Małgorzata",
+      "slug": "magorzata",
+      "source_url": "https://www.behance.net/gallery/194030423/Malgorzata",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(37, 20, 20)",
+      "tags": [
+        "moda",
+        "Fashion Stylist",
+        "Stylizacje",
+        "stylistka",
+        "sesja zdjęciowa"
+      ],
+      "cover": {
+        "src": "assets/covers/60-194030423.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/3662db194030423.65f55cf4d9c9a.jpg",
+        "alt": "Cover image of the project „Małgorzata”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/60-194030423/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/96f69a194030423.65f55cf58c6bf.jpg",
+          "alt": "„Małgorzata” — image 1 of 15",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/60-194030423/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ad06c0194030423.65f55cf57af8e.jpg",
+          "alt": "„Małgorzata” — image 2 of 15",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/60-194030423/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/cdf9e5194030423.65f55cf58b7c3.jpg",
+          "alt": "„Małgorzata” — image 3 of 15",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/60-194030423/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/aae5d1194030423.65f55cf58a7f3.jpg",
+          "alt": "„Małgorzata” — image 4 of 15",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/60-194030423/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/37eae4194030423.65f55cf57f7ac.jpg",
+          "alt": "„Małgorzata” — image 5 of 15",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/60-194030423/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0447fc194030423.65f55cf57e8b4.jpg",
+          "alt": "„Małgorzata” — image 6 of 15",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/60-194030423/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e041ea194030423.65f55cf588f27.jpg",
+          "alt": "„Małgorzata” — image 7 of 15",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/60-194030423/08.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5ad707194030423.65f55cf57a116.jpg",
+          "alt": "„Małgorzata” — image 8 of 15",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/60-194030423/09.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8b469b194030423.65f55cf577bde.jpg",
+          "alt": "„Małgorzata” — image 9 of 15",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/60-194030423/10.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/22ae43194030423.65f55cf587e6a.jpg",
+          "alt": "„Małgorzata” — image 10 of 15",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/60-194030423/11.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c97f78194030423.65f55cf57dc42.jpg",
+          "alt": "„Małgorzata” — image 11 of 15",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/60-194030423/12.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/636922194030423.65f55cf57926c.jpg",
+          "alt": "„Małgorzata” — image 12 of 15",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/60-194030423/13.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/57ce85194030423.65f55cf57c06e.jpg",
+          "alt": "„Małgorzata” — image 13 of 15",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/60-194030423/14.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b32b6c194030423.65f55cf57cd2a.jpg",
+          "alt": "„Małgorzata” — image 14 of 15",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/60-194030423/15.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/082347194030423.65f55cf576c5a.jpg",
+          "alt": "„Małgorzata” — image 15 of 15",
+          "width": 1200,
+          "height": 1600
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 61,
+      "behance_id": 194030207,
+      "title": "Edyta Herbuś",
+      "slug": "edyta-herbus",
+      "source_url": "https://www.behance.net/gallery/194030207/Edyta-Herbus",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(235, 235, 235)",
+      "tags": [
+        "moda",
+        "Fashion Stylist",
+        "stylistka",
+        "sesja zdjęciowa"
+      ],
+      "cover": {
+        "src": "assets/covers/61-194030207.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/c893df194030207.65f55bfab7c0f.jpg",
+        "alt": "Cover image of the project „Edyta Herbuś”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/61-194030207/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/debf87194030207.65f55bfb54adb.jpg",
+          "alt": "„Edyta Herbuś” — image 1 of 10",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/61-194030207/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0a6f43194030207.65f55bfb5026e.jpg",
+          "alt": "„Edyta Herbuś” — image 2 of 10",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/61-194030207/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b6bdf7194030207.65f55bfb56712.jpg",
+          "alt": "„Edyta Herbuś” — image 3 of 10",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/61-194030207/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/382f26194030207.65f55bfb52b26.jpg",
+          "alt": "„Edyta Herbuś” — image 4 of 10",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/61-194030207/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/eacc31194030207.65f55bfb51c0f.jpg",
+          "alt": "„Edyta Herbuś” — image 5 of 10",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/61-194030207/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5a2880194030207.65f55bfb573fe.jpg",
+          "alt": "„Edyta Herbuś” — image 6 of 10",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/61-194030207/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/81dfff194030207.65f55bfb55a5e.jpg",
+          "alt": "„Edyta Herbuś” — image 7 of 10",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/61-194030207/08.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/09f8f8194030207.65f55bfb53a31.jpg",
+          "alt": "„Edyta Herbuś” — image 8 of 10",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "assets/projects/61-194030207/09.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b4088b194030207.65f55bfb4f552.jpg",
+          "alt": "„Edyta Herbuś” — image 9 of 10",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "src": "assets/projects/61-194030207/10.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/22abbe194030207.65f55bfb50f28.jpg",
+          "alt": "„Edyta Herbuś” — image 10 of 10",
+          "width": 1200,
+          "height": 1600
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 62,
+      "behance_id": 194029939,
+      "title": "Elena / SAYHi",
+      "slug": "elena-sayhi",
+      "source_url": "https://www.behance.net/gallery/194029939/Elena-SAYHi",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(20, 20, 20)",
+      "tags": [
+        "Stylizacje",
+        "Fashion Stylist",
+        "stylistka",
+        "moda",
+        "sesja zdjęciowa",
+        "Singer",
+        "cover story"
+      ],
+      "cover": {
+        "src": "assets/covers/62-194029939.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/fba460194029939.65f55a93086cc.jpg",
+        "alt": "Cover image of the project „Elena / SAYHi”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/62-194029939/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/73d49b194029939.65f55a9397b7b.jpg",
+          "alt": "„Elena / SAYHi” — image 1 of 7",
+          "width": 1200,
+          "height": 1188
+        },
+        {
+          "src": "assets/projects/62-194029939/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a6c069194029939.65f55a9397247.jpg",
+          "alt": "„Elena / SAYHi” — image 2 of 7",
+          "width": 1200,
+          "height": 1487
+        },
+        {
+          "src": "assets/projects/62-194029939/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/370036194029939.65f55a93942bc.jpg",
+          "alt": "„Elena / SAYHi” — image 3 of 7",
+          "width": 1200,
+          "height": 1491
+        },
+        {
+          "src": "assets/projects/62-194029939/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a4b393194029939.65f55a9394f4c.jpg",
+          "alt": "„Elena / SAYHi” — image 4 of 7",
+          "width": 1200,
+          "height": 1488
+        },
+        {
+          "src": "assets/projects/62-194029939/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a22596194029939.65f55a93965af.jpg",
+          "alt": "„Elena / SAYHi” — image 5 of 7",
+          "width": 1200,
+          "height": 1484
+        },
+        {
+          "src": "assets/projects/62-194029939/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f95148194029939.65f55a9395bce.jpg",
+          "alt": "„Elena / SAYHi” — image 6 of 7",
+          "width": 1200,
+          "height": 1370
+        },
+        {
+          "src": "assets/projects/62-194029939/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/94b3d1194029939.65f55a93935f7.jpg",
+          "alt": "„Elena / SAYHi” — image 7 of 7",
+          "width": 1135,
+          "height": 1422
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 63,
+      "behance_id": 194029433,
+      "title": "Natalia Woś",
+      "slug": "natalia-wos",
+      "source_url": "https://www.behance.net/gallery/194029433/Natalia-Wos",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(235, 235, 235)",
+      "tags": [
+        "moda",
+        "Stylizacje",
+        "stylistka",
+        "Fashion Stylist",
+        "sesja zdjęciowa"
+      ],
+      "cover": {
+        "src": "assets/covers/63-194029433.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/7eb143194029433.65f5582640805.jpg",
+        "alt": "Cover image of the project „Natalia Woś”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/63-194029433/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/fd7fbf194029433.65f55826c9136.jpg",
+          "alt": "„Natalia Woś” — image 1 of 10",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/63-194029433/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d2351c194029433.65f55826cbd73.jpg",
+          "alt": "„Natalia Woś” — image 2 of 10",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/63-194029433/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/aca401194029433.65f55826c547d.jpg",
+          "alt": "„Natalia Woś” — image 3 of 10",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/63-194029433/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ce1d88194029433.65f55826c624e.jpg",
+          "alt": "„Natalia Woś” — image 4 of 10",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/63-194029433/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4ff0e5194029433.65f55826cb046.jpg",
+          "alt": "„Natalia Woś” — image 5 of 10",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/63-194029433/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7f5b89194029433.65f55826c7031.jpg",
+          "alt": "„Natalia Woś” — image 6 of 10",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/63-194029433/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/064a8d194029433.65f55826ca060.jpg",
+          "alt": "„Natalia Woś” — image 7 of 10",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/63-194029433/08.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/82973e194029433.65f55826c81bb.jpg",
+          "alt": "„Natalia Woś” — image 8 of 10",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/63-194029433/09.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4ed939194029433.65f55826c3672.jpg",
+          "alt": "„Natalia Woś” — image 9 of 10",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/63-194029433/10.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/090fbf194029433.65f55826c4427.jpg",
+          "alt": "„Natalia Woś” — image 10 of 10",
+          "width": 1200,
+          "height": 1500
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 64,
+      "behance_id": 194029233,
+      "title": "Maja",
+      "slug": "maja",
+      "source_url": "https://www.behance.net/gallery/194029233/Maja",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(170, 168, 149)",
+      "tags": [
+        "moda",
+        "stylizacja",
+        "stylistka mody",
+        "Fashion Stylist",
+        "sesja zdjęciowa"
+      ],
+      "cover": {
+        "src": "assets/covers/64-194029233.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/b7993a194029233.65f5572b0b0e2.jpg",
+        "alt": "Cover image of the project „Maja”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/64-194029233/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0f2231194029233.65f5572b878b0.jpg",
+          "alt": "„Maja” — image 1 of 9",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/64-194029233/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5878ee194029233.65f5572b8591e.jpg",
+          "alt": "„Maja” — image 2 of 9",
+          "width": 1200,
+          "height": 1501
+        },
+        {
+          "src": "assets/projects/64-194029233/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/db2aad194029233.65f5572b8897a.jpg",
+          "alt": "„Maja” — image 3 of 9",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/64-194029233/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/af162e194029233.65f5572b89a9d.jpg",
+          "alt": "„Maja” — image 4 of 9",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/64-194029233/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/65ede5194029233.65f5572b8474d.jpg",
+          "alt": "„Maja” — image 5 of 9",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/64-194029233/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/53ff14194029233.65f5572b83643.jpg",
+          "alt": "„Maja” — image 6 of 9",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/64-194029233/07.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2ce2f7194029233.65f5572b82698.jpg",
+          "alt": "„Maja” — image 7 of 9",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/64-194029233/08.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b8f7ee194029233.65f5572b815df.jpg",
+          "alt": "„Maja” — image 8 of 9",
+          "width": 1200,
+          "height": 1500
+        },
+        {
+          "src": "assets/projects/64-194029233/09.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d757b6194029233.65f5572b86969.jpg",
+          "alt": "„Maja” — image 9 of 9",
+          "width": 1200,
+          "height": 1500
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 65,
+      "behance_id": 194029049,
+      "title": "Kasia Szklarczyk",
+      "slug": "kasia-szklarczyk",
+      "source_url": "https://www.behance.net/gallery/194029049/Kasia-Szklarczyk",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(210, 205, 208)",
+      "tags": [
+        "moda",
+        "Fashion Stylist",
+        "stylistka",
+        "sesja zdjęciowa"
+      ],
+      "cover": {
+        "src": "assets/covers/65-194029049.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/227268194029049.65f556438cef2.jpg",
+        "alt": "Cover image of the project „Kasia Szklarczyk”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/65-194029049/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d88c86194029049.65f556442cab4.jpg",
+          "alt": "„Kasia Szklarczyk” — image 1 of 6",
+          "width": 1200,
+          "height": 1488
+        },
+        {
+          "src": "assets/projects/65-194029049/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/23203a194029049.65f556442bc94.jpg",
+          "alt": "„Kasia Szklarczyk” — image 2 of 6",
+          "width": 1200,
+          "height": 1486
+        },
+        {
+          "src": "assets/projects/65-194029049/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/364258194029049.65f5564429514.jpg",
+          "alt": "„Kasia Szklarczyk” — image 3 of 6",
+          "width": 1200,
+          "height": 1482
+        },
+        {
+          "src": "assets/projects/65-194029049/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/be430e194029049.65f556442aea6.jpg",
+          "alt": "„Kasia Szklarczyk” — image 4 of 6",
+          "width": 1200,
+          "height": 1486
+        },
+        {
+          "src": "assets/projects/65-194029049/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/ce201b194029049.65f556442a12d.jpg",
+          "alt": "„Kasia Szklarczyk” — image 5 of 6",
+          "width": 1200,
+          "height": 1471
+        },
+        {
+          "src": "assets/projects/65-194029049/06.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d7d5a1194029049.65f55644287f6.jpg",
+          "alt": "„Kasia Szklarczyk” — image 6 of 6",
+          "width": 1200,
+          "height": 1217
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 66,
+      "behance_id": 194028927,
+      "title": "Nikola",
+      "slug": "nikola",
+      "source_url": "https://www.behance.net/gallery/194028927/Nikola",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(52, 52, 52)",
+      "tags": [
+        "Fashion Stylist",
+        "stylistka",
+        "moda",
+        "sesja zdjęciowa"
+      ],
+      "cover": {
+        "src": "assets/covers/66-194028927.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/8673f0194028927.65f5559ed01dc.jpg",
+        "alt": "Cover image of the project „Nikola”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/66-194028927/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/345e88194028927.65f5559f36e4c.jpg",
+          "alt": "„Nikola” — image 1 of 2",
+          "width": 1200,
+          "height": 1489
+        },
+        {
+          "src": "assets/projects/66-194028927/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/47cb77194028927.65f5559f379d5.jpg",
+          "alt": "„Nikola” — image 2 of 2",
+          "width": 1200,
+          "height": 1487
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 67,
+      "behance_id": 194028861,
+      "title": "Sylwia Majdan - LOOKBOOK",
+      "slug": "sylwia-majdan-lookbook",
+      "source_url": "https://www.behance.net/gallery/194028861/Sylwia-Majdan-LOOKBOOK",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(208, 208, 208)",
+      "tags": [
+        "fashion brand",
+        "sesja zdjęciowa",
+        "photoshoot",
+        "stylistka mody",
+        "MAKRA",
+        "stylizacja"
+      ],
+      "cover": {
+        "src": "assets/covers/67-194028861.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/c8d7c9194028861.681e2d94e437a.jpg",
+        "alt": "Cover image of the project „Sylwia Majdan - LOOKBOOK”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/67-194028861/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/67b16a194028861.65f55550cea01.jpg",
+          "alt": "„Sylwia Majdan - LOOKBOOK” — image 1 of 2",
+          "width": 1200,
+          "height": 1488
+        },
+        {
+          "src": "assets/projects/67-194028861/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1988d3194028861.65f55550cf741.jpg",
+          "alt": "„Sylwia Majdan - LOOKBOOK” — image 2 of 2",
+          "width": 1200,
+          "height": 1497
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 68,
+      "behance_id": 194028753,
+      "title": "Runkee",
+      "slug": "runkee",
+      "source_url": "https://www.behance.net/gallery/194028753/Runkee",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(20, 20, 20)",
+      "tags": [
+        "sesja zdjęciowa",
+        "moda",
+        "Fashion Stylist",
+        "stylistka",
+        "Stylizacje"
+      ],
+      "cover": {
+        "src": "assets/covers/68-194028753.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/4320c6194028753.65f565bd9cc59.jpg",
+        "alt": "Cover image of the project „Runkee”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/68-194028753/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d4d8cf194028753.65f554caf0aed.jpg",
+          "alt": "„Runkee” — image 1 of 3",
+          "width": 1200,
+          "height": 1193
+        },
+        {
+          "src": "assets/projects/68-194028753/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a10a6f194028753.65f554caf19d9.jpg",
+          "alt": "„Runkee” — image 2 of 3",
+          "width": 1200,
+          "height": 940
+        },
+        {
+          "src": "assets/projects/68-194028753/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9e9840194028753.65f565be7b0ec.jpg",
+          "alt": "„Runkee” — image 3 of 3",
+          "width": 1200,
+          "height": 888
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 69,
+      "behance_id": 194028617,
+      "title": "Hello Peaches - kampania",
+      "slug": "hello-peaches-kampania",
+      "source_url": "https://www.behance.net/gallery/194028617/Hello-Peaches-kampania",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(229, 220, 235)",
+      "tags": [
+        "marka",
+        "moda",
+        "ubrania",
+        "Fashion Stylist",
+        "stylistka",
+        "sesja zdjęciowa",
+        "odzież"
+      ],
+      "cover": {
+        "src": "assets/covers/69-194028617.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/011206194028617.67fd3b2f73d7c.jpg",
+        "alt": "Cover image of the project „Hello Peaches - kampania”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/69-194028617/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/29267a194028617.65f554283ab8a.jpg",
+          "alt": "„Hello Peaches - kampania” — image 1 of 5",
+          "width": 1200,
+          "height": 788
+        },
+        {
+          "src": "assets/projects/69-194028617/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2dc583194028617.65f554283b6f9.jpg",
+          "alt": "„Hello Peaches - kampania” — image 2 of 5",
+          "width": 1200,
+          "height": 1186
+        },
+        {
+          "src": "assets/projects/69-194028617/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e9e4c9194028617.65f554283d2d3.jpg",
+          "alt": "„Hello Peaches - kampania” — image 3 of 5",
+          "width": 1200,
+          "height": 1494
+        },
+        {
+          "src": "assets/projects/69-194028617/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d07943194028617.65f554283e0c5.jpg",
+          "alt": "„Hello Peaches - kampania” — image 4 of 5",
+          "width": 1200,
+          "height": 1196
+        },
+        {
+          "src": "assets/projects/69-194028617/05.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/08375e194028617.65f554283c563.jpg",
+          "alt": "„Hello Peaches - kampania” — image 5 of 5",
+          "width": 1200,
+          "height": 1192
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 70,
+      "behance_id": 194028335,
+      "title": "Julia",
+      "slug": "julia",
+      "source_url": "https://www.behance.net/gallery/194028335/Julia",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(234, 235, 235)",
+      "tags": [
+        "photoshoot",
+        "sesja zdjęciowa",
+        "moda",
+        "Fashion Stylist",
+        "stylistka",
+        "Style"
+      ],
+      "cover": {
+        "src": "assets/covers/70-194028335.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/fd8fde194028335.65f5527bbce15.jpg",
+        "alt": "Cover image of the project „Julia”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/70-194028335/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/eea38a194028335.65f5527c5fe24.jpg",
+          "alt": "„Julia” — image 1 of 4",
+          "width": 1169,
+          "height": 1451
+        },
+        {
+          "src": "assets/projects/70-194028335/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0329d8194028335.65f5527c61591.jpg",
+          "alt": "„Julia” — image 2 of 4",
+          "width": 1169,
+          "height": 1451
+        },
+        {
+          "src": "assets/projects/70-194028335/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1eb938194028335.65f5527c5f0c9.jpg",
+          "alt": "„Julia” — image 3 of 4",
+          "width": 1169,
+          "height": 1455
+        },
+        {
+          "src": "assets/projects/70-194028335/04.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a3ce1a194028335.65f5527c60b1b.jpg",
+          "alt": "„Julia” — image 4 of 4",
+          "width": 1169,
+          "height": 1458
+        }
+      ],
+      "detail_status": "complete"
+    },
+    {
+      "order": 71,
+      "behance_id": 194028095,
+      "title": "Julia Tychoniewicz",
+      "slug": "julia-tychoniewicz",
+      "source_url": "https://www.behance.net/gallery/194028095/Julia-Tychoniewicz",
+      "published_on": "2024-03-16",
+      "dominant_color": "rgb(219, 195, 185)",
+      "tags": [
+        "Fashion Stylist",
+        "stylist",
+        "moda",
+        "photoshoot",
+        "warszawa"
+      ],
+      "cover": {
+        "src": "assets/covers/71-194028095.jpg",
+        "source_url": "https://mir-s3-cdn-cf.behance.net/projects/808/80f2f8194028095.65f55e1d331c6.jpg",
+        "alt": "Cover image of the project „Julia Tychoniewicz”",
+        "width": 808,
+        "height": 632
+      },
+      "description": null,
+      "media": [
+        {
+          "src": "assets/projects/71-194028095/01.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8b2d58194028095.65f551501ba35.jpg",
+          "alt": "„Julia Tychoniewicz” — image 1 of 3",
+          "width": 1200,
+          "height": 1488
+        },
+        {
+          "src": "assets/projects/71-194028095/02.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/3686ab194028095.65f5515019cee.jpg",
+          "alt": "„Julia Tychoniewicz” — image 2 of 3",
+          "width": 1200,
+          "height": 1484
+        },
+        {
+          "src": "assets/projects/71-194028095/03.jpg",
+          "source_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9b7354194028095.65f551501c739.jpg",
+          "alt": "„Julia Tychoniewicz” — image 3 of 3",
+          "width": 1200,
+          "height": 1189
+        }
+      ],
+      "detail_status": "complete"
     }
   ]
 }

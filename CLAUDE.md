@@ -25,13 +25,16 @@ A server is required: `index.html` fetches `content.json`, so `file://` won't wo
 | Path | What |
 |---|---|
 | `index.html` | Page shell, lightbox `<dialog>`, inline trailing-slash guard |
-| `css/styles.css` | All styling (paper/ink/rust palette, responsive grid) |
+| `css/styles.css` | All styling (Behance-like white layout, Satoshi font from Fontshare, responsive grid) |
 | `js/app.js` | Hash router (`#/`, `#/project/<slug>`, `#/about`), views, keyboard lightbox |
 | `content.json` | **The content manifest**: profile, projects in Behance order, every image with local `src`, `source_url`, `width`, `height`, `alt` |
-| `assets/` | Downloaded images (`covers/NN-<behanceId>.jpg`, `profile/avatar.jpg`) |
+| `assets/` | Downloaded images (`covers/NN-<behanceId>.jpg`, `projects/NN-<behanceId>/MM.jpg`, `profile/avatar.jpg`) |
 | `source/profile_snapshot.json` | Trimmed data from the public profile page |
+| `source/behance_projects.json` | All projects (titles, dates, tags, cover, ordered image URLs), read in a normal browser session |
 | `tools/fetch_profile.py` | Re-fetches the profile page into the snapshot (one plain GET) |
-| `tools/build_content.py` | Builds `content.json` from the snapshot and downloads covers |
+| `tools/import_behance.py` | Builds `content.json` projects from `source/behance_projects.json` and downloads all images |
+| `tools/build_content.py` | Old builder (first 12 projects, covers only). Superseded; don't run it |
+| `tools/deploy_ftp.sh` | Uploads `dist/portfolio-wiktoria/` over FTPS; asks for the password at runtime |
 | `tools/export.py` | Builds `dist/portfolio-wiktoria/` and checks it for root-absolute URLs and missing assets |
 | `dist/portfolio-wiktoria/` | Deployment-ready copy for base path `/portfolio-wiktoria/` |
 | `tests/site_test.py` | Playwright end-to-end checks and screenshots |
@@ -42,32 +45,16 @@ A server is required: `index.html` fetches `content.json`, so `file://` won't wo
 The site renders everything from `content.json`. Change content there, not in the
 HTML or JS. Project order in the array is the display order, and it matches Behance.
 
-## Adding project media
+## Project media
 
-All projects currently have `media: []`, because the Behance project pages were
-blocked (see SOURCE_GAPS.md). While `media` is empty, the detail page shows only
-the cover and a "could not be retrieved" notice.
+All 71 projects on the profile have their full image sequence in `media`
+(369 images, Behance order). Behance has no descriptions or image captions for
+them; if Wiktoria adds some, put them in `description` / `caption` verbatim.
 
-To add a project's real image sequence:
-
-1. Save the images as `assets/projects/<NN>-<behanceId>/<MM>.jpg`, numbered in the original order.
-2. Fill that project's `media` array in the same order. Each item uses the same shape as `cover`:
-   ```json
-   { "src": "assets/projects/02-255162521/01.jpg",
-     "source_url": "<where the file came from>",
-     "width": 1400, "height": 1750,
-     "alt": "<factual description>",
-     "caption": "<optional, only if it's in the source>" }
-   ```
-   - `src` must be relative (no leading `/`).
-   - `width` and `height` must be the file's real pixel size, because layout and aspect ratios depend on them.
-3. Set `description` to the project text, verbatim from the source. Update `detail_status` and `detail_note`.
-4. The detail view and lightbox pick up the new media automatically; the notice disappears once `media` is non-empty.
-
-**Warning:** `tools/build_content.py` regenerates `content.json` from the
-snapshot with empty `media` and `description`. Don't re-run it after adding media
-by hand, or the media will be erased. If you need to rebuild, change the tool to
-keep the existing values first.
+To refresh from Behance: update `source/behance_projects.json` (read the profile
+and project pages in a normal browser; each project page embeds its data in
+`script#beconfig-store_state`), then run `python3 -I tools/import_behance.py`.
+It keeps existing image files and rewrites the `projects` array of `content.json`.
 
 ## Keep dist in sync
 
