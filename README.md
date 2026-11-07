@@ -41,5 +41,17 @@ and `tools/import_behance.py` to rebuild `content.json`.
 
 ## Deploy
 
+Live on Netlify: https://wiktoria-wolniak-gral.netlify.app (project
+`wiktoria-wolniak-gral`, ID `d013c29e-ebe1-4800-8439-fbcd30d3a703`). Always pass the
+site ID and `--no-build`: this machine's Netlify CLI is otherwise linked to a
+different project.
+
+```sh
+python3 -I tools/export.py
+netlify deploy --prod --no-build --dir dist/portfolio-wiktoria --site d013c29e-ebe1-4800-8439-fbcd30d3a703
+```
+
+Alternative (seohost etc.):
+
 `tools/deploy_ftp.sh <ftp-host> <ftp-user> <remote-dir>` uploads the export over
 FTPS (e.g. to seohost.pl). It asks for the password and never stores it.
