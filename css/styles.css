@@ -84,13 +84,11 @@ main { flex: 1; outline: none; }
 /* On the home page the header sits on top of the hero, like the labels in the reference. */
 .is-home .site-header { position: absolute; top: 0; left: 0; right: 0; }
 
-/* ---------- Hero (pinned while its elements fly away on scroll) ---------- */
-.hero { position: relative; height: 165vh; }
+/* ---------- Hero: first screen; one scroll glides down to the gallery (js/app.js) ---------- */
+.hero { position: relative; height: 100vh; height: 100svh; }
 .hero__stage {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  height: 100svh;
+  position: absolute;
+  inset: 0;
   overflow: hidden;
   perspective: 1200px;
 }
@@ -99,6 +97,7 @@ main { flex: 1; outline: none; }
   position: absolute;
   inset: 0;
   pointer-events: none;
+  transition: opacity 0.9s ease;
   background:
     linear-gradient(var(--line), var(--line)) 25% 0 / 1px 100% no-repeat,
     linear-gradient(var(--line), var(--line)) 50% 0 / 1px 100% no-repeat,
@@ -156,9 +155,17 @@ main { flex: 1; outline: none; }
 .hero__label--bc { left: calc(25% + 0.6rem); bottom: 4%; }
 .hero__label--br { right: var(--gutter); bottom: 4%; }
 .hero__scroll { left: 0; right: 0; bottom: 4%; text-align: center; }
+.hero__scroll-btn {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+.hero__scroll-btn:hover { text-decoration: underline; text-underline-offset: 0.2em; }
 
 @media (max-width: 760px) {
-  .hero { height: 150vh; }
   .hero__title { white-space: normal; text-align: left; font-size: 19vw; }
   .hero__title-wrap { padding: 0 var(--gutter); }
   .hero__photo { width: 30vw; }
@@ -170,9 +177,17 @@ main { flex: 1; outline: none; }
   .hero__label--hash, .hero__label--bc, .hero__label--int { display: none; }
 }
 
-/* The gallery slides up over the end of the pinned hero. */
-.work { position: relative; z-index: 2; margin-top: -65vh; padding-top: 1rem; background: var(--bg); }
-@media (max-width: 760px) { .work { margin-top: -50vh; } }
+/* The gallery comes after the hero with one row of white space above it
+   (the glide stops at the top of that space). */
+.work {
+  position: relative;
+  z-index: 1;
+  --row: calc((100vw - 2.5rem) / 4 * 632 / 808 + 3.4rem);
+  padding-top: var(--row);
+  background: var(--bg);
+}
+@media (max-width: 1100px) { .work { --row: calc((100vw - 2rem) / 3 * 632 / 808 + 3.4rem); } }
+@media (max-width: 760px)  { .work { --row: calc((100vw - 1.5rem) / 2 * 632 / 808 + 3.4rem); } }
 
 /* ---------- Gallery: photos only, edge to edge ---------- */
 .grid {

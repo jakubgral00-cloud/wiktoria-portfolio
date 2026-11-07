@@ -26,7 +26,7 @@ A server is required: `index.html` fetches `content.json`, so `file://` won't wo
 |---|---|
 | `index.html` | Page shell, lightbox `<dialog>`, inline trailing-slash guard |
 | `css/styles.css` | All styling (white page, Satoshi font from Fontshare, pinned hero with guide lines, edge-to-edge photo grid, hover captions) |
-| `js/app.js` | Hash router (`#/`, `#/project/<slug>`, `#/about`), views, home hero intro (3D photo fly-in, typed title, fading name), scroll-linked motion in both directions, keyboard lightbox |
+| `js/app.js` | Hash router (`#/`, `#/project/<slug>`, `#/about`), views, home hero intro (3D photo fly-in, typed title, fading name), one-gesture glide from hero to gallery and back, keyboard lightbox |
 | `content.json` | **The content manifest**: profile, projects in Behance order, every image with local `src`, `source_url`, `width`, `height`, `alt` |
 | `assets/` | Images: `covers/`, `projects/` (from Behance), `profile/avatar.jpg`, `hero/wiktoria-N.jpg` (Wiktoria's own photos, supplied by Jakub) |
 | `source/profile_snapshot.json` | Trimmed data from the public profile page |

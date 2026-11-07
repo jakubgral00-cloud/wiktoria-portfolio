@@ -141,71 +141,168 @@
     setTimeout(() => caret.classList.add("is-done"), t + 1300);
   }
 
-  // Scroll (both directions): hero elements drift, then fly up and away in a
-  // random order while the whole gallery flies in from the front.
-  function setupScrollFx(hero, grid) {
-    const items = [...hero.querySelectorAll(".hero__item")].map((node) => ({
-      node,
-      delay: rand(0, 0.4),
-      driftX: rand(-12, 12),
-      rot: rand(-14, 14),
-      depth: rand(0.4, 1.4),
-    }));
-    // The whole gallery flies in at once, driven by the same scroll range as the
-    // hero exit; once that range is passed every photo is in place and the page
-    // scrolls freely.
-    const cards = [...grid.querySelectorAll(".card")].map((node) => ({
-      node, last: -1,
-      dx: rand(-28, 28), dy: rand(-20, 10), z: rand(600, 950), rot: rand(-10, 10), lag: rand(0, 0.08),
-    }));
-    let heroRange = 1;
-    function measure() {
-      heroRange = Math.max(1, hero.offsetHeight - window.innerHeight);
-    }
+  // One scroll gesture plays a slow, smooth, timed transition (it does not
+  // follow the scroll position): the page glides down from the hero to the
+  // gallery below it while the hero elements drift and fly up in random order
+  // and the gallery photos fly in from the front, all at once. A fresh upward
+  // gesture at the top of the gallery glides back and the hero elements return.
+  // Past the top of the gallery the page scrolls normally.
+  function setupHeroSwitch(hero, grid, startInGallery) {
+    const SWAY = "cubic-bezier(0.65, 0, 0.35, 1)";
+    const GLIDE_MS = 1700;
+    const items = [...hero.querySelectorAll(".hero__item")];
+    const cards = [...grid.querySelectorAll(".card")];
+    const work = grid.closest(".work");
+    let heroAnims = [];
+    let busy = false;
+    let gliding = false;
+    let away = false;                 // hero elements have flown off
+    let quietUntil = 0;
+    let lastMoved = 0;
 
-    let queued = false;
-    function update() {
-      queued = false;
-      const p = clamp01(window.scrollY / heroRange);
-      for (const it of items) {
-        const l = clamp01((p - it.delay) / 0.6);
-        const e = l * l;
-        const drift = -p * 7 * it.depth;
-        it.node.style.transform = p === 0 ? "" :
-          `translate3d(${(it.driftX * e).toFixed(2)}vw, ${(drift - e * 125).toFixed(2)}vh, 0) rotate(${(it.rot * e).toFixed(2)}deg)`;
-      }
-      for (const c of cards) {
-        const r = clamp01((p - 0.12) / 0.8 - c.lag);
-        const rounded = Math.round(r * 1000) / 1000;
-        if (rounded === c.last) continue;
-        c.last = rounded;
-        if (rounded >= 1) {
-          c.node.style.transform = "";
-          c.node.style.opacity = "";
-          c.node.classList.remove("is-flying");
-          continue;
+    const galleryTop = () => {
+      let y = 0;
+      for (let n = work; n; n = n.offsetParent) y += n.offsetTop;
+      return y;
+    };
+    const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+
+    function glideTo(target, ms) {
+      return new Promise((resolve) => {
+        const from = window.scrollY;
+        const start = performance.now();
+        gliding = true;
+        function step(now) {
+          const t = Math.min(1, (now - start) / ms);
+          window.scrollTo(0, from + (target - from) * easeInOut(t));
+          if (t < 1) requestAnimationFrame(step);
+          else { gliding = false; resolve(); }
         }
-        const k = 1 - Math.pow(1 - rounded, 3);
-        const inv = 1 - k;
-        c.node.classList.add("is-flying");
-        c.node.style.opacity = clamp01(rounded * 2.2).toFixed(3);
-        c.node.style.transform =
-          `translate3d(${(c.dx * inv).toFixed(2)}vw, ${(c.dy * inv).toFixed(2)}vh, ${(c.z * inv).toFixed(1)}px) rotate(${(c.rot * inv).toFixed(2)}deg)`;
+        requestAnimationFrame(step);
+      });
+    }
+
+    function flyHero(out, instant) {
+      const previous = heroAnims;
+      heroAnims = [];
+      shuffle(items.map((_, i) => i)).forEach((idx, k) => {
+        const dx = rand(-14, 14), rot = rand(-16, 16), drift = rand(3, 9);
+        const a = items[idx].animate([
+          { transform: "translate3d(0, 0, 0) rotate(0deg)" },
+          { transform: `translate3d(${(dx * 0.15).toFixed(2)}vw, ${(-drift).toFixed(2)}vh, 0) rotate(${(rot * 0.2).toFixed(2)}deg)`, offset: 0.3 },
+          { transform: `translate3d(${dx.toFixed(2)}vw, -110vh, 0) rotate(${rot.toFixed(2)}deg)` },
+        ], { duration: rand(1300, 1600), delay: k * rand(35, 60), easing: SWAY, fill: "both", direction: out ? "normal" : "reverse" });
+        if (instant) a.finish();
+        heroAnims.push(a);
+      });
+      previous.forEach((a) => a.cancel());
+      away = out;
+      return Promise.all(heroAnims.map((a) => a.finished.catch(() => {})));
+    }
+
+    function flyCards() {
+      const top = galleryTop();
+      const vh = window.innerHeight;
+      const shown = cards.filter((c) => {
+        let y = 0;
+        for (let n = c; n; n = n.offsetParent) y += n.offsetTop;
+        return y < top + vh * 1.1;
+      });
+      return Promise.all(shown.map((c) => {
+        c.classList.add("is-flying");
+        const a = c.animate([
+          { transform: `translate3d(${rand(-30, 30).toFixed(2)}vw, ${rand(-22, 14).toFixed(2)}vh, ${rand(650, 950).toFixed(0)}px) rotate(${rand(-12, 12).toFixed(2)}deg)`, opacity: 0 },
+          { opacity: 1, offset: 0.35 },
+          { transform: "translate3d(0, 0, 0) rotate(0deg)", opacity: 1 },
+        ], { duration: rand(1700, 2100), delay: 250 + rand(0, 200), easing: "cubic-bezier(0.16, 1, 0.3, 1)", fill: "backwards" });
+        return a.finished.catch(() => {}).then(() => c.classList.remove("is-flying"));
+      }));
+    }
+
+    async function goDown() {
+      if (busy) return;
+      busy = true;
+      flyHero(true);
+      flyCards();
+      await glideTo(galleryTop(), GLIDE_MS);
+      busy = false;
+      quietUntil = performance.now() + 700;
+    }
+    async function goUp() {
+      if (busy) return;
+      busy = true;
+      setTimeout(() => flyHero(false), 200);
+      await glideTo(0, GLIDE_MS);
+      busy = false;
+      quietUntil = performance.now() + 700;
+    }
+
+    const canAct = () => !busy && performance.now() > quietUntil;
+    const inHero = () => window.scrollY < galleryTop() - 4;
+    // Only a fresh upward gesture at the gallery top goes back, not momentum.
+    const atGalleryTop = () => Math.abs(window.scrollY - galleryTop()) <= 4 && performance.now() - lastMoved > 400;
+
+    function onScroll() {
+      if (gliding) return;
+      lastMoved = performance.now();
+      // Scrollbar drags and similar: keep the hero consistent with where the page is.
+      if (!busy && inHero() && away && window.scrollY < galleryTop() * 0.5) flyHero(false);
+      else if (!busy && !away && window.scrollY > galleryTop() * 0.5) flyHero(true, true);
+    }
+    function onWheel(e) {
+      if (busy) { e.preventDefault(); return; }
+      if (inHero()) {
+        e.preventDefault();
+        if (canAct() && e.deltaY > 4) goDown();
+        else if (canAct() && e.deltaY < -4 && window.scrollY > 4) goUp();
+      } else if (e.deltaY < -4 && atGalleryTop()) {
+        e.preventDefault();
+        if (canAct()) goUp();
       }
     }
-    const onScroll = () => { if (!queued) { queued = true; requestAnimationFrame(update); } };
-    const onResize = () => { measure(); onScroll(); };
+    let touchY = null;
+    const onTouchStart = (e) => { touchY = e.touches[0].clientY; };
+    function onTouchMove(e) {
+      if (touchY === null) return;
+      if (busy) { e.preventDefault(); return; }
+      const dy = e.touches[0].clientY - touchY;
+      if (inHero()) {
+        e.preventDefault();
+        if (dy < -30 && canAct()) { touchY = null; goDown(); }
+      } else if (dy > 40 && atGalleryTop() && canAct()) {
+        e.preventDefault();
+        touchY = null;
+        goUp();
+      }
+    }
+    function onKey(e) {
+      if (e.target.closest && e.target.closest("input, textarea, dialog")) return;
+      const down = ["ArrowDown", "PageDown", " ", "Spacebar"].includes(e.key);
+      const up = ["ArrowUp", "PageUp", "Home"].includes(e.key);
+      if (busy && (down || up)) { e.preventDefault(); return; }
+      if (inHero() && down) { e.preventDefault(); if (canAct()) goDown(); }
+      else if (up && atGalleryTop()) { e.preventDefault(); if (canAct()) goUp(); }
+    }
+    const button = hero.querySelector(".hero__scroll-btn");
+    const onButton = () => { if (inHero() && canAct()) goDown(); };
 
-    measure();
-    update();
+    if (startInGallery) {
+      flyHero(true, true);
+      window.scrollTo(0, galleryTop());
+    }
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onResize);
-    // Images and fonts can shift layout after the first measure.
-    window.addEventListener("load", onResize, { once: true });
-    if (document.fonts) document.fonts.ready.then(onResize);
+    window.addEventListener("wheel", onWheel, { passive: false });
+    window.addEventListener("touchstart", onTouchStart, { passive: true });
+    window.addEventListener("touchmove", onTouchMove, { passive: false });
+    window.addEventListener("keydown", onKey);
+    button.addEventListener("click", onButton);
     return () => {
+      heroAnims.forEach((a) => a.cancel());
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onResize);
+      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("touchstart", onTouchStart);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("keydown", onKey);
     };
   }
 
@@ -232,7 +329,8 @@
         label("hero__label--bl", profile.occupation, profile.location.split(",")[0]),
         label("hero__label--bc", "Fashion, commercial,", "music video"),
         label("hero__label--br", `01–${pad(projects.length)}.`),
-        item("hero__scroll hero__label", el("span", { text: "( ↓ )" }))
+        item("hero__scroll hero__label",
+          el("span", {}, el("button", { class: "hero__scroll-btn", type: "button", "aria-label": "Show work", text: "( ↓ )" })))
       )
     );
 
@@ -241,13 +339,15 @@
 
     setPage(`${profile.display_name} — ${profile.occupation}, ${profile.location}`, "#/");
     render(view);
-    if (!motionOK) return;
+    if (!motionOK) { hero.classList.add("hero--static"); return; }
+    const returning = introPlayed;
     if (!introPlayed) {
       introPlayed = true;
       hero.querySelector(".hero__caret").classList.remove("is-done");
       playHeroIntro(hero);
     }
-    scrollFx = setupScrollFx(hero, grid);
+    // Coming back from a project page lands on the gallery, not the hero.
+    scrollFx = setupHeroSwitch(hero, grid, returning);
   }
 
   function projectView(slug) {
