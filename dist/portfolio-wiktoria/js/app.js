@@ -142,7 +142,7 @@
   }
 
   // Scroll (both directions): hero elements drift, then fly up and away in a
-  // random order; gallery photos fly in from the front as they come into view.
+  // random order while the whole gallery flies in from the front.
   function setupScrollFx(hero, grid) {
     const items = [...hero.querySelectorAll(".hero__item")].map((node) => ({
       node,
@@ -151,23 +151,22 @@
       rot: rand(-14, 14),
       depth: rand(0.4, 1.4),
     }));
+    // The whole gallery flies in at once, driven by the same scroll range as the
+    // hero exit; once that range is passed every photo is in place and the page
+    // scrolls freely.
     const cards = [...grid.querySelectorAll(".card")].map((node) => ({
-      node, top: 0, last: -1,
-      dx: rand(-28, 28), dy: rand(-20, 10), z: rand(600, 950), rot: rand(-10, 10), lag: rand(0, 0.12),
+      node, last: -1,
+      dx: rand(-28, 28), dy: rand(-20, 10), z: rand(600, 950), rot: rand(-10, 10), lag: rand(0, 0.08),
     }));
-    const docTop = (el) => { let y = 0; for (; el; el = el.offsetParent) y += el.offsetTop; return y; };
     let heroRange = 1;
     function measure() {
       heroRange = Math.max(1, hero.offsetHeight - window.innerHeight);
-      for (const c of cards) c.top = docTop(c.node);
     }
 
     let queued = false;
     function update() {
       queued = false;
-      const sy = window.scrollY;
-      const vh = window.innerHeight;
-      const p = clamp01(sy / heroRange);
+      const p = clamp01(window.scrollY / heroRange);
       for (const it of items) {
         const l = clamp01((p - it.delay) / 0.6);
         const e = l * l;
@@ -176,9 +175,7 @@
           `translate3d(${(it.driftX * e).toFixed(2)}vw, ${(drift - e * 125).toFixed(2)}vh, 0) rotate(${(it.rot * e).toFixed(2)}deg)`;
       }
       for (const c of cards) {
-        const top = c.top - sy;
-        if (top > vh * 1.2 && c.last === 0) continue;             // far below, already hidden
-        const r = clamp01(((vh - top) / (vh * 0.5)) - c.lag);
+        const r = clamp01((p - 0.12) / 0.8 - c.lag);
         const rounded = Math.round(r * 1000) / 1000;
         if (rounded === c.last) continue;
         c.last = rounded;
