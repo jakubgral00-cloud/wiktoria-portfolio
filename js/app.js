@@ -53,10 +53,40 @@
   // Focus moves to the new view's heading on in-app navigation only, so that on
   // first load the first Tab still reaches the skip link.
   let firstRender = true;
+  // Touch screens: the gallery row in the middle of the screen behaves as if
+  // hovered (photo shrinks slightly, caption fades in).
+  const touchOnly = window.matchMedia("(hover: none)");
+  let centerWatch = null;       // cleanup for the active watcher
+  function watchCenter(root) {
+    if (!touchOnly.matches) return;
+    const cards = [...root.querySelectorAll(".card")];
+    if (!cards.length) return;
+    let spans = [];
+    const docTop = (el) => { let y = 0; for (; el; el = el.offsetParent) y += el.offsetTop; return y; };
+    const measure = () => { spans = cards.map((c) => { const t = docTop(c); return [t, t + c.offsetHeight]; }); };
+    const update = () => {
+      const mid = window.scrollY + window.innerHeight / 2;
+      cards.forEach((c, i) => c.classList.toggle("is-centered", spans[i][0] <= mid && mid < spans[i][1]));
+    };
+    const onResize = () => { measure(); update(); };
+    measure();
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", onResize);
+    window.addEventListener("load", onResize, { once: true });
+    if (document.fonts) document.fonts.ready.then(onResize);
+    centerWatch = () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", onResize);
+    };
+  }
+
   function render(node, focusTarget) {
     if (scrollFx) { scrollFx(); scrollFx = null; }
+    if (centerWatch) { centerWatch(); centerWatch = null; }
     document.body.classList.toggle("is-home", node.classList.contains("home"));
     main.replaceChildren(node);
+    watchCenter(node);
     window.scrollTo(0, 0);
     if (!firstRender) (focusTarget || main).focus({ preventScroll: true });
     firstRender = false;

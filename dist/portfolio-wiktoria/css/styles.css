@@ -236,10 +236,10 @@ main { flex: 1; outline: none; }
 .card a:hover .card__frame, .card a:focus-visible .card__frame { transform: scale(0.93); }
 .card a:hover .card__caption, .card a:focus-visible .card__caption { opacity: 1; transform: none; }
 
-/* Touch screens have no hover: keep the captions visible there. */
-@media (hover: none) {
-  .card__caption { opacity: 1; transform: none; }
-}
+/* Touch screens have no hover: the row passing through the middle of the
+   screen gets the hover look instead (js/app.js adds .is-centered). */
+.card.is-centered .card__frame { transform: scale(0.93); }
+.card.is-centered .card__caption { opacity: 1; transform: none; }
 
 /* While a photo flies in it sits above its neighbours. */
 .card.is-flying { z-index: 3; }
