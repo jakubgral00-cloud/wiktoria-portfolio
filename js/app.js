@@ -62,14 +62,27 @@
   // ---------- views ----------
   function homeView() {
     const { profile, projects, source } = content;
-    const aboutLines = profile.about ? profile.about.text.split("\n").filter(Boolean) : [];
+    // About text verbatim, minus the e-mail line (the e-mail gets its own button).
+    const aboutLines = profile.about
+      ? profile.about.text.split("\n").map((l) => l.trim()).filter((l) => l && !/^e-mail:/i.test(l))
+      : [];
+    const instagram = profile.socials.find((s) => s.valid_url && s.service === "Instagram");
 
-    const intro = el("section", { class: "intro", "aria-labelledby": "intro-heading" },
-      el("div", {},
-        el("h1", { class: "eyebrow", id: "intro-heading", text: `${profile.occupation} — Selected work` }),
-        aboutLines[0] ? el("p", { class: "intro__lead", text: aboutLines[0] }) : null
+    // Profile column, laid out like the Behance profile card: round photo, name,
+    // occupation, location, contact buttons, then the About text.
+    const profileCard = el("aside", { class: "profile", "aria-labelledby": "profile-name" },
+      img(profile.avatar, { class: "profile__photo", loading: "eager" }),
+      el("h1", { class: "profile__name", id: "profile-name", text: profile.display_name }),
+      el("p", { class: "profile__role", text: profile.occupation }),
+      el("p", { class: "profile__location", text: profile.location }),
+      el("div", { class: "profile__actions" },
+        profile.email ? el("a", { class: "btn btn--solid", href: `mailto:${profile.email}`, text: "E-mail" }) : null,
+        instagram ? el("a", { class: "btn", href: instagram.url_as_listed.replace(/^http:/, "https:"), rel: "noopener", text: "Instagram" }) : null
       ),
-      el("p", { class: "intro__meta", text: profile.location })
+      aboutLines.length ? el("div", { class: "profile__about" },
+        el("h2", { class: "eyebrow", text: profile.about.title }),
+        aboutLines.map((line) => el("p", { text: line }))
+      ) : null
     );
 
     const grid = el("ul", { class: "grid", "aria-label": "Projects" },
@@ -97,7 +110,11 @@
     );
 
     setPage(`${profile.display_name} — ${profile.occupation}, ${profile.location}`, "#/");
-    render(el("div", {}, intro, grid, note));
+    render(el("div", { class: "home" }, profileCard,
+      el("section", { class: "work", "aria-labelledby": "work-heading" },
+        el("h2", { class: "work__heading", id: "work-heading" }, "Work ",
+          el("span", { class: "work__count", text: String(projects.length) })),
+        grid, note)));
   }
 
   function projectView(slug) {
