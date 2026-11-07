@@ -37,7 +37,7 @@
 
   function formatDate(iso, withDay = false) {
     const [y, m, d] = iso.split("-").map(Number);
-    const opts = withDay ? { day: "numeric", month: "long", year: "numeric" } : { month: "long", year: "numeric" };
+    const opts = withDay ? { day: "numeric", month: "long", year: "numeric" } : { month: "short", year: "numeric" };
     return new Intl.DateTimeFormat("en-GB", { ...opts, timeZone: "UTC" })
       .format(new Date(Date.UTC(y, m - 1, d)));
   }
@@ -61,86 +61,108 @@
   }
 
   // ---------- views ----------
-  // Small inline icons (stroke = currentColor), as on the Behance profile card.
-  const ICONS = {
-    check: '<path d="M20 6 9 17l-5-5"/>',
-    role: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>',
-    company: '<path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/>',
-    pin: '<path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/>',
-    link: '<path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/>',
-    mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
-  };
-  function icon(name) {
-    const span = document.createElement("span");
-    span.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
-    return span.firstChild;
-  }
-
   const httpsUrl = (url) => url.replace(/^http:/, "https:");
-  const bareUrl = (url) => url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
 
   function card(p, i) {
-    const count = p.media.length;
     return el("li", { class: "card" },
-      el("a", { href: `#/project/${p.slug}` },
+      el("a", { href: `#/project/${p.slug}`, "aria-label": `${p.title}, ${formatDate(p.published_on)}` },
         el("div", { class: "card__frame", style: p.dominant_color ? `background-color:${p.dominant_color}` : null },
-          img(p.cover, { loading: i < 8 ? "eager" : "lazy" }),
-          count > 1 ? el("span", { class: "card__count", "aria-hidden": "true", text: `${count} images` }) : null
-        ),
-        el("h3", { class: "card__title", text: p.title }),
-        el("p", { class: "card__meta" },
-          el("time", { datetime: p.published_on, text: formatDate(p.published_on) }))
+          img(p.cover, { alt: "", loading: i < 12 ? "eager" : "lazy" })),
+        el("div", { class: "card__caption", "aria-hidden": "true" },
+          el("h3", { class: "card__title", text: p.title }),
+          el("p", { class: "card__meta", text: formatDate(p.published_on) }))
       )
     );
   }
 
+  // ---------- intro animation ----------
+  // First visit to the home page: the texts fly in from different sides of the
+  // screen, then every photo flies in "from the front" in random order and
+  // settles into the gallery. Skipped with prefers-reduced-motion.
+  const motionOK = "animate" in Element.prototype &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let introPending = motionOK && document.documentElement.classList.contains("intro");
+  const EASE = "cubic-bezier(0.16, 1, 0.3, 1)";
+  const rand = (min, max) => min + Math.random() * (max - min);
+  const shuffle = (arr) => {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  };
+
+  function flyText(node, delay) {
+    const w = window.innerWidth, h = window.innerHeight;
+    const from = {
+      left: [-0.7 * w, 0], right: [0.7 * w, 0], top: [0, -0.6 * h], bottom: [0, 0.6 * h],
+    }[node.dataset.fly] || [0, 0.6 * h];
+    node.animate([
+      { transform: `translate(${from[0]}px, ${from[1]}px)`, opacity: 0 },
+      { transform: "none", opacity: 1 },
+    ], { duration: rand(1100, 1500), delay, easing: EASE, fill: "backwards" });
+  }
+
+  function flyPhoto(cardNode, delay) {
+    cardNode.classList.add("is-flying");
+    cardNode.style.opacity = "";
+    const anim = cardNode.animate([
+      { transform: `translate3d(${rand(-30, 30)}vw, ${rand(-25, 15)}vh, 900px) rotate(${rand(-8, 8)}deg)`, opacity: 0, filter: "blur(8px)" },
+      { opacity: 1, offset: 0.35 },
+      { transform: "translate3d(0, 0, 0) rotate(0deg)", opacity: 1, filter: "blur(0)" },
+    ], { duration: rand(1500, 2100), delay, easing: EASE, fill: "backwards" });
+    anim.onfinish = anim.oncancel = () => cardNode.classList.remove("is-flying");
+  }
+
+  function playIntro(view) {
+    introPending = false;
+    const texts = [...document.querySelectorAll(".site-header [data-fly]"), ...view.querySelectorAll(".hero [data-fly]")];
+    const cards = [...view.querySelectorAll(".card")];
+    for (const c of cards) c.style.opacity = "0";
+    document.documentElement.classList.remove("intro");
+
+    // Texts: shuffled order, staggered.
+    shuffle(texts.slice()).forEach((node, i) => flyText(node, 120 + i * 140));
+    const textDone = 120 + texts.length * 140 + 500;
+
+    // Photos already on screen fly in after the texts, in random order;
+    // the rest fly in as they scroll into view.
+    const onScreen = cards.filter((c) => c.getBoundingClientRect().top < window.innerHeight);
+    const below = cards.filter((c) => !onScreen.includes(c));
+    const ready = Promise.race([
+      Promise.all(onScreen.map((c) => c.querySelector("img").decode().catch(() => {}))),
+      new Promise((r) => setTimeout(r, 1500)),
+    ]);
+    ready.then(() => shuffle(onScreen).forEach((c, i) => flyPhoto(c, textDone + i * 130)));
+
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        io.unobserve(e.target);
+        const target = e.target;
+        target.querySelector("img").decode().catch(() => {}).then(() => flyPhoto(target, rand(0, 450)));
+      }
+    }, { rootMargin: "0px 0px -8% 0px" });
+    below.forEach((c) => io.observe(c));
+  }
+
   function homeView() {
     const { profile, projects } = content;
-    // About text verbatim, minus the e-mail line (the e-mail gets its own button).
-    const aboutLines = profile.about
-      ? profile.about.text.split("\n").map((l) => l.trim()).filter((l) => l && !/^e-mail:/i.test(l))
-      : [];
-    const instagram = profile.socials.find((s) => s.valid_url && s.service === "Instagram");
-    const website = profile.website ? httpsUrl(profile.website) : null;
+    const letters = ["top", "bottom", "left", "right"];
+    shuffle(letters);
 
-    const fact = (name, ...children) => el("li", {}, icon(name), el("span", {}, ...children));
-    const since = profile.member_since
-      ? new Intl.DateTimeFormat("en-GB", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" })
-          .format(new Date(profile.member_since * 1000))
-      : null;
-
-    // Profile card, laid out like the Behance one: round photo, name, facts, buttons, About.
-    const profileCard = el("aside", { class: "profile", "aria-labelledby": "profile-name" },
-      img(profile.avatar, { class: "profile__photo", loading: "eager" }),
-      el("h1", { class: "profile__name", id: "profile-name", text: profile.display_name }),
-      el("ul", { class: "facts" },
-        profile.availability ? el("li", { class: "facts__available" }, icon("check"), el("span", { text: profile.availability.text })) : null,
-        fact("role", profile.occupation),
-        profile.company ? fact("company", profile.company) : null,
-        fact("pin", profile.location),
-        website ? fact("link", el("a", { href: website, rel: "noopener", text: bareUrl(website) })) : null
-      ),
-      el("div", { class: "profile__actions" },
-        profile.email ? el("a", { class: "btn btn--solid", href: `mailto:${profile.email}` }, icon("mail"), "E-mail") : null,
-        instagram ? el("a", { class: "btn", href: httpsUrl(instagram.url_as_listed), rel: "noopener", text: "Instagram" }) : null
-      ),
-      aboutLines.length ? el("div", { class: "profile__about" },
-        el("h2", { text: profile.about.title }),
-        aboutLines.map((line) => el("p", { text: line })),
-        since ? el("p", { class: "profile__since", text: `Member since: ${since}` }) : null
-      ) : null
+    const hero = el("section", { class: "hero", "aria-labelledby": "hero-title" },
+      el("h1", { class: "hero__title", id: "hero-title", "aria-label": "Work" },
+        [..."Work"].map((ch, i) => el("span", { "aria-hidden": "true", "data-fly": letters[i], text: ch }))),
+      el("p", { class: "hero__name", "data-fly": Math.random() < 0.5 ? "left" : "right", text: profile.display_name.replace("-", " - ") })
     );
 
-    const work = el("section", { class: "work", "aria-labelledby": "work-heading" },
-      el("div", { class: "tabs" },
-        el("h2", { class: "tabs__item", id: "work-heading" }, "Work",
-          el("span", { class: "tabs__count", text: String(projects.length) }))),
-      el("ul", { class: "grid", "aria-label": "Projects" }, projects.map(card))
-    );
+    const grid = el("ul", { class: "grid", "aria-label": "Projects" }, projects.map(card));
+    const view = el("div", {}, hero, grid);
 
     setPage(`${profile.display_name} — ${profile.occupation}, ${profile.location}`, "#/");
-    render(el("div", {}, el("div", { class: "banner", "aria-hidden": "true" }),
-      el("div", { class: "home" }, profileCard, work)));
+    render(view);
+    if (introPending) playIntro(view);
   }
 
   function projectView(slug) {
@@ -155,10 +177,9 @@
     const title = el("h1", { class: "project__title", id: "project-title", tabindex: "-1", text: p.title });
 
     const head = el("header", { class: "project__head" },
-      img(profile.avatar, { class: "project__avatar", alt: "" }),
-      el("div", {}, title,
-        el("p", { class: "project__owner" }, el("a", { href: "#/about", text: profile.display_name }))),
-      el("a", { class: "btn project__back", href: "#/", text: "← All work" })
+      el("a", { class: "project__back", href: "#/", text: "← All work" }),
+      title,
+      el("p", { class: "project__owner" }, el("a", { href: "#/about", text: profile.display_name.replace("-", " - ") }))
     );
 
     const media = el("ol", { class: "media", "aria-label": `Images from ${p.title}` },
@@ -180,17 +201,17 @@
     const info = el("section", { class: "project__info", "aria-label": "Project details" },
       el("div", {},
         el("h2", { text: p.title }),
-        el("p", {}, "Published: ", el("time", { datetime: p.published_on, text: formatDate(p.published_on, true) })),
+        el("p", {}, "Published ", el("time", { datetime: p.published_on, text: formatDate(p.published_on, true) })),
         p.description ? el("p", { class: "project__desc", text: p.description }) : null,
         p.tags && p.tags.length ? el("ul", { class: "tags", "aria-label": "Tags" }, p.tags.map((t) => el("li", { text: t }))) : null
       ),
-      el("a", { class: "btn", href: p.source_url, rel: "noopener", text: "View on Behance" })
+      el("a", { class: "source-link", href: p.source_url, rel: "noopener", text: "View on Behance ↗" })
     );
 
-    // "More by" strip: the next four projects, wrapping around the list.
+    // "More work": the next four projects, wrapping around the list.
     const more = [1, 2, 3, 4].map((k) => projects[(index + k) % projects.length]).filter((q) => q !== p);
     const moreSection = el("section", { class: "more", "aria-labelledby": "more-heading" },
-      el("h2", { id: "more-heading", text: `More by ${profile.display_name}` }),
+      el("h2", { id: "more-heading", text: "More work" }),
       el("ul", { class: "grid" }, more.map((q) => card(q, 99)))
     );
 
@@ -328,6 +349,7 @@
       route();
     })
     .catch((err) => {
+      document.documentElement.classList.remove("intro");
       main.replaceChildren(el("p", { class: "notice",
         text: `Could not load content (${err.message}). Serve this folder over HTTP, e.g. "python3 -m http.server".` }));
     });

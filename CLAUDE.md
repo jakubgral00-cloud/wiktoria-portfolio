@@ -25,8 +25,8 @@ A server is required: `index.html` fetches `content.json`, so `file://` won't wo
 | Path | What |
 |---|---|
 | `index.html` | Page shell, lightbox `<dialog>`, inline trailing-slash guard |
-| `css/styles.css` | All styling (Behance-like white layout, Satoshi font from Fontshare, responsive grid) |
-| `js/app.js` | Hash router (`#/`, `#/project/<slug>`, `#/about`), views, keyboard lightbox |
+| `css/styles.css` | All styling (grey #c8c8c8 page, Satoshi font from Fontshare, edge-to-edge photo grid, hover captions) |
+| `js/app.js` | Hash router (`#/`, `#/project/<slug>`, `#/about`), views, home intro animation (texts fly in, then photos fly in from the front), keyboard lightbox |
 | `content.json` | **The content manifest**: profile, projects in Behance order, every image with local `src`, `source_url`, `width`, `height`, `alt` |
 | `assets/` | Downloaded images (`covers/NN-<behanceId>.jpg`, `projects/NN-<behanceId>/MM.jpg`, `profile/avatar.jpg`) |
 | `source/profile_snapshot.json` | Trimmed data from the public profile page |

@@ -7,7 +7,13 @@
     // All URLs are relative to this page, so a directory URL needs its trailing
     // slash (e.g. /portfolio-wiktoria -> /portfolio-wiktoria/) when the host doesn't add it.
     if (!/\/$|\.html?$/.test(location.pathname)) location.replace(location.pathname + "/" + location.search + location.hash);
+    // Intro animation on the home page: keep the texts hidden until it starts (js/app.js).
+    if (/^(#\/?)?$/.test(location.hash) && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("intro");
+      setTimeout(function () { document.documentElement.classList.remove("intro"); }, 5000);
+    }
   </script>
+  <style>.intro [data-fly] { opacity: 0; }</style>
   <title>Wiktoria Wolniak-Gral — Freelance Stylist, Warszawa</title>
   <meta name="description" content="Portfolio of Wiktoria Wolniak-Gral, freelance stylist based in Warsaw, Poland.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23161412'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-style='italic' fill='%23f3efe8' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
@@ -20,12 +26,22 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <a class="wordmark" href="#/" aria-label="Wiktoria Wolniak-Gral — home">Wiktoria Wolniak-Gral</a>
-    <nav class="site-nav" aria-label="Primary">
+    <a class="wordmark" href="#/" aria-label="Wiktoria Wolniak-Gral — home" data-fly="left">
+      <span>Wiktoria</span><span>Wolniak-Gral</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary" data-fly="top">
       <a href="#/">Work</a>
       <a href="#/about">About</a>
-      <a class="site-nav__cta" href="mailto:wiktoriawolniak.stylist@gmail.com">Contact</a>
     </nav>
+    <ul class="site-links" aria-label="Elsewhere" data-fly="top">
+      <li><a href="https://www.instagram.com/wiktoria.wolniak/" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.behance.net/wiktoriawolniak" rel="noopener">Behance</a></li>
+    </ul>
+    <div class="site-contact" data-fly="right">
+      <p>Available for freelance &amp; fulltime</p>
+      <a href="mailto:wiktoriawolniak.stylist@gmail.com">wiktoriawolniak.stylist@gmail.com</a>
+      <a href="mailto:wiktoriawolniak.stylist@gmail.com?subject=Project%20inquiry">Send project inquiry</a>
+    </div>
   </header>
 
   <main id="main" tabindex="-1">
