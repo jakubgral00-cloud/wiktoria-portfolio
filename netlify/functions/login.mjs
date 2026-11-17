@@ -8,12 +8,12 @@ export default async (req) => {
   }
   let body = {};
   try { body = await req.json(); } catch { /* empty body */ }
-  if (!checkCredentials(body.email, body.password)) {
+  if (!(await checkCredentials(body.email, body.password))) {
     // A short pause makes guessing passwords slower.
     await new Promise((r) => setTimeout(r, 800));
     return json({ error: "Nieprawidłowy e-mail lub hasło." }, 401);
   }
-  return json(issueToken());
+  return json(await issueToken());
 };
 
 export const config = { path: "/api/login" };

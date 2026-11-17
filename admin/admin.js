@@ -84,14 +84,89 @@
   }
 
   // ---------- login ----------
-  function showLogin(message) {
+  const CARDS = ["login-form", "forgot-form", "reset-form"];
+  function showCard(id) {
     $("#app").hidden = true;
     $("#login").hidden = false;
+    for (const card of CARDS) document.getElementById(card).hidden = card !== id;
+    const form = document.getElementById(id);
+    form.querySelectorAll(".login__error, .login__ok").forEach((p) => { p.hidden = true; });
+    setTimeout(() => form.querySelector("input").focus(), 50);
+    return form;
+  }
+
+  function showLogin(message) {
+    showCard("login-form");
     const err = $("#login-error");
     err.hidden = !message;
     err.textContent = message || "";
-    setTimeout(() => $("#login-form").email.focus(), 50);
   }
+
+  document.querySelectorAll("[data-show]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const from = button.closest("form");
+      const to = showCard(button.dataset.show);
+      if (from.email && to.email && from.email.value) to.email.value = from.email.value;
+    });
+  });
+
+  // Runs a login-screen form: shows errors, locks the button while waiting.
+  function cardSubmit(form, busyText, action) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const button = form.querySelector("[type=submit]");
+      const err = form.querySelector(".login__error");
+      const label = button.textContent;
+      err.hidden = true;
+      button.disabled = true;
+      button.textContent = busyText;
+      try {
+        await action();
+      } catch (error) {
+        err.textContent = error.status === 404 ? "Panel nie działa w tym podglądzie (brak funkcji Netlify)." : error.message;
+        err.hidden = false;
+      } finally {
+        button.disabled = false;
+        button.textContent = label;
+      }
+    });
+  }
+
+  const postJSON = (path, body) => api(path, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(body),
+  });
+
+  function newPasswordProblem(next, repeat) {
+    if (next.length < 8) return "Hasło musi mieć co najmniej 8 znaków.";
+    if (next !== repeat) return "Hasła się różnią.";
+    return null;
+  }
+
+  const forgotForm = $("#forgot-form");
+  cardSubmit(forgotForm, "Wysyłanie…", async () => {
+    const email = forgotForm.email.value.trim();
+    if (!email) throw new Error("Wpisz swój e-mail.");
+    const { message } = await postJSON("/api/forgot", { email });
+    const ok = forgotForm.querySelector(".login__ok");
+    ok.textContent = message;
+    ok.hidden = false;
+  });
+
+  // The e-mailed link opens /admin/#reset=<token>.
+  let resetToken = null;
+  const resetForm = $("#reset-form");
+  cardSubmit(resetForm, "Zapisywanie…", async () => {
+    const problem = newPasswordProblem(resetForm.next.value, resetForm.repeat.value);
+    if (problem) throw new Error(problem);
+    const s = await postJSON("/api/reset", { token: resetToken, next: resetForm.next.value });
+    resetForm.reset();
+    resetToken = null;
+    setSession(s);
+    await start();
+    toast("Nowe hasło ustawione.");
+  });
 
   $("#login-form").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -126,13 +201,15 @@
     }
   });
 
-  document.querySelector(".password__toggle").addEventListener("click", (e) => {
-    const input = $("#login-form").password;
+  function passwordToggle(e) {
+    const button = e.currentTarget;
+    const input = button.parentElement.querySelector("input");
     const show = input.type === "password";
     input.type = show ? "text" : "password";
-    e.currentTarget.textContent = show ? "Ukryj" : "Pokaż";
-    e.currentTarget.setAttribute("aria-label", show ? "Ukryj hasło" : "Pokaż hasło");
-  });
+    button.textContent = show ? "Ukryj" : "Pokaż";
+    button.setAttribute("aria-label", show ? "Ukryj hasło" : "Pokaż hasło");
+  }
+  document.querySelectorAll(".password__toggle").forEach((b) => b.addEventListener("click", passwordToggle));
 
   $("#logout").addEventListener("click", () => {
     if (dirty && !confirm("Masz niezapisane zmiany. Wylogować mimo to?")) return;
@@ -333,6 +410,7 @@
     ["about", "O mnie"],
     ["fonts", "Czcionki"],
     ["versions", "Kopie"],
+    ["account", "Konto"],
   ];
 
   function renderTabs() {
@@ -342,7 +420,7 @@
   }
 
   function renderPanel(top) {
-    const views = { texts: textsView, portfolio: openProject ? projectView : portfolioView, about: aboutView, fonts: fontsView, versions: versionsView };
+    const views = { texts: textsView, portfolio: openProject ? projectView : portfolioView, about: aboutView, fonts: fontsView, versions: versionsView, account: accountView };
     $("#panel").replaceChildren(views[tab]());
     if (top) window.scrollTo(0, 0);
   }
@@ -647,6 +725,46 @@
       list);
   }
 
+  // ---------- Konto (password) ----------
+  function accountView() {
+    const passwordInput = (name, label, autocomplete, hint) => el("label", { class: "field" },
+      el("span", { class: "field__label", text: label }),
+      el("span", { class: "password" },
+        el("input", { type: "password", name, autocomplete, required: true }),
+        el("button", { type: "button", class: "password__toggle", "aria-label": "Pokaż hasło", text: "Pokaż", onclick: passwordToggle })),
+      hint ? el("span", { class: "field__hint", text: hint }) : null);
+    const error = el("p", { class: "login__error", role: "alert", hidden: true });
+    const form = el("form", { class: "account", novalidate: true },
+      passwordInput("current", "Obecne hasło", "current-password"),
+      passwordInput("next", "Nowe hasło", "new-password", "Co najmniej 8 znaków."),
+      passwordInput("repeat", "Powtórz nowe hasło", "new-password"),
+      error,
+      el("button", { class: "btn btn--primary", type: "submit", text: "Zmień hasło" }));
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const button = form.querySelector("[type=submit]");
+      error.hidden = true;
+      const problem = !form.current.value ? "Wpisz obecne hasło." : newPasswordProblem(form.next.value, form.repeat.value);
+      if (problem) { error.textContent = problem; error.hidden = false; return; }
+      button.disabled = true;
+      button.textContent = "Zapisywanie…";
+      try {
+        setSession(await postJSON("/api/password", { current: form.current.value, next: form.next.value }));
+        form.reset();
+        toast("Hasło zmienione. Na innych urządzeniach trzeba zalogować się ponownie.");
+      } catch (err) {
+        if (err.message !== "unauthorized") { error.textContent = err.message; error.hidden = false; }
+      } finally {
+        button.disabled = false;
+        button.textContent = "Zmień hasło";
+      }
+    });
+    return el("section", {},
+      el("h2", { text: "Konto" }),
+      el("p", { class: "panel__lead", text: "Zmiana hasła do panelu. Jeśli kiedyś je zapomnisz, na ekranie logowania kliknij „Nie pamiętam hasła” — link przyjdzie na Twój e-mail." }),
+      form);
+  }
+
   // ---------- start ----------
   async function start() {
     $("#login").hidden = true;
@@ -663,5 +781,17 @@
     }
   }
 
-  if (session()) start(); else showLogin();
+  function openResetLink() {
+    const match = location.hash.match(/^#reset=([\w-]+)$/);
+    if (!match) return false;
+    resetToken = match[1];
+    history.replaceState(null, "", location.pathname);   // keep the token out of the address bar
+    showCard("reset-form");
+    return true;
+  }
+  window.addEventListener("hashchange", openResetLink);
+
+  if (!openResetLink()) {
+    if (session()) start(); else showLogin();
+  }
 })();

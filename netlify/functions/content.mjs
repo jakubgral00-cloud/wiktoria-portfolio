@@ -20,7 +20,7 @@ export default async (req) => {
 
   if (req.method === "GET") {
     if (url.searchParams.has("history") || url.searchParams.has("version")) {
-      if (!authorized(req)) return json({ error: "Zaloguj się ponownie." }, 401);
+      if (!(await authorized(req))) return json({ error: "Zaloguj się ponownie." }, 401);
       if (url.searchParams.has("history")) {
         const { blobs } = await store().list({ prefix: "history/" });
         return json({ versions: blobs.map((b) => b.key).sort().reverse().slice(0, 50) });
@@ -36,7 +36,7 @@ export default async (req) => {
   }
 
   if (req.method === "PUT") {
-    if (!authorized(req)) return json({ error: "Zaloguj się ponownie." }, 401);
+    if (!(await authorized(req))) return json({ error: "Zaloguj się ponownie." }, 401);
     const text = await req.text();
     if (text.length > MAX_BYTES) return json({ error: "Za duże dane." }, 413);
     let data;

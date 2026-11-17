@@ -4,6 +4,7 @@
   "description": "Portfolio of Wiktoria Wolniak-Gral with an admin panel (Netlify Functions + Netlify Blobs).",
   "type": "module",
   "dependencies": {
-    "@netlify/blobs": "^11.1.9"
+    "@netlify/blobs": "^11.1.9",
+    "nodemailer": "10.3.1"
   }
 }

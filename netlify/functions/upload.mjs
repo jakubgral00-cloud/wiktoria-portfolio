@@ -9,7 +9,7 @@ const MAX_BYTES = 5.5 * 1024 * 1024;
 
 export default async (req) => {
   if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
-  if (!authorized(req)) return json({ error: "Zaloguj się ponownie." }, 401);
+  if (!(await authorized(req))) return json({ error: "Zaloguj się ponownie." }, 401);
   const type = (req.headers.get("content-type") || "").split(";")[0].trim().toLowerCase();
   if (!TYPES[type]) return json({ error: "Dozwolone są zdjęcia JPG, PNG, WebP i GIF." }, 415);
   const bytes = await req.arrayBuffer();

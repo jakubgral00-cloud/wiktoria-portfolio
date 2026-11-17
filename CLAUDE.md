@@ -28,8 +28,8 @@ A server is required: `index.html` fetches `content.json`, so `file://` won't wo
 | `css/styles.css` | All styling (white page, Satoshi font from Fontshare, pinned hero with guide lines, edge-to-edge photo grid, hover captions) |
 | `js/app.js` | Hash router (`#/`, `#/project/<slug>`, `#/about`), views, home hero intro (typed "FASHION STYLIST" title, name fading in below; no photos), one-gesture glide from hero to gallery and back, keyboard lightbox |
 | `js/fonts.js` | Satoshi + 100 Google Fonts the admin can pick for headings/body; shared by the site and the panel |
-| `admin/` | Admin panel at `/admin` (login, texts, projects, photos, About, fonts, backups) |
-| `netlify/functions/`, `netlify/lib/` | Netlify Functions: login, content (Netlify Blobs), photo upload/serving |
+| `admin/` | Admin panel at `/admin` (login, forgot/reset password, texts, projects, photos, About, fonts, backups, password change) |
+| `netlify/functions/`, `netlify/lib/` | Netlify Functions: login, password change/reset (e-mail via Gmail SMTP or Resend), content (Netlify Blobs), photo upload/serving |
 | `netlify.toml`, `package.json` | Netlify build (runs `tools/export.py`) and the `@netlify/blobs` dependency |
 | `content.json` | **The content manifest**: profile, projects in Behance order, every image with local `src`, `source_url`, `width`, `height`, `alt` |
 | `assets/` | Images: `covers/`, `projects/` (from Behance), `profile/avatar.jpg`, `hero/wiktoria-N.jpg` (Wiktoria's own photos, supplied by Jakub) |

@@ -35,7 +35,47 @@
       </label>
       <p class="login__error" id="login-error" role="alert" hidden></p>
       <button class="btn btn--primary btn--block" type="submit">Zaloguj się</button>
+      <button class="login__link" type="button" data-show="forgot-form">Nie pamiętam hasła</button>
       <a class="login__back" href="/">← Wróć na stronę</a>
+    </form>
+
+    <form class="login__card" id="forgot-form" novalidate hidden>
+      <div class="brand" aria-label="Fashion Stylist — Wiktoria Wolniak-Gral">
+        <span class="brand__title">FASHION STYLIST</span>
+        <span class="brand__name">Wiktoria Wolniak-Gral</span>
+      </div>
+      <p class="login__lead">Wpisz swój e-mail — wyślemy link do ustawienia nowego hasła.</p>
+      <label class="field">
+        <span class="field__label">E-mail</span>
+        <input type="email" name="email" autocomplete="username" inputmode="email" required>
+      </label>
+      <p class="login__error" role="alert" hidden></p>
+      <p class="login__ok" role="status" hidden></p>
+      <button class="btn btn--primary btn--block" type="submit">Wyślij link</button>
+      <button class="login__link" type="button" data-show="login-form">← Wróć do logowania</button>
+    </form>
+
+    <form class="login__card" id="reset-form" novalidate hidden>
+      <div class="brand" aria-label="Fashion Stylist — Wiktoria Wolniak-Gral">
+        <span class="brand__title">FASHION STYLIST</span>
+        <span class="brand__name">Wiktoria Wolniak-Gral</span>
+      </div>
+      <p class="login__lead">Ustaw nowe hasło do panelu.</p>
+      <label class="field">
+        <span class="field__label">Nowe hasło</span>
+        <span class="password">
+          <input type="password" name="next" autocomplete="new-password" minlength="8" required>
+          <button type="button" class="password__toggle" aria-label="Pokaż hasło">Pokaż</button>
+        </span>
+        <span class="field__hint">Co najmniej 8 znaków.</span>
+      </label>
+      <label class="field">
+        <span class="field__label">Powtórz nowe hasło</span>
+        <input type="password" name="repeat" autocomplete="new-password" required>
+      </label>
+      <p class="login__error" role="alert" hidden></p>
+      <button class="btn btn--primary btn--block" type="submit">Ustaw hasło i zaloguj</button>
+      <button class="login__link" type="button" data-show="login-form">← Wróć do logowania</button>
     </form>
   </main>
 

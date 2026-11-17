@@ -58,36 +58,53 @@ FTPS (e.g. to seohost.pl). It asks for the password and never stores it.
 
 ## Admin panel (`/admin`)
 
-Wiktoria edits the site at **https://wiktoria-wolniak-gral.netlify.app/admin** (phone or laptop):
+Wiktoria edits the site at **https://fashion-stylist-wiktoria-wolniak-gral.netlify.app/admin** (phone or laptop):
 texts, header/footer, links, the About photo and text, projects (add, delete, reorder by
 drag and drop, edit title/date/tags/description), each project's photos (upload, reorder,
 caption, choose the cover) and fonts for headings and body text (Satoshi + 100 Google Fonts,
-list in `js/fonts.js`). Every save keeps a dated backup ("Kopie" tab).
+list in `js/fonts.js`). Every save keeps a dated backup ("Kopie" tab). She changes her
+password in the "Konto" tab; "Nie pamiętam hasła" on the login screen e-mails her a
+one-hour reset link (`/admin/#reset=<token>`).
 
 How it works:
 
 | Path | What |
 |---|---|
-| `admin/` | The panel (login screen + editor), plain HTML/CSS/JS, SortableJS from cdnjs |
-| `netlify/functions/login.mjs` | `POST /api/login` — checks `ADMIN_EMAIL` / `ADMIN_PASSWORD`, returns a 30-day signed token |
+| `admin/` | The panel (login, forgot/reset password, editor), plain HTML/CSS/JS, SortableJS from cdnjs |
+| `netlify/functions/login.mjs` | `POST /api/login` — checks the e-mail and password, returns a 30-day signed token |
+| `netlify/functions/password.mjs` | `POST /api/password` — change password from the panel (needs the current one) |
+| `netlify/functions/forgot.mjs` | `POST /api/forgot` — e-mails a one-time reset link (same reply for any address) |
+| `netlify/functions/reset.mjs` | `POST /api/reset` — sets a new password with the link's token |
 | `netlify/functions/content.mjs` | `GET/PUT /api/content` — the site content in Netlify Blobs (store `site-content`) + history |
 | `netlify/functions/upload.mjs` | `POST /api/upload` — stores photos in Netlify Blobs (store `media`); the panel shrinks them first |
 | `netlify/functions/media.mjs` | `GET /media/<key>` — serves uploaded photos |
-| `netlify/lib/auth.mjs` | Token signing and credential check |
+| `netlify/lib/auth.mjs` | Password check (scrypt hash in Blobs store `admin-auth`), token signing |
+| `netlify/lib/mail.mjs` | Sends the reset e-mail through Gmail SMTP or Resend |
+
+Passwords: `ADMIN_PASSWORD` is the starting password. Once Wiktoria changes it (panel or
+reset link) a scrypt hash in Blobs replaces it and other devices are logged out. Setting a
+**new** `ADMIN_PASSWORD` in Netlify and redeploying overrides the stored one again — the
+manual way back in if e-mail doesn't work.
 
 The site reads `/api/content` first and falls back to the bundled `content.json`
 until the first save (and when previewed without Netlify Functions).
 
 ### Netlify setup (once)
 
-1. Netlify → the `wiktoria-wolniak-gral` project → *Project configuration → Build & deploy →
-   Link repository* → GitHub → `jakubgral00-cloud/wiktoria-portfolio`, branch `main`.
-   Build settings come from `netlify.toml` (command `python3 -I tools/export.py`,
-   publish `dist/portfolio-wiktoria`, functions `netlify/functions`).
+1. The Netlify project `fashion-stylist-wiktoria-wolniak-gral` is linked to
+   `jakubgral00-cloud/wiktoria-portfolio`, branch `main`. Build settings come from
+   `netlify.toml` (command `python3 -I tools/export.py`, publish `dist/portfolio-wiktoria`,
+   functions `netlify/functions`).
 2. *Project configuration → Environment variables* → add
-   `ADMIN_EMAIL` (Wiktoria's login e-mail) and `ADMIN_PASSWORD` (a long password).
-   Optional: `SESSION_SECRET` (any long random string). Changing the password logs out every device.
-3. *Deploys → Trigger deploy* (env changes need a new deploy).
+   `ADMIN_EMAIL` (Wiktoria's login e-mail) and `ADMIN_PASSWORD` (the starting password).
+   Optional: `SESSION_SECRET` (any long random string).
+3. For "Nie pamiętam hasła", add ONE of:
+   - Gmail: `SMTP_USER` = the Gmail address, `SMTP_PASS` = a Google app password
+     (Google account → Security → 2-Step Verification on → App passwords).
+   - Resend: `RESEND_API_KEY` (account made with the same e-mail as `ADMIN_EMAIL`,
+     or a verified domain plus `MAIL_FROM`).
+   Without these the panel says e-mail isn't set up; everything else works.
+4. *Deploys → Trigger deploy* (env changes need a new deploy).
 
 After that every push to `main` deploys automatically. Content edited in the panel is
 stored in Netlify Blobs, not in git, so a deploy never overwrites Wiktoria's changes.
