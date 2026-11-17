@@ -1,0 +1,16 @@
+# Connected-repo deploys: Netlify installs package.json (for the functions),
+# copies the site into dist/portfolio-wiktoria and publishes it.
+[build]
+  command = "python3 -I tools/export.py"
+  publish = "dist/portfolio-wiktoria"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# The admin panel must never be cached by the browser or indexed.
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    Cache-Control = "no-cache"
+    X-Robots-Tag = "noindex, nofollow"

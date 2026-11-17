@@ -1,0 +1,9 @@
+{
+  "name": "wiktoria-portfolio",
+  "private": true,
+  "description": "Portfolio of Wiktoria Wolniak-Gral with an admin panel (Netlify Functions + Netlify Blobs).",
+  "type": "module",
+  "dependencies": {
+    "@netlify/blobs": "^11.1.9"
+  }
+}

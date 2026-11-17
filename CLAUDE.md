@@ -27,6 +27,10 @@ A server is required: `index.html` fetches `content.json`, so `file://` won't wo
 | `index.html` | Page shell, lightbox `<dialog>`, inline trailing-slash guard |
 | `css/styles.css` | All styling (white page, Satoshi font from Fontshare, pinned hero with guide lines, edge-to-edge photo grid, hover captions) |
 | `js/app.js` | Hash router (`#/`, `#/project/<slug>`, `#/about`), views, home hero intro (typed "FASHION STYLIST" title, name fading in below; no photos), one-gesture glide from hero to gallery and back, keyboard lightbox |
+| `js/fonts.js` | Satoshi + 100 Google Fonts the admin can pick for headings/body; shared by the site and the panel |
+| `admin/` | Admin panel at `/admin` (login, texts, projects, photos, About, fonts, backups) |
+| `netlify/functions/`, `netlify/lib/` | Netlify Functions: login, content (Netlify Blobs), photo upload/serving |
+| `netlify.toml`, `package.json` | Netlify build (runs `tools/export.py`) and the `@netlify/blobs` dependency |
 | `content.json` | **The content manifest**: profile, projects in Behance order, every image with local `src`, `source_url`, `width`, `height`, `alt` |
 | `assets/` | Images: `covers/`, `projects/` (from Behance), `profile/avatar.jpg`, `hero/wiktoria-N.jpg` (Wiktoria's own photos, supplied by Jakub) |
 | `source/profile_snapshot.json` | Trimmed data from the public profile page |
@@ -40,10 +44,14 @@ A server is required: `index.html` fetches `content.json`, so `file://` won't wo
 | `tests/site_test.py` | Playwright end-to-end checks and screenshots |
 | `SOURCE_GAPS.md`, `REPORT.md` | What could not be sourced; build/test report |
 
-## content.json is the source of truth
+## Where content lives
 
-The site renders everything from `content.json`. Change content there, not in the
-HTML or JS. Project order in the array is the display order, and it matches Behance.
+Once Wiktoria saves in the admin panel, the live content is the copy in Netlify Blobs
+(`/api/content`), not `content.json`; the site falls back to `content.json` only until
+the first save. So content changes on the live site belong in the panel; editing
+`content.json` after that has no visible effect. Locally (no functions) the site
+renders `content.json`. Never put content in the
+HTML or JS. Project order in the array is the display order (Wiktoria changes it in the panel).
 
 ## Project media
 

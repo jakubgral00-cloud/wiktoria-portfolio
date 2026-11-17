@@ -15,7 +15,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, "dist", "portfolio-wiktoria"))
 FILES = ["index.html", "content.json"]
-DIRS = ["css", "js", "assets"]
+DIRS = ["css", "js", "assets", "admin"]
 
 dist_root = os.path.join(ROOT, "dist")
 if os.path.commonpath([OUT, dist_root]) != dist_root:

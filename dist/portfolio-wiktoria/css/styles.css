@@ -6,6 +6,7 @@
   --muted: #6a6a6a;
   --line: rgba(17, 17, 17, 0.1);
   --font: "Satoshi", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  --font-heading: var(--font);
   --gutter: clamp(0.9rem, 2vw, 1.75rem);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -417,3 +418,6 @@ main { flex: 1; outline: none; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+
+/* Heading font (chosen in the admin panel; defaults to the body font). */
+h1, h2, h3, .wordmark, .hero__title, .card__title, .project__title, .eyebrow { font-family: var(--font-heading); }

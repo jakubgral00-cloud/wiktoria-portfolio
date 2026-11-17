@@ -6,11 +6,21 @@
     "profile_list_complete": true,
     "profile_list_note": "All 71 projects on the public profile, in Behance order (2026-11-07)."
   },
+  "site": {
+    "fonts": { "heading": "Satoshi", "body": "Satoshi" },
+    "availability": "Available for freelance & fulltime",
+    "inquiry_label": "Send project inquiry",
+    "footer": "© Wiktoria Wolniak-Gral · Freelance Stylist · Warszawa"
+  },
   "profile": {
     "display_name": "Wiktoria Wolniak-Gral",
     "first_name": "Wiktoria",
     "occupation": "Freelance Stylist",
     "hero_title": "Fashion Stylist",
+    "links": [
+      { "label": "Instagram", "url": "https://www.instagram.com/wiktoria.wolniak/" },
+      { "label": "Behance", "url": "https://www.behance.net/wiktoriawolniak" }
+    ],
     "company": "Fashion Stylist Wiktoria Wolniak-Gral",
     "location": "Warszawa, Poland",
     "website": "https://www.instagram.com/wiktoria.wolniak/",

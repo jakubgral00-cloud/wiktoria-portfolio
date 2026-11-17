@@ -96,13 +96,14 @@
   const httpsUrl = (url) => url.replace(/^http:/, "https:");
 
   function card(p, i) {
+    const cover = p.cover || (p.media && p.media[0]);
     return el("li", { class: "card" },
-      el("a", { href: `#/project/${p.slug}`, "aria-label": `${p.title}, ${formatDate(p.published_on)}` },
+      el("a", { href: `#/project/${p.slug}`, "aria-label": p.published_on ? `${p.title}, ${formatDate(p.published_on)}` : p.title },
         el("div", { class: "card__frame", style: p.dominant_color ? `background-color:${p.dominant_color}` : null },
-          img(p.cover, { alt: "", loading: i < 12 ? "eager" : "lazy" })),
+          cover ? img(cover, { alt: "", loading: i < 12 ? "eager" : "lazy" }) : null),
         el("div", { class: "card__caption", "aria-hidden": "true" },
           el("h3", { class: "card__title", text: p.title }),
-          el("p", { class: "card__meta", text: formatDate(p.published_on) }))
+          p.published_on ? el("p", { class: "card__meta", text: formatDate(p.published_on) }) : null)
       )
     );
   }
@@ -354,7 +355,7 @@
     const p = projects[index];
 
     // Image sequence in Behance order; fall back to the cover if none was imported.
-    const items = p.media.length ? p.media : [p.cover];
+    const items = p.media && p.media.length ? p.media : (p.cover ? [p.cover] : []);
 
     const title = el("h1", { class: "project__title", id: "project-title", tabindex: "-1", text: p.title });
 
@@ -383,11 +384,11 @@
     const info = el("section", { class: "project__info", "aria-label": "Project details" },
       el("div", {},
         el("h2", { text: p.title }),
-        el("p", {}, "Published ", el("time", { datetime: p.published_on, text: formatDate(p.published_on, true) })),
+        p.published_on ? el("p", {}, "Published ", el("time", { datetime: p.published_on, text: formatDate(p.published_on, true) })) : null,
         p.description ? el("p", { class: "project__desc", text: p.description }) : null,
         p.tags && p.tags.length ? el("ul", { class: "tags", "aria-label": "Tags" }, p.tags.map((t) => el("li", { text: t }))) : null
       ),
-      el("a", { class: "source-link", href: p.source_url, rel: "noopener", text: "View on Behance ↗" })
+      p.source_url ? el("a", { class: "source-link", href: p.source_url, rel: "noopener", text: "View on Behance ↗" }) : null
     );
 
     // "More work": the next four projects, wrapping around the list.
@@ -410,13 +411,11 @@
       contacts.push(el("li", {}, el("span", { text: "E-mail" }),
         el("a", { href: `mailto:${profile.email}`, text: profile.email })));
     }
-    for (const s of profile.socials) {
-      if (!s.valid_url) continue;
-      const url = s.url_as_listed.replace(/^http:/, "https:");
-      contacts.push(el("li", {}, el("span", { text: s.service }),
-        el("a", { href: url, rel: "noopener", text: url.replace(/^https?:\/\/(www\.)?/, "") })));
+    for (const l of links(profile)) {
+      contacts.push(el("li", {}, el("span", { text: l.label }),
+        el("a", { href: l.url, rel: "noopener", text: l.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "") })));
     }
-    contacts.push(el("li", {}, el("span", { text: "Based in" }), el("span", { text: profile.location })));
+    if (profile.location) contacts.push(el("li", {}, el("span", { text: "Based in" }), el("span", { text: profile.location })));
 
     // The About text is shown verbatim, minus the e-mail line which is linked below.
     const aboutText = profile.about
@@ -424,7 +423,7 @@
       : "";
 
     const section = el("section", { class: "about", "aria-labelledby": "about-heading" },
-      el("div", {}, img(profile.avatar, { class: "about__photo" })),
+      el("div", {}, profile.avatar && profile.avatar.src ? img(profile.avatar, { class: "about__photo" }) : null),
       el("div", {},
         el("p", { class: "eyebrow", id: "about-heading", text: profile.about ? profile.about.title : "About" }),
         heading,
@@ -519,14 +518,64 @@
     return { open, close };
   })();
 
+  // ---------- site chrome (header, footer, fonts) from content ----------
+  function links(profile) {
+    if (Array.isArray(profile.links)) return profile.links.filter((l) => l && l.label && l.url);
+    return (profile.socials || []).filter((s) => s.valid_url)
+      .map((s) => ({ label: s.service, url: httpsUrl(s.url_as_listed) }));
+  }
+
+  function renderChrome() {
+    const { profile } = content;
+    const site = content.site || {};
+    const [first, ...rest] = profile.display_name.split(" ");
+    const wordmark = document.querySelector(".wordmark");
+    wordmark.setAttribute("aria-label", `${profile.display_name} — home`);
+    wordmark.replaceChildren(el("span", { text: first }), el("span", { text: rest.join(" ") }));
+
+    document.querySelector(".site-links").replaceChildren(
+      ...links(profile).map((l) => el("li", {}, el("a", { href: l.url, rel: "noopener", text: l.label }))));
+
+    const contact = document.querySelector(".site-contact");
+    contact.replaceChildren(
+      site.availability ? el("p", { text: site.availability }) : null,
+      profile.email ? el("a", { href: `mailto:${profile.email}`, text: profile.email }) : null,
+      profile.email && site.inquiry_label
+        ? el("a", { href: `mailto:${profile.email}?subject=Project%20inquiry`, text: site.inquiry_label }) : null);
+
+    const sep = () => " · ";
+    const footerLinks = links(profile).map((l) => el("a", { href: l.url, rel: "noopener", text: l.label }));
+    if (profile.email) footerLinks.push(el("a", { href: `mailto:${profile.email}`, text: profile.email }));
+    document.querySelector(".site-footer").replaceChildren(
+      el("p", { text: site.footer || `© ${profile.display_name}` }),
+      el("p", {}, footerLinks.flatMap((a, i) => (i ? [sep(), a] : [a]))));
+  }
+
+  function applyFonts() {
+    const F = window.SITE_FONTS;
+    const chosen = (content.site && content.site.fonts) || {};
+    if (!F) return;
+    const heading = F.byName(chosen.heading).name;
+    const body = F.byName(chosen.body).name;
+    const url = F.cssUrl([heading, body]);
+    if (url) document.head.append(el("link", { rel: "stylesheet", href: url }));
+    document.documentElement.style.setProperty("--font", F.stack(body));
+    document.documentElement.style.setProperty("--font-heading", F.stack(heading));
+  }
+
   // ---------- boot ----------
-  fetch("content.json")
-    .then((r) => {
-      if (!r.ok) throw new Error(`content.json: HTTP ${r.status}`);
-      return r.json();
-    })
+  // Content saved in the admin panel (Netlify function) wins; the bundled
+  // content.json is the fallback, e.g. for local previews without functions.
+  const getJSON = (url) => fetch(url, { cache: "no-store" }).then((r) => {
+    if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
+    return r.json();
+  });
+  getJSON("api/content")
+    .catch(() => getJSON("content.json"))
     .then((data) => {
       content = data;
+      applyFonts();
+      renderChrome();
       window.addEventListener("hashchange", route);
       route();
     })

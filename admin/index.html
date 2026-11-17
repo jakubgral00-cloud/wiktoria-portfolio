@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Panel — Wiktoria Wolniak-Gral</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23161412'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-style='italic' fill='%23f3efe8' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&amp;display=swap">
+  <link rel="stylesheet" href="/admin/admin.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js" defer></script>
+  <script src="/js/fonts.js" defer></script>
+  <script src="/admin/admin.js" defer></script>
+</head>
+<body>
+  <!-- Login -->
+  <main class="login" id="login" hidden>
+    <form class="login__card" id="login-form" novalidate>
+      <div class="brand" aria-label="Fashion Stylist — Wiktoria Wolniak-Gral">
+        <span class="brand__title">FASHION STYLIST</span>
+        <span class="brand__name">Wiktoria Wolniak-Gral</span>
+      </div>
+      <p class="login__lead">Panel do edycji strony</p>
+      <label class="field">
+        <span class="field__label">E-mail</span>
+        <input type="email" name="email" autocomplete="username" inputmode="email" required>
+      </label>
+      <label class="field">
+        <span class="field__label">Hasło</span>
+        <span class="password">
+          <input type="password" name="password" autocomplete="current-password" required>
+          <button type="button" class="password__toggle" aria-label="Pokaż hasło">Pokaż</button>
+        </span>
+      </label>
+      <p class="login__error" id="login-error" role="alert" hidden></p>
+      <button class="btn btn--primary btn--block" type="submit">Zaloguj się</button>
+      <a class="login__back" href="/">← Wróć na stronę</a>
+    </form>
+  </main>
+
+  <!-- Editor -->
+  <div class="app" id="app" hidden>
+    <header class="topbar">
+      <div class="brand brand--small">
+        <span class="brand__title">FASHION STYLIST</span>
+        <span class="brand__name">Wiktoria Wolniak-Gral</span>
+      </div>
+      <div class="topbar__actions">
+        <a class="btn btn--ghost" href="/" target="_blank" rel="noopener">Zobacz stronę ↗</a>
+        <button class="btn btn--ghost" type="button" id="logout">Wyloguj</button>
+      </div>
+    </header>
+    <nav class="tabs" id="tabs" aria-label="Sekcje panelu"></nav>
+    <main class="panel" id="panel" tabindex="-1"></main>
+    <div class="savebar" id="savebar">
+      <span class="savebar__status" id="status" aria-live="polite"></span>
+      <button class="btn btn--primary" type="button" id="save" disabled>Zapisz zmiany</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
