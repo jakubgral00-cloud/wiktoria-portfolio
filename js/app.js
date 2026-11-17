@@ -123,46 +123,22 @@
     return arr;
   };
 
-  // Load: photos fly in in 3D from different sides in random order, "Portfolio [→]"
-  // is typed like on a keyboard, then the name fades in.
+  // Load: the title is typed like on a keyboard, then the name fades in below it.
   function playHeroIntro(hero) {
-    const photos = [...hero.querySelectorAll(".hero__photo > img")];
-    const sides = shuffle(["left", "right", "top", "bottom"]);
-    shuffle(photos.map((p, i) => i)).forEach((photoIndex, order) => {
-      const side = sides[photoIndex % sides.length];
-      const [x, y, rx, ry] = {
-        left: ["-80vw", "10vh", 20, -70], right: ["80vw", "-10vh", -20, 70],
-        top: ["10vw", "-90vh", 70, 15], bottom: ["-10vw", "90vh", -70, -15],
-      }[side];
-      photos[photoIndex].animate([
-        { transform: `translate3d(${x}, ${y}, 400px) rotateX(${rx}deg) rotateY(${ry}deg) rotateZ(${rand(-25, 25)}deg)`, opacity: 0 },
-        { opacity: 1, offset: 0.3 },
-        { transform: "translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0)", opacity: 1 },
-      ], { duration: rand(1500, 1900), delay: 150 + order * rand(220, 320), easing: EASE, fill: "backwards" });
-    });
-
-    hero.querySelectorAll(".hero__label > span, .hero__scroll > span").forEach((node, i) => {
-      node.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 900, delay: 400 + i * 120, fill: "backwards" });
+    hero.querySelectorAll(".hero__scroll > span").forEach((node) => {
+      node.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 900, delay: 400, fill: "backwards" });
     });
 
     const typed = hero.querySelector(".hero__typed");
-    const arrow = hero.querySelector(".hero__arrow");
     const caret = hero.querySelector(".hero__caret");
-    const name = hero.querySelector(".hero__name > span");
-    const word = "Portfolio";
-    const arrowText = "[→]";
+    const name = hero.querySelector(".hero__name > p");
+    const word = typed.textContent;
     typed.textContent = "";
-    arrow.textContent = "";
     name.style.opacity = "0";
     let t = 650;
     [...word].forEach((ch, i) => {
       t += rand(85, 175);
       setTimeout(() => { typed.textContent = word.slice(0, i + 1); }, t);
-    });
-    t += 320;
-    [...arrowText].forEach((ch, i) => {
-      t += rand(110, 190);
-      setTimeout(() => { arrow.textContent = arrowText.slice(0, i + 1); }, t);
     });
     setTimeout(() => {
       name.style.opacity = "";
@@ -338,27 +314,18 @@
 
   function homeView() {
     const { profile, projects } = content;
-    const photos = profile.hero_photos || [];
+    const title = (profile.hero_title || profile.occupation).toUpperCase();
     const item = (cls, child) => el("div", { class: `hero__item ${cls}` }, child);
-    const label = (cls, ...lines) => item(`hero__label ${cls}`,
-      el("span", {}, ...lines.flatMap((l, i) => (i ? [el("br"), l] : [l]))));
 
     const hero = el("section", { class: "hero", "aria-labelledby": "hero-title" },
       el("div", { class: "hero__stage" },
         el("div", { class: "hero__lines", "aria-hidden": "true" }),
-        photos.map((ph, i) => item(`hero__photo hero__photo--${i + 1}`,
-          img(ph, { loading: "eager", fetchpriority: i < 2 ? "high" : null }))),
-        item("hero__title-wrap",
-          el("h1", { class: "hero__title", id: "hero-title", "aria-label": "Portfolio" },
-            el("span", { class: "hero__typed", "aria-hidden": "true", text: "Portfolio" }),
-            el("span", { class: "hero__arrow", "aria-hidden": "true", text: "[→]" }),
-            el("span", { class: "hero__caret is-done", "aria-hidden": "true" }))),
-        item("hero__name", el("span", { text: `( ${profile.display_name.replace("-", " - ")} )` })),
-        label("hero__label--int", "Int."),
-        label("hero__label--hash", "#"),
-        label("hero__label--bl", profile.occupation, profile.location.split(",")[0]),
-        label("hero__label--bc", "Fashion, commercial,", "music video"),
-        label("hero__label--br", `01–${pad(projects.length)}.`),
+        el("div", { class: "hero__center" },
+          item("hero__title-wrap",
+            el("h1", { class: "hero__title", id: "hero-title", "aria-label": title },
+              el("span", { class: "hero__typed", "aria-hidden": "true", text: title }),
+              el("span", { class: "hero__caret is-done", "aria-hidden": "true" }))),
+          item("hero__name", el("p", { text: profile.display_name }))),
         item("hero__scroll hero__label",
           el("span", {}, el("button", { class: "hero__scroll-btn", type: "button", "aria-label": "Show work", text: "( ↓ )" })))
       )

@@ -109,28 +109,33 @@ main { flex: 1; outline: none; }
 .hero__item { position: absolute; will-change: transform, opacity; }
 .hero__item > * { display: block; }
 
-.hero__photo { width: clamp(7rem, 15vw, 15rem); }
-.hero__photo img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; background: var(--bg-soft); }
-.hero__photo--1 { left: 26%; top: 9%; }
-.hero__photo--2 { right: 0; top: 25%; width: clamp(6.5rem, 13vw, 13rem); }
-.hero__photo--3 { left: 1.5%; top: 55%; width: clamp(6.5rem, 13vw, 13rem); }
-.hero__photo--4 { left: 58%; top: 64%; }
-
-.hero__title-wrap { inset: 0; display: grid; place-items: center; pointer-events: none; }
+/* Title with the name centred underneath; each still flies off on its own (js/app.js). */
+.hero__center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.9rem, 2vw, 1.75rem);
+  padding: 0 var(--gutter);
+  text-align: center;
+  pointer-events: none;
+}
+.hero__center .hero__item { position: relative; }
 .hero__title {
   margin: 0;
   white-space: nowrap;
-  font-size: clamp(3.5rem, 12.5vw, 13rem);
+  font-size: clamp(2.75rem, 9.5vw, 11rem);
   font-weight: 500;
   line-height: 0.9;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.06em;
   color: var(--title);
 }
-.hero__arrow { font-weight: 400; letter-spacing: -0.08em; margin-left: 0.12em; }
 .hero__caret {
   display: inline-block;
   width: 0.06em;
-  height: 0.78em;
+  height: 0.72em;
   margin-left: 0.04em;
   background: var(--title);
   vertical-align: -0.02em;
@@ -139,21 +144,14 @@ main { flex: 1; outline: none; }
 .hero__caret.is-done { visibility: hidden; animation: none; }
 @keyframes caret { 50% { opacity: 0; } }
 
-.hero__name {
-  right: 14%;
-  top: 31%;
+.hero__name p {
   margin: 0;
-  font-size: clamp(0.8rem, 1.1vw, 1rem);
+  font-size: clamp(1rem, 1.6vw, 1.5rem);
   font-weight: 500;
   line-height: 1.25;
   white-space: nowrap;
 }
 .hero__label { margin: 0; font-size: 0.8rem; font-weight: 500; line-height: 1.25; }
-.hero__label--int { left: var(--gutter); top: 48%; }
-.hero__label--hash { left: calc(12.5% + 0.5rem); top: 48%; }
-.hero__label--bl { left: var(--gutter); bottom: 4%; }
-.hero__label--bc { left: calc(25% + 0.6rem); bottom: 4%; }
-.hero__label--br { right: var(--gutter); bottom: 4%; }
 .hero__scroll { left: 0; right: 0; bottom: 4%; text-align: center; }
 .hero__scroll-btn {
   font: inherit;
@@ -166,15 +164,7 @@ main { flex: 1; outline: none; }
 .hero__scroll-btn:hover { text-decoration: underline; text-underline-offset: 0.2em; }
 
 @media (max-width: 760px) {
-  .hero__title { white-space: normal; text-align: left; font-size: 19vw; }
-  .hero__title-wrap { padding: 0 var(--gutter); }
-  .hero__photo { width: 30vw; }
-  .hero__photo--1 { left: 30%; top: 6%; }
-  .hero__photo--2 { width: 26vw; top: 20%; }
-  .hero__photo--3 { width: 26vw; top: 68%; }
-  .hero__photo--4 { left: 62%; top: 70%; }
-  .hero__name { right: var(--gutter); top: 40%; }
-  .hero__label--hash, .hero__label--bc, .hero__label--int { display: none; }
+  .hero__title { white-space: normal; font-size: 17vw; }
 }
 
 /* The gallery comes after the hero with one row of white space above it
